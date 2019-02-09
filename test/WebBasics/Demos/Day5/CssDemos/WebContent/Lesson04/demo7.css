@@ -1,0 +1,17 @@
+@CHARSET "ISO-8859-1";
+
+h1
+{
+	background-color: lightgrey;
+	color: #E9967A;
+}
+
+.tb1
+ {
+ table-layout:auto
+ }
+.tb2
+ {
+ table-layout:fixed
+ }
+

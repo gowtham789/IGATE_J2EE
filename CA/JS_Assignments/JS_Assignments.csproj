@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C6DB39FD-4819-4662-BCDE-A6B59A28AF48}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JS_Assignments</RootNamespace>
+    <AssemblyName>JS_Assignments</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="common.js" />
+    <Content Include="emp.js" />
+    <Content Include="emp_details.html" />
+    <Content Include="Eshoppee.html" />
+    <Content Include="hello_world.js" />
+    <Content Include="lab3_1.html" />
+    <Content Include="lab1_1.html" />
+    <Content Include="lab1_2.html" />
+    <Content Include="lab1_3.html" />
+    <Content Include="lab1_4.html" />
+    <Content Include="lab2_1.html" />
+    <Content Include="lab2_2.html" />
+    <Content Include="lab3_2.html" />
+    <Content Include="lab3_3.html" />
+    <Content Include="lab4.html" />
+    <Content Include="lab5.html" />
+    <Content Include="lab6.html" />
+    <Content Include="lab7.html" />
+    <Content Include="lab8_1.html" />
+    <Content Include="lab8_2.html" />
+    <Content Include="lab8_3_validate_field.html" />
+    <Content Include="lab9_1.html" />
+    <Content Include="lab9_2.html" />
+    <Content Include="Registration.html" />
+    <Content Include="store.html" />
+    <Content Include="Stylesheet1.css" />
+    <Content Include="sum.html" />
+    <Content Include="textshadow.css" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

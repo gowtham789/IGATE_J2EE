@@ -1,0 +1,336 @@
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458194089860" level="INFO" thread="main">
+<log4j:message><![CDATA[Fetching all projects...]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458194090204" level="INFO" thread="main">
+<log4j:message><![CDATA[9 mobiles(s) fetched]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458194090204" level="INFO" thread="main">
+<log4j:message><![CDATA[----project Details---]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458194090204" level="INFO" thread="main">
+<log4j:message><![CDATA[[ProjectDto [projectCode=1008, projectName=Airline, duration=6, noOfResources=70, stratDate=2016-03-16], ProjectDto [projectCode=1009, projectName=Loan, duration=5, noOfResources=80, stratDate=2016-03-16], ProjectDto [projectCode=1022, projectName=Loan, duration=5, noOfResources=90, stratDate=2016-03-17], ProjectDto [projectCode=1023, projectName=Mobileapp, duration=7, noOfResources=80, stratDate=2016-03-17], ProjectDto [projectCode=1006, projectName=Banking, duration=6, noOfResources=40, stratDate=2016-03-16], ProjectDto [projectCode=1007, projectName=Ecommerce, duration=12, noOfResources=100, stratDate=2016-03-16], ProjectDto [projectCode=1010, projectName=Shopping, duration=7, noOfResources=70, stratDate=2016-03-16], ProjectDto [projectCode=1011, projectName=Website, duration=8, noOfResources=90, stratDate=2016-03-16], ProjectDto [projectCode=1021, projectName=Library, duration=5, noOfResources=50, stratDate=2016-03-17]]]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458194408177" level="INFO" thread="main">
+<log4j:message><![CDATA[Inserting Project details of mobile....ProjectDto [projectCode=1012, projectName=Library, duration=5, noOfResources=50, stratDate=3916-04-15]]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458194408536" level="INFO" thread="main">
+<log4j:message><![CDATA[Inserted Successfully ....1024]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458194669214" level="INFO" thread="main">
+<log4j:message><![CDATA[Inserting Project details of mobile....ProjectDto [projectCode=1012, projectName=Library, duration=5, noOfResources=50, stratDate=3916-04-15]]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458194669542" level="INFO" thread="main">
+<log4j:message><![CDATA[Inserted Successfully ....1025]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458194680513" level="INFO" thread="main">
+<log4j:message><![CDATA[Inserting Project details of mobile....ProjectDto [projectCode=1012, projectName=Library, duration=5, noOfResources=50, stratDate=3916-04-15]]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458194680840" level="INFO" thread="main">
+<log4j:message><![CDATA[Inserted Successfully ....1026]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458195452260" level="INFO" thread="main">
+<log4j:message><![CDATA[Inserting Project details of mobile....ProjectDto [projectCode=1012, projectName=Library, duration=5, noOfResources=50, stratDate=3916-04-15]]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458195452588" level="INFO" thread="main">
+<log4j:message><![CDATA[Inserted Successfully ....1027]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458195452604" level="INFO" thread="main">
+<log4j:message><![CDATA[Fetching all projects...]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458195452650" level="INFO" thread="main">
+<log4j:message><![CDATA[13 mobiles(s) fetched]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458195452650" level="INFO" thread="main">
+<log4j:message><![CDATA[----project Details---]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458195452650" level="INFO" thread="main">
+<log4j:message><![CDATA[[ProjectDto [projectCode=1008, projectName=Airline, duration=6, noOfResources=70, stratDate=2016-03-16], ProjectDto [projectCode=1009, projectName=Loan, duration=5, noOfResources=80, stratDate=2016-03-16], ProjectDto [projectCode=1027, projectName=Library, duration=5, noOfResources=50, stratDate=2016-03-17], ProjectDto [projectCode=1026, projectName=Library, duration=5, noOfResources=50, stratDate=2016-03-17], ProjectDto [projectCode=1024, projectName=Library, duration=5, noOfResources=50, stratDate=2016-03-17], ProjectDto [projectCode=1022, projectName=Loan, duration=5, noOfResources=90, stratDate=2016-03-17], ProjectDto [projectCode=1023, projectName=Mobileapp, duration=7, noOfResources=80, stratDate=2016-03-17], ProjectDto [projectCode=1025, projectName=Library, duration=5, noOfResources=50, stratDate=2016-03-17], ProjectDto [projectCode=1006, projectName=Banking, duration=6, noOfResources=40, stratDate=2016-03-16], ProjectDto [projectCode=1007, projectName=Ecommerce, duration=12, noOfResources=100, stratDate=2016-03-16], ProjectDto [projectCode=1010, projectName=Shopping, duration=7, noOfResources=70, stratDate=2016-03-16], ProjectDto [projectCode=1011, projectName=Website, duration=8, noOfResources=90, stratDate=2016-03-16], ProjectDto [projectCode=1021, projectName=Library, duration=5, noOfResources=50, stratDate=2016-03-17]]]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458195552797" level="INFO" thread="main">
+<log4j:message><![CDATA[Inserting Project details of mobile....ProjectDto [projectCode=1012, projectName=Library, duration=5, noOfResources=50, stratDate=3916-04-15]]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458195553093" level="INFO" thread="main">
+<log4j:message><![CDATA[Inserted Successfully ....1028]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458195553109" level="INFO" thread="main">
+<log4j:message><![CDATA[Fetching all projects...]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458195553155" level="INFO" thread="main">
+<log4j:message><![CDATA[14 mobiles(s) fetched]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458195553155" level="INFO" thread="main">
+<log4j:message><![CDATA[----project Details---]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458195553155" level="INFO" thread="main">
+<log4j:message><![CDATA[[ProjectDto [projectCode=1008, projectName=Airline, duration=6, noOfResources=70, stratDate=2016-03-16], ProjectDto [projectCode=1009, projectName=Loan, duration=5, noOfResources=80, stratDate=2016-03-16], ProjectDto [projectCode=1027, projectName=Library, duration=5, noOfResources=50, stratDate=2016-03-17], ProjectDto [projectCode=1026, projectName=Library, duration=5, noOfResources=50, stratDate=2016-03-17], ProjectDto [projectCode=1024, projectName=Library, duration=5, noOfResources=50, stratDate=2016-03-17], ProjectDto [projectCode=1022, projectName=Loan, duration=5, noOfResources=90, stratDate=2016-03-17], ProjectDto [projectCode=1023, projectName=Mobileapp, duration=7, noOfResources=80, stratDate=2016-03-17], ProjectDto [projectCode=1025, projectName=Library, duration=5, noOfResources=50, stratDate=2016-03-17], ProjectDto [projectCode=1028, projectName=Library, duration=5, noOfResources=50, stratDate=2016-03-17], ProjectDto [projectCode=1006, projectName=Banking, duration=6, noOfResources=40, stratDate=2016-03-16], ProjectDto [projectCode=1007, projectName=Ecommerce, duration=12, noOfResources=100, stratDate=2016-03-16], ProjectDto [projectCode=1010, projectName=Shopping, duration=7, noOfResources=70, stratDate=2016-03-16], ProjectDto [projectCode=1011, projectName=Website, duration=8, noOfResources=90, stratDate=2016-03-16], ProjectDto [projectCode=1021, projectName=Library, duration=5, noOfResources=50, stratDate=2016-03-17]]]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458195553155" level="INFO" thread="main">
+<log4j:message><![CDATA[Checking if project with 1008 exists...]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458195553202" level="INFO" thread="main">
+<log4j:message><![CDATA[project exists status :true]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458196228933" level="INFO" thread="main">
+<log4j:message><![CDATA[Inserting Project details of mobile....ProjectDto [projectCode=1012, projectName=Library, duration=5, noOfResources=50, stratDate=3916-04-15]]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458196229073" level="INFO" thread="main">
+<log4j:message><![CDATA[Fetching all projects...]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458196229105" level="INFO" thread="main">
+<log4j:message><![CDATA[Checking if project with 1008 exists...]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458196229120" level="INFO" thread="main">
+<log4j:message><![CDATA[viewing projects by proj id....1008]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458196256817" level="INFO" thread="main">
+<log4j:message><![CDATA[Inserting Project details of mobile....ProjectDto [projectCode=1012, projectName=Library, duration=5, noOfResources=50, stratDate=3916-04-15]]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458196256926" level="INFO" thread="main">
+<log4j:message><![CDATA[Fetching all projects...]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458196256942" level="INFO" thread="main">
+<log4j:message><![CDATA[Checking if project with 1008 exists...]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458196256957" level="INFO" thread="main">
+<log4j:message><![CDATA[viewing projects by proj id....1008]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458196276305" level="INFO" thread="main">
+<log4j:message><![CDATA[Inserting Project details of mobile....ProjectDto [projectCode=1012, projectName=Library, duration=5, noOfResources=50, stratDate=3916-04-15]]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458196276415" level="INFO" thread="main">
+<log4j:message><![CDATA[Fetching all projects...]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458196276430" level="INFO" thread="main">
+<log4j:message><![CDATA[Checking if project with 1008 exists...]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458196443836" level="INFO" thread="main">
+<log4j:message><![CDATA[Inserting Project details of mobile....ProjectDto [projectCode=1012, projectName=Library, duration=5, noOfResources=50, stratDate=3916-04-15]]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458196443945" level="INFO" thread="main">
+<log4j:message><![CDATA[Fetching all projects...]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458196443961" level="INFO" thread="main">
+<log4j:message><![CDATA[Checking if project with 1008 exists...]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458196573045" level="INFO" thread="main">
+<log4j:message><![CDATA[Fetching all projects...]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458196573170" level="INFO" thread="main">
+<log4j:message><![CDATA[Inserting Project details of mobile....ProjectDto [projectCode=1012, projectName=Library, duration=5, noOfResources=50, stratDate=3916-04-15]]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458196573186" level="INFO" thread="main">
+<log4j:message><![CDATA[Checking if project with 1008 exists...]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458196573201" level="INFO" thread="main">
+<log4j:message><![CDATA[deleting the mobile by id ....1027]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458196710399" level="INFO" thread="main">
+<log4j:message><![CDATA[Checking if project with 1008 exists...]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458196710836" level="INFO" thread="main">
+<log4j:message><![CDATA[project exists status :true]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458196750184" level="INFO" thread="main">
+<log4j:message><![CDATA[Fetching all projects...]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458196750527" level="INFO" thread="main">
+<log4j:message><![CDATA[14 mobiles(s) fetched]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458196750527" level="INFO" thread="main">
+<log4j:message><![CDATA[----project Details---]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458196750527" level="INFO" thread="main">
+<log4j:message><![CDATA[[ProjectDto [projectCode=1008, projectName=Airline, duration=6, noOfResources=70, stratDate=2016-03-16], ProjectDto [projectCode=1009, projectName=Loan, duration=5, noOfResources=80, stratDate=2016-03-16], ProjectDto [projectCode=1027, projectName=Library, duration=5, noOfResources=50, stratDate=2016-03-17], ProjectDto [projectCode=1026, projectName=Library, duration=5, noOfResources=50, stratDate=2016-03-17], ProjectDto [projectCode=1024, projectName=Library, duration=5, noOfResources=50, stratDate=2016-03-17], ProjectDto [projectCode=1022, projectName=Loan, duration=5, noOfResources=90, stratDate=2016-03-17], ProjectDto [projectCode=1023, projectName=Mobileapp, duration=7, noOfResources=80, stratDate=2016-03-17], ProjectDto [projectCode=1025, projectName=Library, duration=5, noOfResources=50, stratDate=2016-03-17], ProjectDto [projectCode=1028, projectName=Library, duration=5, noOfResources=50, stratDate=2016-03-17], ProjectDto [projectCode=1006, projectName=Banking, duration=6, noOfResources=40, stratDate=2016-03-16], ProjectDto [projectCode=1007, projectName=Ecommerce, duration=12, noOfResources=100, stratDate=2016-03-16], ProjectDto [projectCode=1010, projectName=Shopping, duration=7, noOfResources=70, stratDate=2016-03-16], ProjectDto [projectCode=1011, projectName=Website, duration=8, noOfResources=90, stratDate=2016-03-16], ProjectDto [projectCode=1021, projectName=Library, duration=5, noOfResources=50, stratDate=2016-03-17]]]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458196750527" level="INFO" thread="main">
+<log4j:message><![CDATA[Checking if project with 1008 exists...]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458196750574" level="INFO" thread="main">
+<log4j:message><![CDATA[project exists status :true]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458196750574" level="INFO" thread="main">
+<log4j:message><![CDATA[viewing projects by proj id....1008]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458196750621" level="INFO" thread="main">
+<log4j:message><![CDATA[view Successful ....1008]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458196750621" level="INFO" thread="main">
+<log4j:message><![CDATA[deleting the mobile by id ....1027]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458196750668" level="INFO" thread="main">
+<log4j:message><![CDATA[Deleted Successfully ....1027]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458196884277" level="INFO" thread="main">
+<log4j:message><![CDATA[Inserting Project details of mobile....ProjectDto [projectCode=1012, projectName=Library, duration=5, noOfResources=50, stratDate=3916-04-15]]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458196884604" level="INFO" thread="main">
+<log4j:message><![CDATA[Inserted Successfully ....1029]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458196884604" level="INFO" thread="main">
+<log4j:message><![CDATA[Fetching all projects...]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458196884651" level="INFO" thread="main">
+<log4j:message><![CDATA[14 mobiles(s) fetched]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458196884651" level="INFO" thread="main">
+<log4j:message><![CDATA[----project Details---]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458196884651" level="INFO" thread="main">
+<log4j:message><![CDATA[[ProjectDto [projectCode=1008, projectName=Airline, duration=6, noOfResources=70, stratDate=2016-03-16], ProjectDto [projectCode=1009, projectName=Loan, duration=5, noOfResources=80, stratDate=2016-03-16], ProjectDto [projectCode=1026, projectName=Library, duration=5, noOfResources=50, stratDate=2016-03-17], ProjectDto [projectCode=1029, projectName=Library, duration=5, noOfResources=50, stratDate=2016-03-17], ProjectDto [projectCode=1024, projectName=Library, duration=5, noOfResources=50, stratDate=2016-03-17], ProjectDto [projectCode=1022, projectName=Loan, duration=5, noOfResources=90, stratDate=2016-03-17], ProjectDto [projectCode=1023, projectName=Mobileapp, duration=7, noOfResources=80, stratDate=2016-03-17], ProjectDto [projectCode=1025, projectName=Library, duration=5, noOfResources=50, stratDate=2016-03-17], ProjectDto [projectCode=1028, projectName=Library, duration=5, noOfResources=50, stratDate=2016-03-17], ProjectDto [projectCode=1006, projectName=Banking, duration=6, noOfResources=40, stratDate=2016-03-16], ProjectDto [projectCode=1007, projectName=Ecommerce, duration=12, noOfResources=100, stratDate=2016-03-16], ProjectDto [projectCode=1010, projectName=Shopping, duration=7, noOfResources=70, stratDate=2016-03-16], ProjectDto [projectCode=1011, projectName=Website, duration=8, noOfResources=90, stratDate=2016-03-16], ProjectDto [projectCode=1021, projectName=Library, duration=5, noOfResources=50, stratDate=2016-03-17]]]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458196884651" level="INFO" thread="main">
+<log4j:message><![CDATA[Checking if project with 1008 exists...]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458196884698" level="INFO" thread="main">
+<log4j:message><![CDATA[project exists status :true]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458196884698" level="INFO" thread="main">
+<log4j:message><![CDATA[viewing projects by proj id....1008]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458196884745" level="INFO" thread="main">
+<log4j:message><![CDATA[view Successful ....1008]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458196884745" level="INFO" thread="main">
+<log4j:message><![CDATA[deleting the mobile by id ....1027]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458196884792" level="INFO" thread="main">
+<log4j:message><![CDATA[Deleted Successfully ....1027]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458196907354" level="INFO" thread="main">
+<log4j:message><![CDATA[Fetching all projects...]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458196907712" level="INFO" thread="main">
+<log4j:message><![CDATA[14 mobiles(s) fetched]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458196907712" level="INFO" thread="main">
+<log4j:message><![CDATA[----project Details---]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458196907712" level="INFO" thread="main">
+<log4j:message><![CDATA[[ProjectDto [projectCode=1008, projectName=Airline, duration=6, noOfResources=70, stratDate=2016-03-16], ProjectDto [projectCode=1009, projectName=Loan, duration=5, noOfResources=80, stratDate=2016-03-16], ProjectDto [projectCode=1026, projectName=Library, duration=5, noOfResources=50, stratDate=2016-03-17], ProjectDto [projectCode=1029, projectName=Library, duration=5, noOfResources=50, stratDate=2016-03-17], ProjectDto [projectCode=1024, projectName=Library, duration=5, noOfResources=50, stratDate=2016-03-17], ProjectDto [projectCode=1022, projectName=Loan, duration=5, noOfResources=90, stratDate=2016-03-17], ProjectDto [projectCode=1023, projectName=Mobileapp, duration=7, noOfResources=80, stratDate=2016-03-17], ProjectDto [projectCode=1025, projectName=Library, duration=5, noOfResources=50, stratDate=2016-03-17], ProjectDto [projectCode=1028, projectName=Library, duration=5, noOfResources=50, stratDate=2016-03-17], ProjectDto [projectCode=1006, projectName=Banking, duration=6, noOfResources=40, stratDate=2016-03-16], ProjectDto [projectCode=1007, projectName=Ecommerce, duration=12, noOfResources=100, stratDate=2016-03-16], ProjectDto [projectCode=1010, projectName=Shopping, duration=7, noOfResources=70, stratDate=2016-03-16], ProjectDto [projectCode=1011, projectName=Website, duration=8, noOfResources=90, stratDate=2016-03-16], ProjectDto [projectCode=1021, projectName=Library, duration=5, noOfResources=50, stratDate=2016-03-17]]]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458196907728" level="INFO" thread="main">
+<log4j:message><![CDATA[Inserting Project details of mobile....ProjectDto [projectCode=1012, projectName=Library, duration=5, noOfResources=50, stratDate=3916-04-15]]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458196907759" level="INFO" thread="main">
+<log4j:message><![CDATA[Inserted Successfully ....1030]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458196907775" level="INFO" thread="main">
+<log4j:message><![CDATA[Checking if project with 1008 exists...]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458196907822" level="INFO" thread="main">
+<log4j:message><![CDATA[project exists status :true]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458196907822" level="INFO" thread="main">
+<log4j:message><![CDATA[viewing projects by proj id....1008]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458196907853" level="INFO" thread="main">
+<log4j:message><![CDATA[view Successful ....1008]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458196907868" level="INFO" thread="main">
+<log4j:message><![CDATA[deleting the mobile by id ....1026]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458196907915" level="INFO" thread="main">
+<log4j:message><![CDATA[Deleted Successfully ....1026]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458217233027" level="INFO" thread="main">
+<log4j:message><![CDATA[Fetching all projects...]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458217290920" level="INFO" thread="main">
+<log4j:message><![CDATA[Fetching all projects...]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458362956587" level="INFO" thread="main">
+<log4j:message><![CDATA[Fetching all projects...]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458362957716" level="INFO" thread="main">
+<log4j:message><![CDATA[14 mobiles(s) fetched]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458362957716" level="INFO" thread="main">
+<log4j:message><![CDATA[----project Details---]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="com.cg.proj.dao.ProjectDao" timestamp="1458362957716" level="INFO" thread="main">
+<log4j:message><![CDATA[{1024=ProjectDto [projectCode=1024, projectName=Library, duration=5, noOfResources=50, stratDate=2016-03-17], 1025=ProjectDto [projectCode=1025, projectName=Library, duration=5, noOfResources=50, stratDate=2016-03-17], 1028=ProjectDto [projectCode=1028, projectName=Library, duration=5, noOfResources=50, stratDate=2016-03-17], 1029=ProjectDto [projectCode=1029, projectName=Library, duration=5, noOfResources=50, stratDate=2016-03-17], 1030=ProjectDto [projectCode=1030, projectName=Library, duration=5, noOfResources=50, stratDate=2016-03-17], 1006=ProjectDto [projectCode=1006, projectName=Banking, duration=6, noOfResources=40, stratDate=2016-03-16], 1007=ProjectDto [projectCode=1007, projectName=Ecommerce, duration=12, noOfResources=100, stratDate=2016-03-16], 1008=ProjectDto [projectCode=1008, projectName=Airline, duration=6, noOfResources=70, stratDate=2016-03-16], 1009=ProjectDto [projectCode=1009, projectName=Loan, duration=5, noOfResources=80, stratDate=2016-03-16], 1010=ProjectDto [projectCode=1010, projectName=Shopping, duration=7, noOfResources=70, stratDate=2016-03-16], 1011=ProjectDto [projectCode=1011, projectName=Website, duration=8, noOfResources=90, stratDate=2016-03-16], 1021=ProjectDto [projectCode=1021, projectName=Library, duration=5, noOfResources=50, stratDate=2016-03-17], 1022=ProjectDto [projectCode=1022, projectName=Loan, duration=5, noOfResources=90, stratDate=2016-03-17], 1023=ProjectDto [projectCode=1023, projectName=Mobileapp, duration=7, noOfResources=80, stratDate=2016-03-17]}]]></log4j:message>
+</log4j:event>
+

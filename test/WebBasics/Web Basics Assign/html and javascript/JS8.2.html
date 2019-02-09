@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Product Details</title>
+<script src="JSlab.js"></script>
+<style type="text/css">
+	h1
+	{
+		
+		color: #191970;
+		
+		text-align: center;
+	}
+	body
+	{
+		background-color: CornflowerBlue;
+	}
+	
+	table
+	{
+		margin-left: 100px;
+		margin-top: 10px;
+		border-collapse: collapse;
+		background-color: #708090;
+		border: 14px solid black;
+		border-bottom-style: solid;
+		
+	}
+	td
+	{
+		padding: 10px;
+	}
+	input,select
+	{
+		border: 2px solid blue;
+		border-radius: 5px;
+	}
+	#but
+	{
+		background-color: blue;
+		color: white;
+	}
+	.div1{
+	margin-top:110px;
+	margin-left:180px;
+	margin-right:25px;
+	height:420px;
+	width:600px;
+	border-style:solid;
+	border-color:#00008B;  
+	background-color:#696969;
+}
+</style>
+</head>
+<body>
+<div class="div1">
+<h1 align="center">Product Details</h1>
+<form name="regForm" method="post" onsubmit="return submitVal();" onreset="val_reset();">
+	<table>
+		<tr>
+			<td>Category <font color="red"> * </font></td>
+			<td><select name="cty" onchange="proofs();"><!-- According to the country the proofs available is decided by calling the function course() as soon as country is changed -->
+				<option value="">Select</option>
+				<option value="Electronics">Electronics</option>
+				<option value="Grocery">Grocery</option>
+				
+			</td>
+		</tr>	
+		<tr>
+			<td>Product<font color= "red"> * </font></td>
+			<td><select name="product">Product
+				<option =""></option>
+				<option =""></option>
+				<option =""></option>
+				</select>
+			</td>
+		</tr>	
+		<tr>
+		<td>Enter the Quantity<font color= "red"> * </font></td>
+ 		<td><input id="number" name="quantity" type="text"  required/><td>
+
+		</td>
+
+		</tr>
+		<tr>
+<td>Total Price: </td>
+<td><input type="text" name="total" value="0.0" readonly="readonly">
+</td>
+</tr>
+ <tr>
+			<td><input id="but" type="reset" value=" clear " onclick="resetall();"></td>
+			<td><input id="but" type="submit" value=" submit "/></td>
+		</tr>		
+		</table>
+		</form>
+</div>
+
+</body>
+</html>

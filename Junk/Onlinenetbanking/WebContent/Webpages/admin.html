@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="home.css"/>
+<script type="text/javascript">
+	document.onmousedown=disableclick;
+	function disableclick()
+	{
+	if(event.button==2)
+		{
+		alert("Right Click Disabled for security purpose");
+		return false;
+		}
+	}
+</script>
+</head>
+<body oncontextmenu="return false">
+<iframe id="header" height="30%" width="96%" src="header.htm"><h1>Bank Name</h1></iframe>
+<iframe id="left" height="400px" width="25%" src="adminhome.html"></iframe>
+<iframe id="right" name="right" src="weladmin.html" height="400px" width="69%"></iframe>
+<iframe id="footer" height="70px" width="96%"></iframe>
+</body>
+</html>

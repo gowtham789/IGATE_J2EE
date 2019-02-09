@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<!-- Simple Element food name -->
+<xs:element name="fname">
+<xs:simpleType>
+	<xs:restriction base="xs:string">
+		<xs:pattern value="[A-Z\sa-z]+"></xs:pattern>
+	</xs:restriction>
+</xs:simpleType>
+</xs:element>
+
+
+<!-- Simple Element Type of food -->
+<xs:element name="type">
+<xs:simpleType>
+	<xs:restriction base="xs:string">
+		<xs:enumeration value="vegetarian"></xs:enumeration>
+		<xs:enumeration value="non vegetarian"></xs:enumeration>
+	</xs:restriction>
+</xs:simpleType>
+</xs:element>
+
+<!-- Simple Element Price -->
+<xs:element name="price">
+<xs:simpleType>
+	<xs:restriction base="xs:integer">
+		<xs:minInclusive value="0"></xs:minInclusive>
+		
+	</xs:restriction>
+</xs:simpleType>
+</xs:element>
+
+
+<!-- Attribute id -->
+<xs:attribute name="id" type="xs:string">
+</xs:attribute>
+
+<!-- Complex Type Order -->
+<xs:element name="Food">
+<xs:complexType>
+	<xs:sequence>
+		<xs:element ref="fname"></xs:element>
+		<xs:element ref="type"></xs:element>
+		<xs:element ref="price"></xs:element>
+	</xs:sequence>
+	<xs:attribute ref="id" use="required"></xs:attribute>
+</xs:complexType>
+</xs:element>
+
+<!-- Root element Menu -->
+<xs:element name="Menu">
+<xs:complexType>
+	<xs:sequence>
+		<xs:element ref="Food" maxOccurs="unbounded"></xs:element>
+	</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:schema>

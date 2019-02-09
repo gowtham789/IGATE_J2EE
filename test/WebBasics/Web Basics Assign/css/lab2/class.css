@@ -1,0 +1,110 @@
+@CHARSET "ISO-8859-1";
+
+h1 {
+	font-family: calibri;
+	font-size: 45px;
+	color: #556B2F;
+	text-align: center;
+	
+	
+}
+
+.div1{
+	margin-top:10px;
+	margin-left:10px;
+	height:820px;
+	width:950px;
+	border-style:solid;
+	border-color:#00008B;  
+	background-color: #FFFAFA;
+}
+
+.divCls{
+	margin-top:10px;
+	margin-left:10px;
+	font-family: verdana;
+	font-style: bold;
+	
+	font-size: 15px;
+	border: solid;
+	border-color: #00008B ;
+	width: 900px;
+	height: 100px;
+	padding: 10px;
+	
+}
+
+.divmid{
+	margin-top:10px;
+	margin-left:10px;
+	font-family: verdana;
+	font-style: bold;
+	
+	font-size: 15px;
+	border: solid;
+	border-color: #00008B ;
+	width: 900px;
+	height: 500px;
+	padding: 10px;
+	
+}
+
+.divbtm{
+	margin-top:10px;
+	margin-left:10px;
+	font-family: verdana;
+	font-style: bold;
+	
+	font-size: 15px;
+	border: solid;
+	border-color: #00008B ;
+	width: 900px;
+	height: 100px;
+	padding: 10px;
+	
+}
+
+.divPra {
+	margin-left:5px;
+	margin-top:10px;
+	margin-bottom:10px;
+	font-size: 20px;
+	border: solid;
+	width: 400px;
+	height: 480px;
+	border-color: #00008B;
+	font-family: verdana;
+	font-style: italic;
+	color: #2F4F4F;
+	font-size: 15px;
+}
+.divrgt {
+	margin-right:5px;
+	margin-top:10px;
+	margin-bottom:100px;
+	
+	font-size: 20px;
+	border: solid;
+	width: 400px;
+	height: 480px;
+	border-color: #00008B;
+	font-family: verdana;
+	font-style: italic;
+	color: #2F4F4F;
+	
+	font-size: 15px;
+}
+p
+{
+		font-family:verdena;
+	font-size: 20px;
+    font-style: italic;	
+}
+.t1
+ {
+ 
+ color:#2F4F4F;
+ margin-left:5px;
+ table-layout:auto;
+ border-color: #00008B;
+ }

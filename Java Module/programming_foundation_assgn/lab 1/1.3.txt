@@ -1,0 +1,24 @@
+BEGIN 
+  
+  DECLARE a,b,c,i,N AS INTEGER
+  
+  INITIALIZE a AS 0 
+  INITIALIZE b AS 1
+  PROMPT "Enter N value" AND STORE IN N
+  IF(N==1) THEN 
+    PRINT +a
+  ELSE IF(N==2) THEN
+    PRINT +a,+b
+  ELSE 
+  
+  FOR i = 3 TO N AND i<N 
+		c=a+b;
+		
+		a=b;
+		b=c;
+		PRINT "The Series is " +c
+		
+	END FOR
+  END IF	
+END
+    

@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script type="text/javascript">
+        function calcTotal() {
+            var prd = document.form1.Product.value;
+            var quan = document.form1.quant.value;
+            var total = 0;
+            if ((prd == 0) || (quan == 0)) {
+                alert('select product or quantity first');
+            } else {               
+                total = prd * quan;
+                document.form1.amount.value = total;
+                alert("Product Price:" + prd + "   Quantity:" + quan + "   Total Price:" + total);
+            }
+           
+       }
+
+        function List() {
+            var cat = document.form1.category.value;
+            if (cat.match("Electronics")) {
+                document.form1.Product.options[0].text = "Television";
+                document.form1.Product.options[0].value = "20000";
+                document.form1.Product.options[1].text = "Laptop";
+                document.form1.Product.options[1].value = "30000";
+                document.form1.Product.options[2].text = "Phone";
+                document.form1.Product.options[2].value = "10000";
+                
+            }
+            else if (cat.match("Grocery")) {
+                document.form1.Product.options[0].text = "Soap";
+                document.form1.Product.options[0].value = "40";
+                document.form1.Product.options[1].text = "Powder";
+                document.form1.Product.options[1].value = "90";
+               
+            }
+        }
+
+
+        
+    </script>
+</head>
+<body>
+    <form name="form1" >
+        <h1 style="text-align:center">Product Details</h1>
+        <center>
+        <table border="2">
+            <tr>
+                <td><b>Category:</b></td>
+                <td><select name="category" onchange="List()"><option value="Electronics" name="Electronics">Electronics</option>
+                   <option value="Grocery" name="Grocery">Grocery</option>
+                    </select></td>
+            </tr>
+            <tr>
+                <td><b>Product:</b></td>
+                <td><select name="Product">
+			<option value="---------">--------</option>
+				<option value="---------">--------</option>
+                    <option value="---------">--------</option>
+		</select></td>
+            </tr>
+            <tr>
+                <td><b>Quantity:</b></td>
+                <td><input type="number" name="quant"  value="0" min="0" /></td>
+            </tr>
+            <tr>
+            <td><b>Total Price:</b></td>
+            <td><input type="number" name="amount" disabled ></td>
+            </tr>
+            <tr>
+                <td><button type="button" name="Submit" onclick="calcTotal()">Submit</button> </td>
+                <td><input type="reset" value="Clear"</td>
+            </tr>
+        </table>
+            </center>
+    </form>
+</body>
+</html>

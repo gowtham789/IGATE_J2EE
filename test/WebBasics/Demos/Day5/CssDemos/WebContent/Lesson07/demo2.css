@@ -1,0 +1,72 @@
+@CHARSET "ISO-8859-1";
+
+.content
+{
+	height:1000px;
+	width:950px;
+	border-style: solid;
+	border-color: black;
+	
+}
+
+.d1
+{
+	margin-top:20px;
+	margin-left:20px;
+	border-style: solid;
+	border-color: red;
+	height:300px;
+	width:300px;
+	top:50px;
+	background-color: lightgrey;
+	size: 200px;
+}
+
+.d1_sub
+{
+	
+	position:absolute;
+	margin-top:20px;
+	margin-left:20px;
+	align:center;
+	border-style: solid;
+	border-color: red;
+	height:250px;
+	width:250px;
+}
+
+.d2
+{
+	margin-top:20px;
+	margin-left:20px;
+	border-style: solid;
+	border-color: red;
+	height:300px;
+	width:300px;
+	top:50px;
+	background-color: lightgrey;
+	size: 200px;
+}
+
+.d2_sub
+{
+	
+	-webkit-transition-duration:5s;
+	margin-top:20px;
+	margin-left:20px;
+	align:center;
+	text-align:center;
+	border-style: solid;
+	border-color: red;
+	height:250px;
+	width:250px;
+	background-color: powderblue;
+	border-radius:25px;
+
+}
+
+.d2_sub:hover
+{
+	-webkit-transform:rotate(360deg);
+}
+

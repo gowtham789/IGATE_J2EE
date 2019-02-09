@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+<script>
+function viewChoice()
+{
+ var ch;
+ for(i=0;i<document.f1.answers.length;i++)
+	 {
+	 if(document.f1.answers[i].checked)
+ 		ch=document.f1.answers[i].value;
+	 }
+ document.getElementById("result").innerHTML=ch;
+}
+</script>
+</head>
+<body>
+<form name="f1">
+Gender: 
+<input type="radio" name="gender"/>Male
+<input type="radio" name="gender"/>Female
+<br></br>
+Options:<br>
+<input type="radio" name="answers" value="10"/>Answer1<br>
+<input type="radio" name="answers" value="23"/>Answer2<br>
+<input type="radio" name="answers" value="34"/>Answer3<br>
+<input type="radio" name="answers" value="100"/>Answer4<br>
+
+<input type="button" onClick="viewChoice()" value="Choose"/>
+</form>
+<br/><br/><br/><h1>
+<span id="result"></span></h1>
+</body>
+</html>

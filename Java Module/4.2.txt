@@ -1,0 +1,47 @@
+package com.cg.lab4.pl;
+import java.util.Random;
+import java.util.Scanner;
+
+import com.cg.lab4.bean.*;
+public class PersonMain {
+
+	public static void main(String args[])
+	{
+		Scanner sc=new Scanner(System.in);
+		Random rand=new Random();
+		Person p1=new Person();
+		System.out.println("enter account holder name");
+		String name=sc.next();
+		p1.setName(name);
+		System.out.println("enter account holder age");
+		int age=sc.nextInt();
+		p1.setAge(age);
+		System.out.println("enter withdraw amount for savings account");
+		Account a1=new SavingsAccount();
+		a1.setAccHolder(p1);
+		a1.setAccNum(rand.nextInt(1000));
+		double bal=50000;
+		a1.setBalance(bal);
+		double swithdraw=sc.nextDouble();
+		a1.withdraw(swithdraw);
+		
+		Account ca=new CurrentAccount();
+		ca.setAccNum(rand.nextInt(1000));
+		ca.setBalance(10000);
+		ca.setAccHolder(p1);
+		System.out.println("enter withdraw amount for current account");
+		double cwithdraw=sc.nextDouble();
+		a1.withdraw(cwithdraw);
+		
+		ca.withdraw(50000);
+		
+		System.out.println("account holder name"+name);
+		System.out.println("account holder age"+age);
+		System.out.println("account number"+a1.getAccNum());
+		System.out.println("account bal"+a1.getBalance());
+		
+		
+		sc.close();
+	}
+	
+}

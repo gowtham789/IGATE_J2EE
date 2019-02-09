@@ -1,0 +1,66 @@
+
+/************************************************************************************
+ * File                      : 2.1.1.txt
+ * Author Name               : GOWTHAM
+ * Desc                      : Pseudo code to print the electricity bill
+ * Version                   : 2.0
+ * Last Modified Date        : 09-Feb-2016
+ * Change Description        : Indentation,alignment.
+ ************************************************************************************/
+
+BEGIN
+  DECLARE User_id            AS INTEGER
+  DECLARE User_name          AS STRING
+  DECLARE Last_month_mtr_rdg AS REAL
+  DECLARE Curr_month_mtr_rdg AS REAL
+  DECLARE unit_cnsmd         AS REAL
+  DECLARE Net_Amt            AS REAL
+  
+  INITIALIZE fixd_chrg TO 100
+  
+  PROMPT "Enter User_id,User_name,Last_month_mtr_rdg,Curr_month_mtr_rdg,unit_cnsmd"
+  
+  ACCEPT User_id,User_name,Last_month_mtr_rdg,Curr_month_mtr_rdg,unit_cnsmd
+  
+  unitsconsumed(Last_month_mtr_rdg,Curr_month_mtr_rdg);
+  
+  PRINT User_id
+  PRINT User_name
+  PRINT unit_cnsmd
+  PRINT Net_Amt
+
+  
+END
+
+/*********************************************************************
+* Module Name : unitsconsumed()
+* Input Parameters : Last_month_mtr_rdg,Curr_month_mtr_rdg
+* Return Type : REAL
+* Author : GOWTHAM
+* Creation Date : 09-Feb-2016
+*********************************************************************/
+  
+  SUB unitsconsumed(Last_month_mtr_rdg,Curr_month_mtr_rdg)
+  
+      CALCULATE unit_cnsmd = (Last_month_mtr_rdg)–(Curr_month_mtr_rdg)
+	  netamount(unit_cnsmd,fixd_chrg); 
+	  
+  END SUB
+  
+/*********************************************************************
+* Module Name : netamount()
+* Input Parameters :unit_cnsmd,fixd_chrg
+* Return Type : REAL
+* Author : GOWTHAM
+* Creation Date : 09-Feb-2016
+*********************************************************************/
+
+  SUB netamount(unit_cnsmd,fixd_chrg)
+  
+      CALCULATE Net_Amt = (unit_cnsmd * 1.15 )+fixd_chrg
+  
+  END SUB
+  
+    
+  
+  

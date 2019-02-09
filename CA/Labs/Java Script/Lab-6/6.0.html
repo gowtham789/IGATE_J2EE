@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title> 6.1 </title>
+		<script type="text/javascript">
+			function findLink()
+			{
+				return unescape(window.location.href);
+			}
+			function findPath()
+			{
+				return unescape(window.location.pathname);
+			}
+			function protocol()
+			{
+				return window.location.protocol;
+			}
+		</script>
+	</head>
+	<body>
+		<table border=4 bordercolor=blue cellspacing=2>
+			<tr align="center">
+				<td colspan=2> <b style="font-size:30px">Location Object Properties </b> </td>
+			</tr>
+			<tr>
+				<td>href </td>
+				<td><script> document.write(findLink());</script></td>
+			</tr>
+			<tr>
+				<td>pathname</td>
+				<td><script> document.write(findPath()); </script></td>
+			</tr>
+			<tr>
+				<td>protocol</td>
+				<td><script> document.write(protocol());</script></td>
+			</tr>
+		</table>
+	</body>
+</html>

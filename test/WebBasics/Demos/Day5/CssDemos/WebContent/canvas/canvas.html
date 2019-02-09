@@ -1,0 +1,44 @@
+<%-- 
+    Document   : index
+    Created on : Apr 25, 2011, 1:06:19 PM
+    Author     : jawalepr
+--%>
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="height=device-height,width=device-width,user-scalable=no" />
+        <meta charset="UTF-8">
+        <script src="colouring.js"> </script>
+        <title>JSP Page</title>
+    </head>
+    <body>
+       <h3>Canvas Demo</h3>
+       <canvas id="Canvas1" width="200" height="200" style="border:solid 1px #000000"></canvas>
+       <button onclick="drawSquare();return true;">Draw Square</button>
+       <br>
+       <canvas id="Canvas2" width="200" height="200" style="position: relative; border: 2px solid #ff0000;"> <strong>[Your browser can not show this example.]</strong> </canvas>
+
+       <script>
+            var c1 = document.getElementById("Canvas1");
+            var c1_context = c1.getContext("2d");
+            function drawSquare() {
+               c1_context.fillStyle = "#0f0";
+               c1_context.fillRect(50, 50, 100, 100);//fillRect used to draw solid patterns
+               redBorder();
+            }
+            function redBorder() { //Red color edges
+               c1_context.strokeStyle = "#f00";//strokestyles is used to color the lines
+               c1_context.strokeRect(45, 45, 110, 110);// used to draw the rectangle with lines
+               showFillText();
+            }
+            function showFillText() {
+                c1_context.fillStyle = '#f00';
+                c1_context.font = 'italic bold 15px sans-serif';
+                c1_context.textBaseline = 'bottom';
+                c1_context.fillText('HTML5 Training', 7, 200);
+            }
+        </script>
+    </body>
+</html>

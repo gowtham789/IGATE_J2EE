@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Online Order Form</title>
+<script src="regvalidation.js">
+</script>
+</head>
+<body bgcolor="skyblue">
+	<h1 align="center">Registration Form</h1>
+		<form action="RegisterServlet" method="post">
+			<table align="center" border="1" cellpadding="25">
+				<tr>
+					<td><b>FirstName</b>: <font color="red"> * </font></td>
+					<td><input type="text" name="fname" placeholder="Enter first name" maxlength="20" pattern="[A-Za-z]+"  oninvalid="this.setCustomValidity('Enter a valid Name Eg. Tarun')" onchange="this.setCustomValidity('')" required/></td>
+				</tr>
+			
+				<tr>
+					<td><b>LastName</b>: <font color="red"> * </font></td>
+					<td><input type="text" name="lname" placeholder="Enter last name" maxlength="20" pattern="[A-Za-z]+"  oninvalid="this.setCustomValidity('Enter a valid Name Eg. Dey')" onchange="this.setCustomValidity('')" required/></td>
+				</tr>
+				
+				<tr>
+					<td><b>Password</b>: <font color="red"> * </font></td>
+					<td><input type="password" name="pwd" placeholder="Enter password" pattern="[a-zA-Z0-9]{6,}" required/></td>
+				</tr>
+	
+				<tr>
+					<td><b>Gender</b>:<font color="red"> * </font></td>
+					<td>
+						<input type="radio" value="male" name="gen"/>Male<br>
+						<input type="radio" value="female" name="gen"/>Female<br>
+					</td>
+				</tr>
+				
+				
+				<tr>
+					<th><b>Select skill:</b>:<font color="red"> * </font></th>
+					<td>
+						<input type="checkbox" name="skill" value="Java">Java<br>
+						<input type="checkbox" name="skill" value=".NET">.NET<br>
+						<input type="checkbox" name="skill" value="Testing">Testing<br>
+						<input type="checkbox" name="skill" value="Mainframe">Mainframe<br>
+				</tr>
+				
+				<tr>
+					<td><b>Select City</b>:<font color="red"> * </font></td>
+					<td><select name="city">
+							<option value="select">select</option>
+							<option value="Hyderabad">Hyderabad</option>
+							<option value="Chennai">Chennai</option>
+							<option value="Mumbai">Mumbai</option>
+						</select>
+					</td>
+				</tr>
+				
+				<tr>
+					<td><input type="submit" name="reg" value="Register"/></td>
+					<td><input type="reset" name="res" value="Clear"/></td>
+					
+			 	</tr>	
+				
+			</table>
+		</form>
+</body>
+</html>

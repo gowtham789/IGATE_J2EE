@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<locations>
+
+<location city="Gandhinagar">
+<capacity>1000</capacity><state>GUJ</state>
+</location>
+
+<location city="Chennai">
+<capacity>3000</capacity><state>TN</state>
+</location>
+
+<location city="Pune">
+<capacity>5000</capacity><state>MAH</state>
+</location>
+
+<location city="Noida">
+<capacity>3000</capacity><state>UP</state>
+</location>
+
+<location city="Banglore">
+<capacity>5000</capacity><state>KA</state>
+</location>
+
+<location city="Hyderabad">
+<capacity>2000</capacity><state>AP</state>
+</location>
+
+<location city="Mumbai">
+<capacity>5600</capacity>
+<state>MAH</state>
+</location>
+
+</locations>

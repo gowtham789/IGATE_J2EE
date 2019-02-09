@@ -1,0 +1,43 @@
+#main
+{
+	background-color:blue;
+	margin-top:10px;
+	margin-left:10px;
+	height:700px;
+	width:980px;
+	border-style:solid;  
+	background-color:lightblue ;
+	position:relative;
+}
+#header
+{
+	text-align:center;
+	font-family:Arial;
+	background-color:orange;
+	margin-top:20px;
+	border:1px solid grey;
+	height:100px;
+	width:950px;
+	margin-left:17px;
+	position:relative;
+}
+#content
+{
+	background-color:pink;
+	margin-top:20px;
+	border:1px solid grey;
+	height:400px;
+	width:950px;
+	margin-left:17px;
+	position:relative;
+}
+#footer
+{
+	background-color:yellow;
+	margin-top:20px;
+	border:1px solid grey;
+	height:100px;
+	width:950px;
+	margin-left:17px;
+	position:relative;
+}

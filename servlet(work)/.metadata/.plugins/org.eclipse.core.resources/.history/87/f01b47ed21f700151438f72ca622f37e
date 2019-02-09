@@ -1,0 +1,33 @@
+package com.cg.tc.dao;
+
+import java.util.ArrayList;
+
+import com.cg.tc.dto.PatientDto;
+
+public class PatientDao implements IPatientDao {
+
+	@Override
+	public PatientDto patientById(int pid) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ArrayList<PatientDto> getAllPatients() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean isPatient(int id) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public int addPatientDetails(PatientDto patient) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

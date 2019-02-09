@@ -1,0 +1,19 @@
+BEGIN 
+
+  DECLARE    numbers[10] AS INTEGER ARRAY
+  DECLARE    min         AS INTEGER
+  INITIALIZE min         TO 0
+  
+  FOR index=1 TO 10
+    ACCEPT numbers[index]
+  END FOR
+  min=numbers[0]
+  FOR index=1 to 10
+    IF numbers[index]<min THEN
+	   min=numbers[index]
+	END IF
+  END FOR
+  PRINT min
+END  
+	
+    

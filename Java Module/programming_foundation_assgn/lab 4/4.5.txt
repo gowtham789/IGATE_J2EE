@@ -1,0 +1,35 @@
+/************************************************************************************
+ * File                      : 4.5.txt
+ * Author Name               : GOWTHAM
+ * Description               : Number of times character is found in the given word
+ * Version                   : 1.0
+ * Last Modified Date        : 11-Feb-2016
+************************************************************************************/
+
+
+BEGIN 
+	DECLARE word AS STRING
+	DECLARE char AS CHARACTER
+	PROMPT "Enter any String"    AND STORE IN word
+    PROMPT "Enter any character" AND STORE IN char
+	found(word,char)
+END
+
+/*********************************************************************
+* Module Name : found()
+* Input Parameters : word,char
+* Return Type : STRING,CHARACTER
+* Author : GOWTHAM
+* Creation Date : 11-Feb-2016
+*********************************************************************/
+SUB found(word,char)
+	DECLARE    count AS INTEGER
+	INITIALIZE count TO 0
+	FOR index=0 TO \0
+		IF(word[index]==char)
+			count++;
+		END IF
+	END FOR
+	
+	PRINT "Number of times character is found in the given word is" count
+END SUB

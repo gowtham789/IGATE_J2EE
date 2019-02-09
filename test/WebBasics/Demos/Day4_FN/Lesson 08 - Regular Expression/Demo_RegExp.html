@@ -1,0 +1,40 @@
+<HTML>
+<HEAD>
+
+</HEAD>
+<BODY>
+<SCRIPT TYPE="text/javascript">
+  var re = new RegExp("@[a-z]+");
+  var teststring="mailme123@helpdesk.com";
+  if (teststring.match(re)) {
+    document.write("<br>valid email id---->"+teststring);
+  } else {
+    document.write("<br>invalid email id---->"+teststring);
+  }
+ var re = new RegExp("@[a-z]+");
+  var teststring="mailmeathelpdesk.com";
+  if (teststring.match(re)) {
+    document.write("<br>valid email id---->"+teststring);
+  } else {
+    document.write("<br>invalid email id---->"+teststring);
+  }
+
+  var re=/over\sbyte/;
+  var teststring="over_byte";
+  if(teststring.match(re))
+	document.write("<br>Good");
+	else
+	document.write("<br>Bad");
+	
+ var re=/[a-z]{3}[0-9]{2}[MAI]/;
+ var input="This id for56I";
+ if (input.match(re)) {
+    document.write("<br/><br/><br/>valid String---->"+input);
+  } else {
+    document.write("<br/><br/><br/>invalid String--->"+input);
+  }
+ 
+</SCRIPT>
+</BODY>
+</HTML>
+

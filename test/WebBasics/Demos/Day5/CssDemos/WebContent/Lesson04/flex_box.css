@@ -1,0 +1,20 @@
+@CHARSET "ISO-8859-1";
+
+div
+{
+display:-webkit-box; 
+width:600px;
+border:1px solid black;
+}
+
+#p1
+{
+-webkit-box-flex:1.0;
+border:1px solid red;
+}
+
+#p2
+{
+-webkit-box-flex:3.0;
+border:1px solid blue;
+}

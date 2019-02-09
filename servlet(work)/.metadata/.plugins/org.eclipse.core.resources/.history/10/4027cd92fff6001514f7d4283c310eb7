@@ -1,0 +1,5 @@
+package com.cg.tc.dto;
+
+public class PatientDto {
+
+}

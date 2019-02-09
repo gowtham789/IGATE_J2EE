@@ -1,0 +1,41 @@
+/************************************************************************************
+ * File                      : 2.1.4.txt
+ * Author Name               : GOWTHAM
+ * Desc                      : To check whether a given number is an Armstrong number
+ * Version                   : 2.0
+ * Last Modified Date        : 09-Feb-2016
+ * Change Description        : No changes
+ ************************************************************************************/
+
+
+
+BEGIN
+   
+     DECLARE       num,sum,rem AS INTEGER 
+     INITIALIZE    sum TO 0
+     PROMT         "Enter the number to check armstrong number" 
+     ACCEPT        num
+   
+     WHILE(num!=0)
+   
+      rem=num%10
+	  sum=sum+rem*rem*rem
+	  num=num/10
+	  
+	END WHILE
+	
+    IF(num==sum) THEN //checking the resultant number is armstrong number
+	
+	    PRINT "It is Armstrong Number."
+		
+	ELSE
+	
+        PRINT "The number is not a armstrong number"
+		
+END		
+      	
+	  
+   
+       
+
+    

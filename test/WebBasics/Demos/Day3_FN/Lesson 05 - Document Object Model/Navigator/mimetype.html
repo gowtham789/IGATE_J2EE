@@ -1,0 +1,474 @@
+<html>
+<head>
+<title>JavaScript - Flash detect</title>
+
+<SCRIPT LANGUAGE="Javascript">
+
+
+var flashinstalled = 0;
+var flashversion = 0;
+MSDetect = "false";
+if (navigator.plugins && navigator.plugins.length)
+{
+	x = navigator.plugins["Shockwave Flash"];
+	if (x)
+	{
+		flashinstalled = 2;
+		if (x.description)
+		{
+			y = x.description;
+			flashversion = y.charAt(y.indexOf('.')-1);
+		}
+	}
+	else
+		flashinstalled = 1;
+	if (navigator.plugins["Shockwave Flash 2.0"])
+	{
+		flashinstalled = 2;
+		flashversion = 2;
+	}
+}
+else if (navigator.mimeTypes && navigator.mimeTypes.length)
+{
+	x = navigator.mimeTypes['application/x-shockwave-flash'];
+	if (x && x.enabledPlugin)
+		flashinstalled = 2;
+	else
+		flashinstalled = 1;
+}
+else
+	MSDetect = "true";
+
+
+</SCRIPT>
+
+<SCRIPT LANGUAGE="VBScript">
+
+on error resume next
+
+If MSDetect = "true" Then
+	For i = 2 to 6
+		If Not(IsObject(CreateObject("ShockwaveFlash.ShockwaveFlash." & i))) Then
+
+		Else
+			flashinstalled = 2
+			flashversion = i
+		End If
+	Next
+	If flashinstalled = 0 Then
+		flashinstalled = 1
+	End If
+End If
+
+</SCRIPT>
+
+</HEAD>
+
+<BODY>
+
+<H2>Flash Detect</H2>
+
+<div id="header"></div>
+
+<!--<div class="floater">
+<p>Flash cannot be detected in <b>Netscape 2</b>, <b>Explorer 3 and 4 on Mac</b>,
+<b>Konqueror</b> and <b>Ice Browser</b>.</p>
+<p>The Flash version cannot be detected in <b>Opera 5 on Mac and Linux</b>
+and <b>Hotjava</b>.</p>
+<p>I have heard, but not tested, that detecting the Flash version works in <b>iCab 2.7.1</b>.</p>
+<p>I have heard, but not tested, that this script works in Konqueror 3.2</p></div>
+
+<P class="intro">This combination of JavaScript and VBScript will detect if your users have installed the
+Flash plugin and, if so, which version.
+After you have detected the presence/absence of the plugin, you can take appropriate measures.</p>
+
+<P ID="toc"></p>-->
+
+<p>Let's see if you have Flash installed and, if so, which version:</p>
+
+<p class="accent">
+<script language="javascript" type="text/javascript">
+<!--
+if (flashinstalled == 2)
+{
+	if (flashversion)
+		document.write("You have Flash version " + flashversion + " installed.");
+	else
+		document.write("You have Flash installed, but I can't detect the version.");
+}
+else if (flashinstalled == 1) document.write("You don't have Flash installed.");
+else document.write("I can't find out if you have Flash installed.");
+// -->
+</script></p>
+
+<!--<H3>JavaScript and VBScript</H3>
+
+<p>The theoretical way to detect the Flash plugin is to check
+either the array <code>navigator.plugins</code> or <code>navigator.mimeTypes</code>.
+These arrays are filled with all plugins and mime types the browser
+can handle and you can check them to see if it can deal with Flash movies.</p>
+
+<p>Netscape 2 and Konqueror do not support either array, so you cannot detect Flash
+in those browsers.</p>
+
+<p>The plugins array is by far the most interesting because it also contains version
+information, while the mimeTypes array only tells us whether the browser can handle the
+<code>application/x-shockwave-flash</code> mime type (= if Flash is installed). The mime type
+hasn't changed with Flash versions, though, so you cannot tell which version of Flash
+the user has.</p>
+
+<p>Since Opera on Mac and Linux, iCab and Hotjava only support the mimeTypes array, detecting
+which Flash version is present is not possible in these browsers.</p>
+
+<p>Explorer confuses the issue by leaving the arrays empty, even though both exist, so that according to
+JavaScript Explorer never has any plugins and does not support any mime types. The only exception to this
+rule is Explorer 5 on Mac, which supports both arrays (sensible decision!).</p>
+
+<p>The only way to check for plugins in Explorer is by using VBScript. Here we encounter a new complication: Explorers
+on Mac do not support VBScript, so it is fundamentally impossible to detect any plugin in Explorer 3 and 4
+on Mac. As I said, Explorer 5 on Mac supports the Netscape way.</p>
+
+<p>Finally, the VBScript is supposed to produce error messages, so it is not exactly an example of
+clean coding. Until now I have found no better way.</p>
+
+
+<H3>The script</H3>
+
+<p>That said, let's go to the script:</p>
+
+<pre>
+&lt;SCRIPT LANGUAGE="Javascript"&gt;
+&lt;!--
+
+var flashinstalled = 0;
+var flashversion = 0;
+MSDetect = "false";
+if (navigator.plugins && navigator.plugins.length)
+{
+	x = navigator.plugins["Shockwave Flash"];
+	if (x)
+	{
+		flashinstalled = 2;
+		if (x.description)
+		{
+			y = x.description;
+			flashversion = y.charAt(y.indexOf('.')-1);
+		}
+	}
+	else
+		flashinstalled = 1;
+	if (navigator.plugins["Shockwave Flash 2.0"])
+	{
+		flashinstalled = 2;
+		flashversion = 2;
+	}
+}
+else if (navigator.mimeTypes && navigator.mimeTypes.length)
+{
+	x = navigator.mimeTypes['application/x-shockwave-flash'];
+	if (x && x.enabledPlugin)
+		flashinstalled = 2;
+	else
+		flashinstalled = 1;
+}
+else
+	MSDetect = "true";
+
+// --&gt;
+&lt;/SCRIPT&gt;
+
+&lt;SCRIPT LANGUAGE="VBScript"&gt;
+
+on error resume next
+
+If MSDetect = "true" Then
+	For i = 2 to 6
+		If Not(IsObject(CreateObject("ShockwaveFlash.ShockwaveFlash." & i))) Then
+
+		Else
+			flashinstalled = 2
+			flashversion = i
+		End If
+	Next
+End If
+
+If flashinstalled = 0 Then
+	flashinstalled = 1
+End If
+
+&lt;/SCRIPT&gt;
+</pre>
+
+<H3>Explanation</H3>
+
+<p>After the detect, the variable <code>flashinstalled</code> can have three values:</p>
+
+<ul>
+<li>2: Flash installed
+<li>1: Flash not installed
+<li>0: Unknown if Flash is installed
+</UL>
+
+<p>The variable <code>flashversion</code> contains the version of Flash. If the version is
+unknown, it is 0.</p>
+
+<p>In this page I <code>document.write</code> a little message based on the value of these two variables. You'll
+have to decide exactly what to do with the information this script provides, especially what to do if you don't know
+if Flash is installed.</p>
+
+<h4>The JavaScript</h4>
+
+<p>First of all, make <code>flashdetect</code> and <code>flashversion</code> 0
+(we don't yet know if Flash is installed and which version it is) and make <code>MSDetect</code> false.
+If we need the VBScript, it will be set to <code>true</code>.</p>
+
+<pre>
+var flashinstalled = 0;
+var flashversion = 0;
+MSDetect = "false";
+</pre>
+
+
+<p>We start the detect by seeing if <code>navigator.plugins</code> exists and, if it exists, if its <code>length</code>
+is larger than zero. After all, the array itself exists in Explorer, but it does not contain any data
+so its length is zero. The Netscape-style detect script that follows should only be executed if
+the array is actually filled with data.</p>
+
+<pre>
+if (navigator.plugins && navigator.plugins.length)
+{
+</pre>
+
+<p>Then we try to find the plugin <code>Shockwave Flash</code>.</p>
+
+<pre>
+	x = navigator.plugins["Shockwave Flash"];
+</pre>
+
+<p>If it exists</p>
+
+<pre>
+	if (x)
+	{
+</pre>
+
+<p>we know that Flash is installed, so we set <code>flashinstalled</code> to 2.</p>
+
+<pre>
+		flashinstalled = 2;
+</pre>
+
+<p>Then we see if the plugin object has a property <code>description</code>.
+<span class="smaller">(As far as
+I know every browser that supports <code>navigator.plugins</code> also supports <code>description</code>,
+but let's be careful)</SPAN></p>
+
+<pre>
+		if (x.description)
+		{
+</pre>
+
+<p>If it's supported, we extract the Flash version from it. The description is always something
+like <code>Flash 4.0 r47</code>. Therefore we take the number before the dot and put it in <code>flashversion</code>.</p>
+
+<pre>
+			y = x.description;
+			flashversion = y.charAt(y.indexOf('.')-1);
+		}
+	}
+</pre>
+
+<p>If <code>navigator.plugins["Shockwave Flash"]</code> does not exist, Flash is probably not installed
+so we set <code>flashinstalled</code> to 1.</p>
+
+<pre>
+	else
+		flashinstalled = 1;
+</pre>
+
+<p>Finally a special case: Flash 2 has a special plugin name <code>Shockwave Flash 2.0</code>. If
+this plugin is present, set the variables to <em>Flash 2 detected</em>:</p>
+
+<pre>
+	if (navigator.plugins["Shockwave Flash 2.0"])
+	{
+		flashinstalled = 2;
+		flashversion = 2;
+	}
+}
+</pre>
+
+<p>If the plugins array is not supported, we see if the browser supports <code>navigator.mimeTypes</code>.
+Again check the length for Explorer's sake.</p>
+
+<pre>
+else if (navigator.mimeTypes && navigator.mimeTypes.length)
+{
+</pre>
+
+
+<p>Now we see if <code>navigator.mimeTypes['application/x-shockwave-flash']</code> exists, that is if this
+MIME type can be handled by the browser. If it can, we check its property <code>.enabledPlugin</code>, which
+is true if the plugin is actually installed
+<span class="smaller">(I don't really understand why there is an <code>enabledPlugin</code> property,
+in my view any plugin that's present is enabled by definition)</SPAN>.<br>
+If it is, we set <code>flashinstalled</code> to 2, if it isn't we set it to 1.
+Unfortunately, <code>navigator.mimeTypes</code> doesn't tell us which version is installed.</p>
+
+<pre>
+	x = navigator.mimeTypes['application/x-shockwave-flash'];
+	if (x && x.enabledPlugin)
+		flashinstalled = 2;
+	else
+		flashinstalled = 1;
+}
+</pre>
+
+<p>Netscape and the minor browsers are ready now.</p>
+
+<p>If neither array is supported we make <code>MSDetect</code> true so that the VBScript
+will be executed. Of course this doesn't help Netscape 2, Konqueror and Explorer 3 and 4 on
+Mac a bit, since they don't support VBScript. Too Bad.</p>
+
+<pre>
+else
+	MSDetect = "true";
+</pre>
+
+<h4>The VBScript</h4>
+
+<p>The VBScript is not exactly an example of beautiful coding. In fact, the script is supposed to
+ produce errors.</p>
+
+<p>The main problem is that the detect is done by trying to create an object
+<code>ShockwaveFlash.ShockwaveFlash.[versionNumber]</code>. If this is done succesfully, the browser
+supports this version of Flash. If this version of the plugin is not installed, however, Explorer
+gives an error message because it cannot create the object.</p>
+
+<p>Therefore we need to use the VBScript <code>on error</code> event handler to tell Explorer to continue
+the script, no matter what.</p>
+
+<pre>
+&lt;SCRIPT LANGUAGE="VBScript"&gt;
+
+on error resume next
+</pre>
+
+<p>Then for the actual detect. First of all we check if <code>MSDetect</code> is true. If it is, we execute the rest of the VBScript.</p>
+
+<pre>
+If MSDetect = "true" Then
+</pre>
+
+<p>Now we try to create objects. Flash 2 is called <code>ShockwaveFlash.ShockwaveFlash.2</code>,
+Flash 3 is called <code>ShockwaveFlash.ShockwaveFlash.3</code> etc. So what we need to do is create
+all these objects and see which one of them doesn't give an error.</p>
+
+<p>So we go through the versions</p>
+
+<pre>
+	For i = 2 to 6
+</pre>
+
+<p>and try to create an object for Flash version <code>i</code></p>
+
+<pre>
+		If Not(IsObject(CreateObject("ShockwaveFlash.ShockwaveFlash." & i))) Then
+</pre>
+
+<p>Now we come to the dirty bit. If Flash version <code>i</code> is not supported,
+the browser gives an error, but since we told it to <code>resume next</code> it will nonetheless
+execute the next command. However, if the Flash version is not supported, we don't want
+anything to happen. That's why we check if the object is <em>not</em> present
+(<code>Not(IsObject(etc))</code>) and if it isn't (if the error occurs) nothing should be done:</p>
+
+<pre>
+<DIV class="smaller" STYLE="text-align: right">[that's right, nothing]</DIV>
+</pre>
+
+<p>If the object can be created and is present, we've found the installed Flash version.
+We set <code>flashinstalled</code> to 2 and <code>flashversion</code> to <code>i</code>.</p>
+
+<pre>
+		Else
+			flashinstalled = 2
+			flashversion = i
+</pre>
+
+<p>End all stuff, this is required in VBScript, it's the equivalent of closing brackets
+<code>}</code> in JavaScript.</p>
+
+<pre>
+		End If
+	Next
+End If
+</pre>
+
+<p>If, after we've checked all possible versions, <code>flashinstalled</code> is still 0, it means that
+Flash is not installed. Therefore we make it 1. We've tried to find Flash, but didn't find it.</p>
+
+<pre>
+If flashinstalled = 0 Then
+	flashinstalled = 1
+End If
+</pre>
+
+<p>That's it. Now you only have to write a little script that reads out <code>flashinstalled</code>
+and <code>flashversion</code> and gives commands
+for the several situations. Think carefully about what should happen if you don't know if Flash is installed.</p>
+
+<H3>Flash detect without JavaScript</H3>
+
+<p>There is a way of detecting Flash without JavaScript. You
+have to create a tiny Flash movie that redirects the user to the Flash page and place it on a page with a META refresh
+that redirects the user to the non-Flash page. If Flash works, the Flash redirect comes first, if it doesn't
+work the browser executes the META refresh. For more details see the
+<a href="http://www.macromedia.com/support/flash/ts/documents/scriptfree_detection.htm"
+	class="external" >Macromedia</a> site.</p>
+
+<H3>Detecting other plugins</H3>
+
+<p>Theoretically, using this script you should be able to detect other plugins. However, it rarely
+succeeds. You have to find the correct MIME type for the Netscape style detect and the correct VB
+Object for the Explorer style detect. Find the object by starting up your registry editor (Start -> Run
+-> Regedit), opening to HKEY_CLASSES_ROOT and selecting the file extension of the plugin you want
+to detect. The '<em>Content Type</em>' entry holds the MIME type, the '<em>Default</em>' entry contains
+the VB Object we need.</p>
+
+<p>Rewrite the function for the new objects, then try it. Unfortunately I cannot guarantee anything, some
+plugins work differently.</p>
+
+<h4>Real Player</h4>
+
+<p>However, a reader has succeeded in implementing this detect for Real Player:</p>
+
+<ul>
+<li>MIME type: <code>RealPlayer</code></li>
+<li>VB Object: <code>RealPlayer.RealPlayer(tm) ActiveX Control (32-bit)</code> (Real5)<br>
+or <code>rmocx.RealPlayer G2 Control</code> (Real G2)</li>
+</UL>
+
+<h4>Acrobat</h4>
+
+<p>It's also rumoured to work for Adobe Acrobat:</p>
+
+<ul>
+<li>MIME type: <code>application/pdf</code></li>
+<li>VB Object: <code>Pdf.PdfCtrl.[version number]</code></li>
+</UL>
+
+<p>So to detect a specific version of Acrobat you have to use a loop similar to the one in the
+VBScript above.</p>
+
+<p>If you succesfully use this script to detect another plugin, please
+<a href="../contact.html">let me know</a>.</p>
+
+<h3>Pure JavaScript</h3>
+
+<p>A reader proposed the following script to get rid of the VBScript:</p>
+
+
+
+</div>-->
+</BODY>
+</HTML>

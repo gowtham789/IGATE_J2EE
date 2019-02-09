@@ -1,0 +1,52 @@
+  @-webkit-keyframes travel {
+    from { }
+    to   { left: 640px; }
+  }
+  
+  @-webkit-keyframes bounce {
+    from, to  {
+      -webkit-animation-timing-function: ease-out;
+    }
+    50% {
+      bottom: 220px;
+      -webkit-animation-timing-function: ease-in;
+    }
+  }
+  
+  #stage {
+    position: relative;
+    margin: 1em auto;
+    top:200px;
+    width: 680px;
+    height: 260px;
+    border: 2px solid #666;
+    background: #cff;
+  }
+  
+  #traveler {
+    position: absolute;
+    width: 40px;
+    height: 260px;
+    -webkit-animation-name: travel;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    -webkit-animation-duration: 4.8s;  
+  }
+
+  #bouncer {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius:20px;
+    border:solid 1px;
+    border-color:red;
+    background-image: url('images/smiley2.JPG');
+    background-repeat:no-repeat;
+    -webkit-animation-name: bounce;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-duration: 4.2s;
+  }
+  
+ 
+  

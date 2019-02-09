@@ -1,0 +1,71 @@
+/************************************************************************************
+ * File                      : 4.6.txt
+ * Author Name               : GOWTHAM
+ * Description               : Sort and Search an element from array
+ * Version                   : 2.0
+ * Last Modified Date        : 12-Feb-2016
+ * Change Description        : No changes
+ ************************************************************************************/
+ 
+ BEGIN
+	DECLARE key,low,high,mid AS INTEGER
+	DECLARE arr[5]           AS INTEGER ARRAY
+	PROMPT "Enter elements in the array" 
+	FOR index=0 TO 4
+		ACCEPT arr[index]
+	END FOR
+	INITIALIZE low TO arr[0] AND high TO arr[4]
+	PROMPT "Enter key element" AND STORE IN key
+	
+	FOR index=0 TO 4
+	
+		IF(arr[index]<arr[index+1] || (arr[index]>arr[index+1])) THEN
+        CALL BinarySearch(array,key,low,high);
+	    ELSE
+		sort(array)
+		END IF
+	END FOR
+ END 	
+
+/*********************************************************************
+* Module Name : sort()
+* Input Parameters : array
+* Return Type : array
+* Author : GOWTHAM
+* Creation Date : 12-Feb-2016
+*********************************************************************/
+ 
+SUB sort(array)
+	DECLARE temp AS INTEGER
+	FOR index=0 TO 3
+		IF(arr[index]>arr[index+1]) THEN
+		temp=arr[index];
+		arr[index]=arr[index+1]
+		arr[index+1]=temp;
+		END IF
+	END FOR	
+	CALL BinarySearch(array,key,low,high);
+END SUB
+    
+/*********************************************************************
+* Module Name : binarysearch()
+* Input Parameters : array,key,low,high
+* Return Type : array element
+* Author : GOWTHAM
+* Creation Date : 12-Feb-2016
+*********************************************************************/
+	
+ SUB BinarySearch(array,key,low,high)
+	CALULATE mid=(low+high)/2 AND STORE IN mid
+    IF(key==arr[mid])
+		PRINT "Element Found"
+	EXIT
+	END IF
+	IF(key>arr[mid])
+		low=mid+1
+	CALL Binary(key,low,high)
+    ELSE IF(key<arr[mid])
+		high=mid-1;
+	CALL Binary(key,low,high)
+END SUB	
+

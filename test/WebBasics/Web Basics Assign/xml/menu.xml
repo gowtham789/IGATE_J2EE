@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="menuxsd.xsd">
+	<Food id="3444">
+		<fname>ChickenBiryani</fname>
+		<type>non vegetarian</type>
+		<price>150</price>
+		
+	</Food>
+	<Food id="4567">
+		<fname>PaneerButtermasala</fname>
+		<type>vegetarian</type>
+		<price>180</price>
+		
+	</Food>
+	<Food id="9843">
+		<fname>Butter Naan</fname>
+		<type>vegetarian</type>
+		<price>150</price>
+			</Food>
+	<Food id="5688">
+		<fname>VegKohlapuri</fname>
+		<type>vegetarian</type>
+		<price>180</price>
+			</Food>
+	<Food id="5638">
+		<fname> Egg Noodles</fname>
+		<type>non vegetarian</type>
+		<price>160</price>
+			</Food>
+</Menu>

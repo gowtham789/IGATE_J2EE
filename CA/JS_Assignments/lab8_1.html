@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        function calcIntr() {
+            var p = document.form1.amt.value;
+            var n = document.form1.period.value;
+            var r = document.form1.rate.value;
+            if (p > 1500000) {
+                alert("Loan amount can not be more than 15 lakh");
+            } else if (r < 0)
+            {
+                alert("interest rate can not be negative");
+            } else if (n >= 7 && n <= 15) {
+                var tot_intr = (p * n * r) / 100;
+                var tot_amt = p * (1 + (n * r) / 100);
+                var year_amt = (tot_amt) / n;
+                var month_amt = (tot_amt) / (12*n);
+
+                document.form2.ret_amt.value = month_amt;
+                document.form2.tot_pay.value = tot_amt;
+                document.form2.tot_intr.value = tot_intr;
+            } else {
+                alert("Repayment period should be between 7 and 15 years");
+            }
+        }
+    </script>
+</head>
+<body>
+     <h1>Enter Loan Information:</h1><br /><br />
+    <form name="form1">
+       
+        <table>
+            <tr>
+                <td> 1) Amount of the Loan(any currency):</td>
+                <td><input type="number" id="amt" value="0" min="0"  name="amt" /></td>
+                </tr>
+              <tr>
+                  <td>
+                      2)Annual percentage rate of interest:
+                  </td>
+                  <td><input type="number" id="rate" value="0" name="rate" /></td>
+              </tr>
+            <tr>
+                <td>3)Repayment period in years:</td>
+                <td> <input type="number" id="period" value="0" name="period" /></td>
+            </tr>
+            </table><br />
+            <input type="button" value="Compute" onclick="calcIntr()" /><br /><br />
+        </form>
+    <hr />
+        <h1>Payment Information:</h1></br></br>
+    <form name="form2">
+        <table>
+            <tr>
+                <td>4)Your monthly payment will be:</td>
+                <td><input type="number" id="ret_amt" name="ret_amt" value="0" disabled /></td>
+            </tr>
+            <tr>
+                <td>
+                    5)Your total payment will be:
+                </td>
+                <td> <input type="number" id="tot_pay" value="0" name="tot_pay" disabled /> </td>
+            </tr>
+            <tr>
+                <td>6)Your total interest payments will be:</td>
+                <td><input type="number" id="tot_intr" value="0" name="tot_intr" disabled /></td>
+            </tr>
+        </table>
+                                        
+    </form>
+</body>
+</html>

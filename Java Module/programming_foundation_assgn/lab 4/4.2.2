@@ -1,0 +1,33 @@
+/************************************************************************************
+ * File                      : 4.2.txt
+ * Author Name               : GOWTHAM
+ * Description               : Efficiency of given Algorithm based on input
+ * Version                   : 2.0
+ * Last Modified Date        : 11-Feb-2016
+************************************************************************************/
+
+4.2 Determine the output of below given algorithm by tracing it for the taking any sample input and find its efficiency.
+************************************************************************************************************************
+
+ALGORITHM surprise(A[0..n-1])
+//Input: An array A[0..n-1] of real numbers
+If n=1
+	return A[0]
+else
+	t=surprise(A[0..n-2])
+if t<=A[n-1]
+	return t
+else
+	return A[n-1]
+************************************************************************************************************************
+OUTPUT 
+   INPUT1 :A[1]={5}
+   OUTPUT1:5
+   
+   INPUT1 :A[6]={7,4,3,5,6,9}
+   OUTPUT1:7,4,3,5,6
+   
+   INPUT1 :A[6]={7,4,3,5,6,2}
+   OUTPUT1:2
+************************************************************************************************************************
+Effieciency of above algorithm is O(n)

@@ -1,0 +1,68 @@
+CREATE TABLE ACCOUNTMASTER(
+AccountID NUMBER(10) constraint acc_pk primary key,
+AccountType VARCHAR2(25), 
+AccountBalance NUMBER(15),
+OpenDate DATE
+);
+
+CREATE TABLE CUSTOMER(
+AccountID NUMBER(10) references accountmaster(accountid), 
+customername VARCHAR2(50), 
+Email VARCHAR2(30), 
+Address VARCHAR2(100), 
+Pancard VARCHAR2(15)  constraint  uniq_pan unique);
+
+CREATE TABLE TRANSACTIONS(
+TransactionID NUMBER(15) constraint trans_pk primary key,
+Trandescription VARCHAR2(100), 
+DateofTransaction DATE , 
+TransactionType VARCHAR2(1), 
+TranAmount NUMBER(15),
+AccountId NUMBER(10) references accountmaster(accountid));
+
+CREATE TABLE SERVICE_TRACKER(
+ServiceID NUMBER(10) constraint ser_uniq unique, 
+ServiceDescription VARCHAR2(100),
+AccountID NUMBER(10) references accountmaster(accountid), 
+ServiceRaised_Date DATE ,
+Servicestatus VARCHAR2(20));
+
+CREATE TABLE onlineUSER(
+AccountID NUMBER(10) references accountmaster(accountid),
+userid NUMBER(15) constraint user_uniq unique,
+loginpassword VARCHAR2(15),
+secretquestion VARCHAR2(250),
+Transactionpassword VARCHAR2(15),
+lockstatus VARCHAR2(1),answer varchar2(30));
+
+CREATE TABLE PAYEE(
+AccountId NUMBER(10) references accountmaster(accountid),
+PayeeAccountId NUMBER(20) constraint pay_pk primary key, 
+Nickname VARCHAR2(40));
+
+
+CREATE TABLE FUND_TRANSFER(
+FundTransferID NUMBER(10),
+AccountID NUMBER(10) references accountmaster(accountid) ,
+PayeeAccount_ID NUMBER(10) references payee(payeeaccountid), 
+DateOfTransfer DATE, 
+TransferAmount NUMBER(15));
+
+
+
+
+CREATE SEQUENCE SEQ_ACC 
+START WITH 70000000;
+
+CREATE SEQUENCE SEQ_SERVC
+START WITH 3001;
+
+CREATE SEQUENCE SEQ_TRANSC
+START WITH 50000;
+
+CRATE SEQUENCE SEQ_SERVC
+START WITH 3001;
+
+CREATE SEQUENCE SEQ_FUNDTRS
+START WITH 6000;
+

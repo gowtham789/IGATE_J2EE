@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script>
+function add(x,y)
+{
+  var sum=0;
+  for(i=0;i<arguments.length;i++)
+	  {
+	  sum+=arguments[i];
+	  }
+  alert(sum);
+}
+</script>
+</head>
+<body>
+<h1> Demo for Arguments</h1>
+<input type="button"
+ name="Add" value="Add"
+ onClick="add(5,4,3,67,20)"/>
+
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Student's Registration</title>
+<script src="registerVerfy.js"></script>
+<style type="text/css">
+	h1
+	{
+		
+		color: #191970;
+		text-decoration: underline;
+		text-align: center;
+	}
+	body
+	{
+		background-color: CornflowerBlue;
+	}
+	table
+	{
+		margin-left: 320px;
+		margin-top: 10px;
+		border-collapse: collapse;
+		background-color: skyblue;
+		border: 2px solid black;
+	}
+	td
+	{
+		padding: 10px;
+	}
+	input,select
+	{
+		border: 2px solid blue;
+		border-radius: 5px;
+	}
+	#but
+	{
+		background-color: blue;
+		color: white;
+	}
+</style>
+</head>
+<body>
+	<h1>Student Registration</h1>
+	<form name="regForm" method="post" onSubmit="return submitVal();"><!-- The form takes the details of student registration and prints it in a new window -->
+	<table>
+		<tr>
+			<td>Student Name: <font color="red"> * </font></td>
+			<td><input type="text" name="stName" placeholder="Enter name" pattern="[A-Za-z]+\s[A-Za-z]+"  oninvalid="this.setCustomValidity('Enter a valid Name Eg. Tarun Dey')" onchange="this.setCustomValidity('')" required/></td>
+		</tr>
+		<tr>
+			<td>Password: <font color="red"> * </font></td>
+			<td><input type="password" name="pass1" pattern="[a-zA-Z0-9_]{6,}" oninvalid="this.setCustomValidity('Enter a valid Password with alphanumeric and underscore with a minimum of 6 character  Eg. abc_123')" onchange="this.setCustomValidity('')" required/></td>
+		</tr>
+		<tr>
+			<td>Retype Password: <font color="red"> * </font></td>
+			<td><input type="password" name="pass2" onblur="pass_val()" pattern="[a-zA-Z0-9_]{6,}"  oninvalid="this.setCustomValidity('Retype the same password')" onchange="this.setCustomValidity('')" required/></td>
+		</tr>
+		<tr>
+			<td>Course Type: <font color="red"> * </font></td>
+			<td><select name="courseType" onchange="course();"><!-- According to the course type the course name is decided by calling the function course() as soon as course type is changed -->
+				<option value="">Select</option>
+				<option value="partTime">Part Time</option>
+				<option value="fullTime">Full Time</option>
+			</td>
+		</tr>
+		<tr id="errorRow">
+					<td colspan="2" id="err" style="border: none;"></td>
+			</tr>
+		<tr>
+			<td>Course Name<font color= "red"> * </font></td>
+			<td><select name="courseName">Course Name
+				<option =""></option>
+				<option =""></option>
+				<option =""></option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>Facilities Required</td>
+			<td/>
+		</tr>
+		<tr>
+			<td><input type="checkbox" name="hoste" value="hostel">Hostel</input>
+				<input type="checkbox" name="transpor" value="transport">Transport</input>
+			</td>
+			<td>
+				<input type="checkbox" name="book" value="books">Books</input>
+			</td>
+		</tr>
+		<tr>
+			<td>Email Id: <font color="red"> * </font></td>
+			<td><input type="email" name="mail"  oninvalid="this.setCustomValidity('Enter your email id correctly Eg. abc@gmail.com')" onchange="this.setCustomValidity('')" required/></td>
+		</tr>
+		<tr>
+			<td>DOB: <font color="red"> * </font></td>
+			<td><input type="date" name="dob" onblur="getAge()"  oninvalid="this.setCustomValidity('Enter a valid Date Of Birth')" onchange="this.setCustomValidity('')" required/></td>
+		</tr>
+		<tr>
+			<td><input id="but" type="reset" value=" Reset " onclick="resetall();"></td>
+			<td><input id="but" type="submit" value=" Register "/></td>
+		</tr>
+	</table>
+	</form>
+</body>
+</html>

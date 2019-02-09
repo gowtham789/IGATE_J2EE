@@ -1,0 +1,7 @@
+/**
+ * 
+ */
+function showAlert()
+{
+	alert("Hello");
+}

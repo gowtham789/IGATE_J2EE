@@ -1,0 +1,90 @@
+#header{
+	margin-left:15px;
+	border-color: aqua;
+	border-style: groove;
+	border-radius:10px;
+	
+	}
+#content{
+		margin-left:15px;
+		border-color: aqua;
+		border-style: groove;
+		border-radius:10px;
+		
+}
+#left{
+		margin-left:15px;
+		border-color: aqua;
+		border-style: groove;
+		border-radius:10px;
+		position: relative;
+}
+#right{
+		margin-left:0px;
+		border-color: aqua;
+		border-style: groove;
+		border-radius:10px;
+		position: absolute;
+		
+}
+#footer
+{
+		margin-left: 15px;
+		border-color: aqua;
+		border-style: groove;
+		border-radius:10px;
+}
+
+#button
+{
+border-radius:15px;
+width: 80px;
+height:40px;
+background-color:#c4ffff;
+}
+
+h2{
+font-family: cursive;
+font-style: italic;
+font-weight: bold;
+}
+
+h3{
+font-family: sans-serif;
+font-style: normal;
+font-weight: bold;
+}
+
+#cheq{
+font-family: times new roman;
+font-size: 20px;
+font-style: italic;
+color: teal;
+}
+
+table{
+	border-color:teal;
+	border-radius:10px;
+	
+}
+td{
+	border-radius:10px;
+	
+}
+th{
+	border-radius:10px;
+	font-family: serif;
+	color:gray;
+	font-style: italic;
+}
+#min{
+font-family:times new roman;
+font-style: italic;
+font-weight: bold;
+font-size:25px;
+border-radius:15px;
+width:100%;
+text-align:center;
+margin-top: 50px;
+background-color: #a4a4a4;
+}

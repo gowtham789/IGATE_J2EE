@@ -1,0 +1,25 @@
+DECLARE
+	--create a record
+    TYPE studRec IS 
+     RECORD
+           (sname student_master.student_name%TYPE,
+	marks1 student_marks.subject1%TYPE,
+                 	marks2 student_marks.subject2%TYPE,
+                 marks3 student_marks.subject3%TYPE
+            );
+      srec studRec;
+BEGIN
+            --select values
+         SELECT student_name,subject1,subject2,subject3
+         INTO srec
+FROM student_master s,student_marks m
+WHERE s.student_Code=m.student_code
+AND s.student_name='Gowti';
+
+ -- Display Output
+  DBMS_OUTPUT.PUT_LINE(' Name :'||srec.sname);
+  DBMS_OUTPUT.PUT_LINE(' subject1:'||srec.marks1);
+  DBMS_OUTPUT.PUT_LINE(' subject2:'||srec.marks2);  
+DBMS_OUTPUT.PUT_LINE(' subject3:'||srec.marks3);
+END;
+         		

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<!-- Simple Element pname -->
+<xs:element name="pname">
+<xs:simpleType>
+	<xs:restriction base="xs:string">
+		<xs:pattern value="[A-Za-z0-9]+"></xs:pattern>
+	</xs:restriction>
+</xs:simpleType>
+</xs:element>
+
+<!-- Simple Element category -->
+<xs:element name="category">
+<xs:simpleType>
+	<xs:restriction base="xs:string">
+		<xs:enumeration value="Mobile"></xs:enumeration>
+		<xs:enumeration value="Electronics"></xs:enumeration>
+		<xs:enumeration value="Books"></xs:enumeration>
+	</xs:restriction>
+</xs:simpleType>
+</xs:element>
+
+
+<!-- Simple Element price -->
+<xs:element name="price">
+<xs:simpleType>
+	<xs:restriction base="xs:integer">
+		<xs:minInclusive value="100"></xs:minInclusive>
+		<xs:maxInclusive value="60000"></xs:maxInclusive>
+	</xs:restriction>
+</xs:simpleType>
+</xs:element>
+
+<!-- Simple Element available -->
+<xs:element name="available" type="xs:boolean"></xs:element>
+
+<!-- Attribute id -->
+<xs:attribute name="id" type="xs:string"></xs:attribute>
+
+<!-- Complex Type Product -->
+<xs:element name="product">
+<xs:complexType>
+	<xs:sequence>
+		<xs:element ref="pname"></xs:element>
+		<xs:element ref="category"></xs:element>
+		<xs:element ref="price"></xs:element>
+		<xs:element ref="available"></xs:element>
+	</xs:sequence>
+	<xs:attribute ref="id" use="required"></xs:attribute>
+</xs:complexType>
+</xs:element>
+
+<!-- Root element Products -->
+<xs:element name="products">
+<xs:complexType>
+	<xs:sequence>
+		<xs:element ref="product" maxOccurs="unbounded"></xs:element>
+	</xs:sequence>
+</xs:complexType>
+</xs:element>
+
+</xs:schema>

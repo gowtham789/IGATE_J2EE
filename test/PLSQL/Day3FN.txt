@@ -1,0 +1,128 @@
+*************** PACKAGE EXAMPLE ******************
+
+-- PACKAGE DECLARATION
+
+CREATE OR REPLACE PACKAGE cgPACK
+AS
+  PROCEDURE p1(Message VARCHAR);
+  FUNCTION f1(n1 NUMBER,n2 NUMBER) RETURN NUMBER;
+END cgPACK;
+
+-- PACKAGE BODY DECLARATION
+
+CREATE OR REPLACE PACKAGE BODY cgPACK
+AS
+
+--Define the procedure
+  PROCEDURE p1(Message VARCHAR)
+	AS
+	BEGIN
+	dbms_output.put_line('Hai  '||Message);
+        END p1;
+
+
+
+  FUNCTION f1(n1 NUMBER,n2 NUMBER) RETURN NUMBER
+	AS
+	result NUMBER(2);
+	BEGIN
+		result:=n1+n2;
+		dbms_output.put_line(result);
+		return result;
+	END f1;
+
+
+END cgPACK;
+
+
+--------------------------
+
+CREATE TABLE items(id NUMBER(5),name VARCHAR2(10));
+
+
+CREATE OR REPLACE PROCEDURE p1
+AS
+BEGIN
+  INSERT INTO items VALUES(1,'One');
+  INSERT INTO items VALUES(2,'Two');
+  p2();
+  rollback;
+END p1;
+
+CREATE OR REPLACE PROCEDURE p2
+AS 
+PRAGMA AUTONOMOUS_TRANSACTION;
+BEGIN
+  INSERT INTO items VALUES(3,'Three');
+  INSERT INTO items VALUES(4,'Four');
+  INSERT INTO items VALUES(5,'Five');
+  commit;
+END p2;
+
+
+************** LOB ****************
+
+Create table Leave
+ (Empno number(4),
+ S_date date,
+  E_date date,
+  snap   blob,
+ msg    clob);
+
+Insert into leave values
+ (7439,'12-APR-98', '17-APR-98', empty_blob(),
+   'The assignments regarding Oracle 8 have 
+  been completed. I''ll be back on 17th');
+
+************** TRIGGER **************
+
+
+CREATE OR REPLACE TRIGGER 
+item_mgmt_update
+AFTER UPDATE ON items
+FOR EACH ROW
+BEGIN
+  DBMS_OUTPUT.PUT_LINE('Items Updated');
+END;
+
+
+
+CREATE OR REPLACE TRIGGER 
+item_update
+AFTER UPDATE ON items
+BEGIN
+  DBMS_OUTPUT.PUT_LINE('Items Updated');
+END;
+
+
+*****************************
+
+CREATE OR REPLACE TRIGGER
+sal_Trigger
+AFTER update OR delete OF staff_sal
+ON staff_master
+FOR EACH ROW
+WHEN ( old.dept_code!=10)
+  BEGIN
+
+    DBMS_OUTPUT.PUT_LINE(:new.staff_name||'  Salary  updated from '||:old.staff_sal||' to '||:new.staff_sal);
+
+END;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,131 @@
+#header{
+	margin-left:15px;
+	border-color: aqua;
+	border-style: groove;
+	border-radius:10px;
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#b9ffff), color-stop(50%,#91ffff), color-stop(71%,#5effff), color-stop(100%,#00ffff));
+	}
+#content{
+		margin-left:15px;
+		border-color: aqua;
+		border-style: groove;
+		border-radius:10px;
+		
+}
+#left{
+		margin-left:15px;
+		border-color: aqua;
+		border-style: groove;
+		border-radius:10px;
+		position: relative;
+}
+#right{
+		margin-left:0px;
+		border-color: aqua;
+		border-style: groove;
+		border-radius:10px;
+		position: absolute;
+		
+}
+#footer
+{
+		margin-left: 15px;
+		border-color: aqua;
+		border-style: groove;
+		border-radius:10px;
+}
+
+#button
+{
+	border-radius:15px;
+	width: 100px;
+	height:40px;
+	font-family:Monotype Corsiva;
+	font-weight:bold;
+	font-size:20px;
+	background-color:#c4ffff;
+}
+
+h2{
+	font-family: cursive;
+	font-style: italic;
+	font-weight: bold;
+}
+
+h3{
+	font-family: sans-serif;
+	font-style: normal;
+	font-weight: bold;
+}
+
+#cheq{
+	font-family: times new roman;
+	font-size: 20px;
+	font-style: italic;
+	color: teal;
+}
+
+table
+{
+	border-color:teal;
+	border-radius:10px;
+	text-align: center;
+	cellpadding:8px;
+	cellspacing:8px;
+	
+	
+}
+td{
+	border-radius:10px;
+	text-align: center;
+	
+}
+th
+{
+	border-radius:10px;
+	font-family: serif;
+	bgcolor:#00ffff;
+	font-style: italic;
+	text-align: center;
+}
+input
+{
+	border-radius:10px;
+	
+}
+select
+{
+	
+	border-radius:10px;
+	
+}
+#min
+{
+	font-family:times new roman;
+	font-style: italic;
+	font-weight: bold;
+	font-size:25px;
+	border-radius:15px;
+	width:100%;
+	text-align:center;
+	margin-top: 50px;
+	background-color: #a4a4a4;
+}
+
+
+#tab
+{
+	border-style:groove;
+	Border-radius:10px;
+	height:200px;
+	width:500px;
+}
+
+h3
+{
+	text-align: center;
+}
+ul
+{
+	list-style: disc;
+}

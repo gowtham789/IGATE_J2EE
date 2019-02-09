@@ -1,0 +1,72 @@
+package com.cg.tc.controller;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.cg.tc.dto.PatientDto;
+import com.cg.tc.service.PatientService;
+
+/**
+ * Servlet implementation class PatientServer
+ */
+@WebServlet(name="PatientServer", urlPatterns = { "/Add","/View","/AddPatient","/ViewPatient"})
+public class PatientServer extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public PatientServer() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doPost(request,response);
+	}
+
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		PatientService ps=new PatientService();
+		//Adding An Employee
+		// Add Request
+		String reqURL = request.getServletPath();
+				if (reqURL.equals("/Add")) {
+					response.sendRedirect("AddPatient.html");
+				} // End of AddRequest
+
+				// Add New Employee Request
+				if (reqURL.equals("/AddPatient")) {
+					PatientDto pdto=new PatientDto();
+					// Get details from form and store in Bean - Model
+					pdto.setPatientName(request.getParameter("pname"));
+					pdto.setAge(Integer.parseInt(request.getParameter("age")));
+					pdto.setPhoneNo(request.getParameter("mno"));
+					pdto.setDescription(request.getParameter("desc"));
+					
+					int count=ps.addPatientDetails(pdto);
+					if (count > 0)
+						response.sendRedirect("Success.html");
+					else
+						response.sendRedirect("Error.html");
+				} // End of AddPatient Request
+				
+				PatientService ps=new PatientService();
+				//Adding An Employee
+				// Add Request
+				String reqURL = request.getServletPath();
+						if (reqURL.equals("/Add")) {
+							response.sendRedirect("AddPatient.html");
+						} // End of AddRequest
+	}
+
+	}

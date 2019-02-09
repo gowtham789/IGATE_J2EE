@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Customer Details</title>
+<script src="Validation.js"></script>
+</head>
+<body>
+<br>
+<br></br>
+<h2 align="center">Application Form</h2>
+<form name="customer" action="success.html">
+<table align="center">
+	<tr>
+		<td>Username:</td>
+		<td><input type="text" name="cid" /></td>
+	</tr>
+	<tr>
+		<td>Email-Id:</td>
+		<td><input type="text" name="email" /></td>
+	</tr>
+	<tr>
+		<td>Mobile Number:</td>
+		<td><input type="text" name="mobno" /></td>
+	</tr>
+	<tr>
+		<td>City:</td>
+		<td><select name="city">
+			<option value="---------">Select City</option>
+				<option value="---------">--------</option>
+		</select></td>
+	</tr>
+	<tr>
+		<td>Are you an existing account holder:</td>
+		<td><input type="radio">Yes<input type="radio">No</td>
+	</tr>
+	<tr>
+		<td><input type="checkbox">I agree to terms and conditions.
+	</tr>
+	<tr></tr>
+	<tr>
+	<td align="center">
+	<input type="button" value="Apply Credit card" onclick="isBlank()"/>
+	</td>
+	<td align="center"align="center">
+	<input type="reset" value="Clear"/>
+	</td>
+	</tr>
+</table>
+</form>
+</body>
+</html>

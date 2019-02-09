@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script>
+function getAge()
+{
+	var dob1=document.frm.dob.value;
+	alert(dob1);
+
+	if (dob1 != null)
+        d1 = dob1.split('-');
+	var d=d1[0]+"/"+d1[1]+"/"+d1[2];
+	born=new Date(d);
+	alert(born);
+
+	var now=new Date();
+	if (now.getMonth() == born.getMonth() && now.getDate() == born.getDate()) {
+           age = now.getFullYear() - born.getFullYear();
+       }
+       else {
+           age = Math.floor((now.getTime() - born.getTime()) / (365.25 * 24 * 60 * 60 * 1000));
+       }
+	alert(age);
+	
+}
+</script>
+</head>
+<body>
+<form name="frm">
+<input type="date" name="dob"/>
+<input type="button" value="Age" onclick="getAge()"/>
+</form>
+
+</body>
+</html>

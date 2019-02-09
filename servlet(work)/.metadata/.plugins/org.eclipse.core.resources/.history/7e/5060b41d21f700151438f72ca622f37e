@@ -1,0 +1,5 @@
+package com.cg.tc.service;
+
+public interface IPatientService {
+
+}

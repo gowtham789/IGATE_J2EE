@@ -1,0 +1,28 @@
+#main
+{
+	border:1px solid grey;
+	height:680px;
+	width:990px;
+	position:relative;
+}
+#header
+{
+	border:1px solid grey;
+	height:100px;
+	width:960px;
+	margin-left:20px;
+}
+#content
+{
+	border:1px solid grey;
+	height:400px;
+	width:960px;
+	margin-left:20px;
+}
+#footer
+{
+	border:1px solid grey;
+	height:100px;
+	width:960px;
+	margin-left:20px;
+}

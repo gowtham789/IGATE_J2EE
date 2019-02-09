@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>candidate information</title>
+</head>
+<body>
+<h1 align="center">Candidate Information</h1>
+<form method="post">
+<table align="center" border="10%">
+<tr>
+<td>Name:</td>
+<td>
+<input id="fname" name="firstname" type="text" maxlength="15" pattern="[A-Z][a-z]{5,15}" required oninvalid="this.setCustomValidity('enter characters only')" onchange="this.setCustomValidity('')"></td>
+</tr>
+<tr>
+</tr>
+<tr>
+<td>Password:</td>
+<td>
+<input id="pwd" name="password" type="password" maxlength="15" required required oninvalid="this.setCustomValidity('password cannot be empty')">
+</td>
+</tr>
+<tr>
+<td>
+Mobile Number:
+</td>
+<td>
+<input id="number" name="number" type="text" pattern="[9][0-9]{9}" required  oninvalid="this.setCustomValidity('phone number must be 10 in length')" onchange="this.setCustomValidity('')">
+</td>
+</tr>
+<tr>
+<td>Gender</td>
+<td><input type="radio" value="Male"   name="s-grp" required>Male<br>
+	<input type="radio" value="Female" name="s-grp"required>Female<br>
+    
+</td>
+</tr>
+<tr>
+<td>
+Date of Birth:
+</td>
+<td>
+<input id="dob" name="dateofbirth" type="date" max="2016-12-31" required></td>
+</tr>
+
+<tr>
+<td>Email:</td>
+<td><input type="email" placeholder="abc@gmail.com" required oninvalid="this.setCustomValidity('please provide the correct email address')">
+</td>
+</tr>
+<tr>
+<td>Highest Qualification</td>
+<td><input id="qualification" name="qualification" placeholder="select highest qualification" list="qualify" required/></td>
+
+            <td><datalist id="qualify">
+               <option value="B.tech">  
+               <option value="M.tech">
+               <option value="MBA">
+               <option value="MCA">
+               <option value="MSc">
+               <option value="BSc">
+               <option value="MA">
+              
+            </datalist></td>
+</tr>
+<td> Courses Interested In</td>
+<td><input type="checkbox" value="HTML5" name="HTML5">HTML5
+	<input type="checkbox" value="JAVA" name="JAVA">JAVA 
+	<input type="checkbox" value="CSS3" name="CSS3">CSS3
+	<input type="checkbox" value="ANGULAR JS" name="ANGULAR JS">ANGULAR JS
+	<input type="checkbox" value="JQuery" name="JQuery">JQuery 
+</td>
+</tr>
+<tr>
+<td>
+Comments (Mention External Certifications If any)    :</td>
+<td><textarea rows="5" cols="60" required  oninvalid="this.setCustomValidity('please provide address')"></textarea>
+</td>
+</tr>
+<tr>
+<td>
+Upload Degree/External Certificates</td>
+<td><input
+			type="file" size="15" name="fnm">
+</td>
+</tr>
+<tr>
+<td></td>
+<td><input type="submit" value="Submit">
+
+&nbsp<input type="reset" value="Reset">
+</td>
+
+</tr>
+
+</body>
+</html>

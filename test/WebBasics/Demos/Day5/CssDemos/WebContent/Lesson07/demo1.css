@@ -1,0 +1,90 @@
+@CHARSET "ISO-8859-1";
+
+.content
+{
+	height:1000px;
+	width:950px;
+	border-style: solid;
+	border-color: black;
+	
+}
+
+
+.d2
+{
+	margin-top:200px;
+	margin-left:200px;
+	border-style: solid;
+	border-color: red;
+	height:300px;
+	width:300px;
+	top:50px;
+	background-color: lightgrey;
+	size: 200px;
+	border-radius:25px;
+	
+	
+}
+
+.d2_sub
+{
+	
+	position:absolute;
+	margin-top:20px;
+	margin-left:20px;
+	align:center;
+	border-style: solid;
+	border-color: red;
+	height:250px;
+	width:250px;
+    border-radius:25px;
+    background-color: powderblue;
+    text-align: center;	
+    -webkit-animation: fourth_ani  4s;
+    -webkit-animation-play-state: running;
+    -webkit-animation-iteration-count: 2;
+
+}
+
+
+/*Change the background color*/
+@-webkit-keyframes first_ani /* Safari and Chrome */
+{
+	
+from {background: powderblue;}
+to {background: yellow;}
+}
+
+
+/*Change the background color when the animation is 25%, 50%
+ and again when the animation is 100% complete:*/
+
+@-webkit-keyframes second_ani /* Safari and Chrome */
+{
+0%   {background: red;}
+25%  {background: yellow;}
+50%  {background: blue;}
+100% {background: green;}
+
+}
+
+
+@-webkit-keyframes third_ani /* Safari and Chrome */
+{
+0%   {background: red; left:0px;}
+25%  {background: yellow; left:200px;}
+50%  {background: blue; left:200px;}
+75%  {background: green; left:100px; }
+100% {background: red; left:0px;}
+}
+
+
+@-webkit-keyframes fourth_ani /* Safari and Chrome */
+{
+0%   {background: red; left:0px; top:0px;}
+25%  {background: yellow; left:200px; top:0px;}
+50%  {background: blue; left:200px; top:200px;}
+75%  {background: green; left:0px; top:200px;}
+100% {background: red; left:0px; top:0px;}
+}
+

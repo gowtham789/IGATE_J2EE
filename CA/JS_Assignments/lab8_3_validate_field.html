@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        function mailme() {
+            var mywindow;
+            var sub=document.form1.subject.value;
+            var c=document.form1.cc.value;
+            var bc = document.form1.bcc.value;
+            var abc = c + " " +bc;
+            if ((sub == null) || (sub == "")) {
+                alert("subject can not be empty");
+            } else if ((c == null) || (c == "")) {
+                alert("CC field can not be empty");
+            } else if ((bc == null) || (bc == "")) {
+                alert("BCC field can not be empty");
+            } else  {
+                myWindow = open("mailto:"+abc +"?subject : "+sub, 'mywin', 'height=300,width=300,scrollbars=yes');
+            } 
+        }
+    </script>
+</head>
+<body>
+    <form name="form1" onsubmit="mailme()">
+        <h1>subject of message:</h1><br />
+        <input type="text" size="50" name="subject" /><br />
+        <h1>Send cc to:</h1><br />
+        <input type="email" size="50" name="cc" /><br />
+        <h1>Send blind cc to:</h1><br />
+        <input type="email" size="50" name="bcc" /><br /><br />
+        <input type="submit" value="Submit Query" />
+    </form>
+</body>
+</html>

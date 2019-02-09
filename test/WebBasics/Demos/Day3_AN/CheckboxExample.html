@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+<script>
+function viewChoice()
+{
+var choices=new Array();
+var index =0;
+
+for(i=0;i<document.f1.tech.length;i++)
+	{
+		if(document.f1.tech[i].checked)
+			{
+			 choices[index++]=document.f1.tech[i].value;
+			}	
+	}
+document.getElementById("result").innerHTML=choices;
+}
+</script>
+</head>
+<body>
+<form name="f1">
+Java Technologies are :<br></br>
+<input type="checkbox" name="tech" value="JSP"/>Java Server Pages<br>
+<input type="checkbox" name="tech" value="JSF"/>Faces<br>
+<input type="checkbox" name="tech" value="JWS"/>Web Services<br>
+<input type="checkbox" name="tech" value="Jenk"/>Jenkins<br>
+<input type="checkbox" name="tech" value="C"/>C Prog<br>
+<input type="checkbox" name="tech" value="Pl"/>Perl<br>
+<input type="button" onClick="viewChoice()" value="Choose"/>
+</form>
+<span id="result"></span>
+</body>
+</html>

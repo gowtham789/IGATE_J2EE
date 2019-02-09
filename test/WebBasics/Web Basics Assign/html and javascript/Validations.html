@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Online Shopping</title>
+</head>
+<body>
+<h1 align="center"><u>Online Order Form</u></h1>
+<form>
+<table align="center">
+<tr>
+<td>First  Name:</td>
+<td>
+<input id="fname" name="firstname" type="text" pattern="[A-Z][a-z]{7,10}" required oninvalid="this.setCustomValidity('first Name should begin with Caps and must be 7-10 chars long')" onchange="this.setCustomValidity('')"></td>
+</tr>
+<tr>
+<td>Last Name:</td>
+<td>
+<input id="lname" name="lastname" type="text" pattern="[A-Z][a-z]{7,10}" required oninvalid="this.setCustomValidity('last Name should begin with Caps and must be 7-10 chars long')" onchange="this.setCustomValidity('')">
+</td>
+</tr>
+<tr>
+<td>
+Mobile Number:
+</td>
+<td>
+<input id="number" name="number" type="text" pattern="[9][0-9]{9}" required  oninvalid="this.setCustomValidity('phone number must be 10 in length')" onchange="this.setCustomValidity('')">
+</td>
+</tr>
+<tr>
+<td>
+Address       :</td>
+<td><textarea rows="5" cols="20" required oninvalid="this.setCustomValidity('please provide address')"></textarea>
+</td>
+</tr>
+
+<tr>
+<td>
+Date of Birth:
+</td>
+<td>
+<input id="dob" name="dateofbirth" type="date" max="1997-12-31" required></td>
+</tr>
+
+<tr>
+<td>Gender</td>
+<td><input type="radio" value="Male"   name="s-grp" required>Male<br>
+	<input type="radio" value="Female" name="s-grp"required>Female<br>
+    <input type="radio" value="Transgender" name="s-grp"required>Transgender<br>
+</td>
+</tr>
+<tr>
+<td>Email:</td>
+<td><input type="email" placeholder="abc@gmail.com" required oninvalid="this.setCustomValidity('email cannot be empty')">
+</td>
+</tr>
+
+<tr>
+<td>Select a Product</td>
+<td><input id="product_name" name="product _name" type="text" list="product" required/></td>
+            <td><datalist id="product">
+               <option value="Mobile">
+               <option value="Washing Machine">
+               <option value="Television">
+               <option value="Home Theatre">
+               <option value="Music System">
+               <option value="HeadPhones">
+               <option value="Ipod">
+               <option value="Microoven">
+               <option value="Refrigerator">
+               <option value="Laptop">
+            </datalist></td>
+</tr>
+<tr>
+<td>Enter the Quantity</td>
+ <td><input id="number" name="quantity" type="number" step="1" min="1" max="10"  value="0" required/><td>
+
+</td>
+
+</tr>
+<tr>
+<td>Services</td>
+<td><input type="checkbox" value="COD" name="COD">COD<br>
+	<input type="checkbox" value="GIFT WRAP" name="GIFT WRAP">GIFT WRAP <br>
+	<input type="checkbox" value="WARRANTY CARD" name="WARRANTY CARD">WARRANTY CARD<br>
+	
+</td>
+</tr>
+<tr>
+<td>Your Bill Amount is </td>
+<td><input type="text" value="0.0" readonly="readonly">
+</td>
+</tr>
+<tr>
+<td><input type="submit" value="Submit">
+</td>
+<td><input type="reset" value="Reset">
+</td>
+
+</tr>
+
+</table>
+
+</form>
+
+
+</body>
+</html>

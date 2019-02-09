@@ -1,0 +1,31 @@
+
+/************************************************************************************
+ * File                      : 2.1.2.txt
+ * Author Name               : GOWTHAM
+ * Desc                      : Pseudo code to accept the experience and display their tag Color
+ * Version                   : 2.0
+ * Last Modified Date        : 09-Feb-2016
+ * Change Description        : No changes
+ ************************************************************************************/
+
+
+BEGIN
+
+   DECLARE    EXP AS INTEGER //employee experience 
+   PROMPT     "Enter the experience of employee:"
+   ACCEPT     EXP
+   
+   IF ( EXP== 0 || EXP<3)THEN
+		 PRINT "The tag color is blue"
+		 
+	ELSE IF ( EXp==3 || EXP<5 ) THEN
+		 PRINT  "The tag color is grey."
+		 
+	ELSE IF ( EXp==5 || EXP<10 ) THEN
+		 PRINT  "The tag color is Yellow."	
+		 
+    ELSE
+         PRINT  "The tag color is red."		
+	END IF
+	
+END

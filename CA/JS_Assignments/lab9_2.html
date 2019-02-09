@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script type="text/javascript">
+        function clickValidate() {
+            var str = document.form1.naam.value;
+
+            var dob=document.form1.dobBirth.value;
+            var phnumber=document.form1.phnum.value;
+            var mail=document.form1.usrmail.value;
+            var quali=document.form1.graduate.value;
+            var re1 = new RegExp(/[A-Za-z]{3,10}/);
+            var re2 = new RegExp(/[0-9]{10}/);
+            var re3 = new RegExp(/[a-z]+[0-9]*@[a-z]+/);
+            var re4 = new RegExp(/[0-9]{2}["/"][0-9]{2}["/"][0-9]{4}/);
+            
+            if((str==null) || (str==0)){alert("please enter your name");}
+            else if (!str.match(re1)){alert("Enter valid name");}
+            else if ((dob==null) || (dob==0)){alert("please enter your date of birth");}
+            else if (!dob.match(re4)){alert ("enter correct date of birth");}
+            else if (!phnumber.match(re2)){alert("enter correct phone number");}
+            else if (!mail.match(re3)){alert("valid email address");}
+            else if(quali !="UG" && quali !="PG"){alert("select qualification");}
+            else{document.write("Registration successful");}
+           
+        }
+        function popQual() {
+
+            var varcat = document.form1.graduate.value;
+            if (varcat.match("UG")) {
+                document.form1.qualification.options[0].text = "B.Sc";
+                document.form1.qualification.options[0].value = "B.Sc";
+                document.form1.qualification.options[1].text = "B.A";
+                document.form1.qualification.options[1].value = "B.A";
+                document.form1.qualification.options[2].text = "B.Com";
+                document.form1.qualification.options[2].value = "B.Com";
+
+            }
+            else if (varcat.match("PG")) {
+                document.form1.qualification.options[0].text = "MA";
+                document.form1.qualification.options[0].value = "MA";
+                document.form1.qualification.options[1].text = "M.Tech";
+                document.form1.qualification.options[1].value = "M.tech";
+                document.form1.qualification.options[2].text = "MCA";
+                document.form1.qualification.options[2].value = "MCA";
+                document.form1.qualification.options[3].text = "MBA";
+                document.form1.qualification.options[3].value = "MBA";
+            }
+        }
+
+        function showClick() {
+            var currdate = new Date();
+            var dob1 = document.form1.dobBirth.value;            
+            var dob2 = new Date(dob1);
+            var age = (currdate.getFullYear() - dob2.getFullYear());
+            
+                var mywindow = open('Preview', 'mywin', 'height=300,width=300,scrollbars=yes');
+                mywindow.document.writeln("<html><head><title></title></head><body><h1><center><table>");
+                mywindow.document.writeln("<tr><td>Name : </td>"+"<td>"+document.form1.naam.value+"</td></tr>")
+                mywindow.document.writeln("<tr><td>Age : </td>"+"<td>"+age+"</td></tr>")
+                mywindow.document.writeln("<tr><td>Phone Number : </td>"+"<td>"+document.form1.phnum.value +"</td></tr>")
+                mywindow.document.writeln("<tr><td>Email : </td>"+"<td>"+document.form1.usrmail.value +"</td></tr>")
+                mywindow.document.writeln("<tr><td>Graduation Level : </td>"+"<td>"+document.form1.graduate.value+"</td></tr>")
+                mywindow.document.writeln("<tr><td>Qualification : </td>"+"<td>"+document.form1.qualification.value +"</td></tr>")
+                mywindow.document.writeln("</center></h1></table></body></html>");
+        }
+
+    </script>
+</head>
+<body>
+   
+    <form name="form1" style="border-style: solid; border-color: inherit; border-width: medium; width: 500px; height: 562px;">
+        <table>
+            <tr>
+                <td><h1>Name : </h1></td>
+                <td><input type="text" name="naam"  /></td>
+            </tr>
+            <tr>
+                <td><h1>Date of Birth : </h1></td>
+                <td><input type="date" name="dobBirth" placeholder="dd/mm/yyyy"  /></td>
+            </tr>
+            <tr>
+                <td><h1>Phone Number : </h1></td>
+                <td><input type="text" name="phnum"  />
+            </tr>
+            <tr>
+                <td><h1>Email : </h1></td>
+                <td><input type="email" name="usrmail" /></td>
+            </tr>
+            <tr>
+                <td><h1>Graduation Level : </h1></td>
+                <td><input type="radio" value="UG" name="graduate" id="UG" value="UG" onchange="popQual()"  />UG
+                    <input type="radio" id="PG" value="PG" name="graduate" onchange="popQual()" />PG
+
+                </td>
+            </tr>
+            <tr>
+                <td><h1>Qualification : </h1></td>
+                <td><select name="qualification">
+                    <option value="select your qualification">select your qualification</option>
+                    <option value="---------">--------------</option>
+			    	<option value="---------">--------------</option>
+                    <option value="---------">-------------</option>
+                    </select></td>
+            </tr>
+            <tr><td><button type="button" name="submit" onclick="clickValidate()">Submit</button></td> 
+                <td><button type="button" name="preview" onclick="showClick()">Preview</button></td>
+            </tr>
+        </table>
+    </form>
+
+</body>
+</html>

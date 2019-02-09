@@ -1,0 +1,44 @@
+
+/************************************************************************************
+ * File                      : 2.2.txt
+ * Author Name               : GOWTHAM
+ * Desc                      : To calculate sum of digits of a number
+ * Version                   : 2.0
+ * Last Modified Date        : 09-Feb-2016
+ * Change Description        : No changes
+ ************************************************************************************/
+
+
+BEGIN
+     DECLARE     num,sum,rem AS INTEGER
+	 INITIALISE  sum TO 0
+	 INITIALISE  rem TO 0
+	 
+	 PROMPT      "Enter a number "
+	 ACCEPT      num
+	 sum(num);
+END	 
+
+/************************************************************************************
+* Module Name       :SUM
+* Input Parameters  :number
+* Return Type       :INTEGER
+* Author            :GOWTHAM
+* Creation Date     :09-Feb-2015
+* Description       :Retrieval of Sum of Digits of a Number
+ ************************************************************************************/
+     
+	 SUB sum(num)
+	 
+	           WHILE(num!=0)
+	    
+		       rem=num%10
+		       sum=sum+rem
+		       num=num/10
+	           
+			   END WHILE
+		PRINT "the sum of digits is" sum
+		RETURN sum
+		
+     END SUB	
+		

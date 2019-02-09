@@ -1,0 +1,48 @@
+/************************************************************************************
+ * File                      : 3.4.txt
+ * Author Name               : GOWTHAM
+ * Description               : Displaying  the contents in toggle case
+ * Version                   : 2.0
+ * Last Modified Date        : 09-Feb-2016
+ * Change Description        : No changes
+ ************************************************************************************/
+ 
+BEGIN  
+	DECLARE toggle   AS FILE
+	DECLARE index    AS CHARACTER
+    PROMPT "Enter the file name" AND STORE IN toggle
+	IF(fileExists(toggle)) THEN
+	
+	    OPEN FILE
+		
+		     IF(fileSize(toggle)!=0) THEN
+			
+			     WHILE (toggle!=EOF) 
+				 DO
+				     READ DATA from toggle AND STORE IN index
+					 IF(read>=97&&read<=122) THEN
+						read=read-32
+						DISPLAY read
+						
+						 
+					 ELSE IF(read>=65&&read<=95) THEN
+						read=read+32
+						DISPLAY read
+				     ELSE
+                       
+                        PRINT "Provide valid number within the range"
+                     END IF
+					 
+                 END WHILE
+            ELSE
+		    PRINT “File is empty”
+            END IF
+    ELSE
+	
+     PRINT “File doesn’t exists”
+	 
+	END IF 			 
+END 
+                     
+                
+	

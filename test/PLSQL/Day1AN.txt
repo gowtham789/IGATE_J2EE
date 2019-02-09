@@ -1,0 +1,221 @@
+*********************************************
+//IMPLICIT CURSOR
+DECLARE
+
+BEGIN
+	INSERT INTO emp_new VALUES(105,'Veena',1222);
+	DBMS_OUTPUT.PUT_LINE(SQL%ROWCOUNT||' rows inserted from block');
+
+        UPDATE emp_new SET sal=sal+2000;
+      IF (SQL%NOTFOUND) THEN
+	DBMS_OUTPUT.PUT_LINE('No rows updated from block');
+      ELSE
+	DBMS_OUTPUT.PUT_LINE(SQL%ROWCOUNT||' rows updated from block');
+      END IF;
+
+END;
+	
+
+****************** CURSOR EXAMPLE 1**************
+1) Fetch all rows from emp_new Table and print it
+
+--Declare variables and cursor
+DECLARE
+  CURSOR eCur is SELECT * FROM emp_new;
+  emp emp_new%ROWTYPE;
+
+---Begin select to process rows
+BEGIN
+    OPEN eCur;
+   -- Process the rows
+    LOOP
+	FETCH eCur INTO emp;
+
+	DBMS_OUTPUT.PUT_LINE('--Employee Details--');
+	DBMS_OUTPUT.PUT_LINE('Id     :'||emp.empid);
+	DBMS_OUTPUT.PUT_LINE('Name   :'||emp.name);
+	DBMS_OUTPUT.PUT_LINE('Salary :'||emp.sal);
+	DBMS_OUTPUT.PUT_LINE('--------------------');
+
+	EXIT WHEN eCur%NOTFOUND;
+    END LOOP;
+DBMS_OUTPUT.PUT_LINE(eCur%ROWCOUNT||' Employee Details displayed');
+
+CLOSE eCur;
+
+END;
+    
+
+
+****************** CURSOR EXAMPLE 1**************
+1) Fetch name and sal from emp_new Table and print it
+
+DECLARE
+  CURSOR empCUR is SELECT name,sal FROM emp_new;
+  ename emp_new.name%TYPE;
+  salary emp_new.sal%TYPE;
+
+BEGIN
+  OPEN empCUR;
+  LOOP
+	FETCH empCUR into ename,salary;
+	IF(salary<10000) THEN
+		DBMS_OUTPUT.PUT_LINE(ename||' gets less salary');
+	ELSE
+        	DBMS_OUTPUT.PUT_LINE(ename||'  '||salary);
+	END IF;
+        EXIT WHEN empCUR%NOTFOUND;
+  END LOOP;	
+  CLOSE empCUR;
+END;
+
+****************** CURSOR EXAMPLE 1**************
+1) Fetch sum of sal based on dept
+
+DECLARE
+  CURSOR salCUR is
+	SELECT SUM(staff_sal),dept_code
+        FROM staff_master 
+	GROUP BY dept_code;
+  SalSum NUMBER(7);
+  dept NUMBER(5);
+
+BEGIN
+	OPEN salCUR;
+	LOOP
+   
+		FETCH salCUR into SalSum,dept;
+                EXIT WHEN salCUR%NOTFOUND;
+		DBMS_OUTPUT.PUT_LINE(SalSum||'  '||dept);	
+		
+	END LOOP;
+	
+DBMS_OUTPUT.PUT_LINE(salCur%ROWCOUNT||' Details displayed');
+CLOSE salCUR;
+END;
+
+****************** CURSOR FOR LOOP EXAMPLE 1**************
+1) Fetch all rows from emp_new Table and print it
+
+--Declare variables and cursor
+DECLARE
+  CURSOR eCur is SELECT * FROM emp_new;
+
+---Begin select to process rows
+BEGIN
+   FOR emp IN eCUR
+   LOOP
+	DBMS_OUTPUT.PUT_LINE('--Employee Details--');
+	DBMS_OUTPUT.PUT_LINE('Id     :'||emp.empid);
+	DBMS_OUTPUT.PUT_LINE('Name   :'||emp.name);
+	DBMS_OUTPUT.PUT_LINE('Salary :'||emp.sal);
+	DBMS_OUTPUT.PUT_LINE('--------------------');
+   END LOOP;
+
+END;
+    
+****************** CURSOR FOR LOOP EXAMPLE 2**************
+1) Fetch name and sal from emp_new Table and print it
+
+DECLARE
+  CURSOR empCUR is SELECT name,sal FROM emp_new;
+ 
+BEGIN
+ FOR empRec IN empCUR
+ LOOP
+
+  IF(empRec.sal<10000) THEN
+	DBMS_OUTPUT.PUT_LINE(empRec.name||' gets less salary');
+		
+  ELSE
+        DBMS_OUTPUT.PUT_LINE(empRec.name||'  '||empRec.sal);
+ END IF; 
+ END LOOP;
+END;
+
+****************** PARAMETERISED CURSOR EXAMPLE 1**************
+1) Fetch employees whose sal is within a range
+
+DECLARE
+
+  staff staff_master%ROWTYPE;
+  CURSOR staffCur(min NUMBER, max NUMBER) 
+	IS 
+  SELECT * FROM staff_master
+  WHERE staff_sal BETWEEN min and max;
+
+BEGIN
+   OPEN staffCur(&minSal,&maxSal);
+
+   LOOP
+	FETCH staffCur INTO staff;
+	EXIT WHEN staffCur%NOTFOUND;
+	
+	DBMS_OUTPUT.PUT_LINE(staff.staff_name||'  '||staff.staff_sal);
+
+   END LOOP;
+   
+   CLOSE staffCur;
+END;
+
+****************** PARAMETERISED CURSOR EXAMPLE USING FOR LOOP **************
+1) Fetch employees whose sal is within a range
+
+
+DECLARE
+
+  CURSOR staffCur(min NUMBER, max NUMBER) 
+	IS 
+  SELECT * FROM staff_master
+  WHERE staff_sal BETWEEN min and max;
+
+BEGIN
+  FOR staff IN staffCur(&minSal,&maxSal)
+  LOOP
+	DBMS_OUTPUT.PUT_LINE(staff.staff_name||'  '||staff.staff_sal);  
+  END LOOP;
+END;
+  
+
+************* SELECT FOR UPDATE ***************
+
+DECLARE
+	staff staff_master%ROWTYPE;	
+
+	CURSOR c1 
+        IS
+	SELECT * FROM staff_master
+	WHERE dept_code!=10
+	FOR UPDATE of Staff_sal;
+BEGIN
+	OPEN c1;
+	LOOP
+	  FETCH c1 INTO staff;
+	  EXIT WHEN c1%NOTFOUND;
+	  IF staff.staff_sal<25000 THEN
+		UPDATE staff_master SET
+		staff_sal=staff_sal+5000
+		WHERE CURRENT OF c1;
+		DBMS_OUTPUT.PUT_LINE(staff.staff_name||'salary updated!  ');  
+	ELSE
+		DBMS_OUTPUT.PUT_LINE(staff.staff_name||'  '||staff.staff_sal);  
+	END IF;
+	END LOOP;
+        CLOSE c1;
+END;
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+

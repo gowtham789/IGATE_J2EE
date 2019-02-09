@@ -1,0 +1,43 @@
+/************************************************************************************
+ * File                      : 3.3.txt
+ * Author Name               : GOWTHAM
+ * Description               : To find and remove vowels in a file and keep the remaining content in another file 
+ * Version                   : 2.0
+ * Last Modified Date        : 09-Feb-2016
+ ************************************************************************************/
+ 
+BEGIN
+	DECLARE vowel     AS FILE
+	DECLARE remaining AS FILE
+	DECLARE vowelcheck  AS CHARACTER
+	PROMPT "Enter the filename" AND STORE IN file
+	IF(fileExists(vowel)) THEN
+		OPEN vowel
+		 
+        IF(fileSize(vowel)!=0) THEN
+			
+			WHILE (vowel!=EOF) THEN
+			DO
+			   READ DATA FROM THE vowel AND STORE IN vowelcheck
+			   display vowelcheck
+			   IF (vowelcheck!='a'||vowelcheck!='e'||vowelcheck!='i'||vowelcheck!='o'||vowelcheck!='u'||vowelcheck!='A'||vowelcheck!='E'||vowelcheck!='I'||vowelcheck!='O'||vowelcheck!='U') THEN
+			     
+				 OPEN remaining
+				 
+                 WRITE vowelcheck TO remaining
+                
+                END IF
+				
+				END WHILE			
+		ELSE
+		   PRINT “File is empty”
+        END IF
+    ELSE
+    PRINT “File doesn’t exists”
+	END IF
+	
+	CLOSE remaining
+	CLOSE vowel
+	
+END	
+	

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script>
+function add()
+{
+	var x,y,z;
+	x=document.addForm.num1.value;
+	y=document.addForm.num2.value;
+	z=x+y;
+	alert(z);
+}
+
+</script>
+</head>
+<body>
+<form name="addForm">
+Number 1:<input type="text" name="num1"/>
+<br/><br/>
+Number 2:<input type="text" name="num2"/>
+<br/><br/>
+<input type="button" onclick="add()" value="  Add "/>
+</form>
+</body>
+</html>

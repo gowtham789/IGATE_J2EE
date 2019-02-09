@@ -1,0 +1,74 @@
+@CHARSET "ISO-8859-1";
+
+
+h1
+{
+	margin-left:10px;
+	width:950px;
+	background-color: lightgrey;
+	color: #E9967A;
+}
+
+.site-wrapper
+{
+	margin-top:10px;
+	margin-left:10px;
+	height:1100px;
+	width:950px;
+	border-style:solid;
+	border-color:red;  
+	background-color: #FFFAFA;
+}
+
+
+.sub-div1
+{
+	margin-top:10px;
+	margin-left:10px;
+	width:250px;
+	height:250px;
+	border-style:solid;
+	border-color:blue;
+	background-color:#FF7F50;
+	position:relative;
+	float:right;	
+	//float:left;	
+}
+
+.sub-div2
+{
+	margin-top:10px;
+	margin-left:10px;
+	width:250px;
+	height:250px;
+	border-style:solid;
+	border-color:blue;
+	background-color:#00FFFF;
+	float:right;
+    //float:left;
+}
+
+.sub-div3
+{
+	margin-top:10px;
+	margin-left:10px;
+	width:250px;
+	height:250px;
+	border-style:solid;
+	border-color:blue;
+	background-color:#B0E0E6;
+	float:right;
+    //float:left;
+}
+.sub-div4
+{
+	margin-top:10px;
+	margin-left:10px;
+	width:100px;
+	height:250px;
+	border-style:solid;
+	border-color:blue;
+	background-color:#8A2BE2;
+	float:right;
+    //float:left;
+}

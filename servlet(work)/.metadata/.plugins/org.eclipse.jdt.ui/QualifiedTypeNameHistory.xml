@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="com.cg.login.service.LoginService"/>
+<fullyQualifiedTypeName name="com.cg.login.dao.LoginDao"/>
+<fullyQualifiedTypeName name="java.sql.DriverManager"/>
+<fullyQualifiedTypeName name="com.cg.login.exception.LoginException"/>
+<fullyQualifiedTypeName name="com.cg.reg.service.RegisterService"/>
+<fullyQualifiedTypeName name="com.cg.reg.exception.RegisterException"/>
+<fullyQualifiedTypeName name="com.cg.reg.dto.RegisterDto"/>
+<fullyQualifiedTypeName name="com.cg.reg.dao.RegisterDao"/>
+<fullyQualifiedTypeName name="com.cg.bid.dao.BiddingDao"/>
+<fullyQualifiedTypeName name="javax.servlet.ServletContext"/>
+<fullyQualifiedTypeName name="com.cg.bid.controller.BiddingServlet"/>
+<fullyQualifiedTypeName name="java.io.PrintWriter"/>
+<fullyQualifiedTypeName name="com.cg.bid.service.BiddingService"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="javax.swing.text.html.HTMLDocument.Iterator"/>
+<fullyQualifiedTypeName name="java.util.Iterator"/>
+<fullyQualifiedTypeName name="com.cg.bid.dto.BiddingDto"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="javax.naming.InitialContext"/>
+<fullyQualifiedTypeName name="javax.sql.DataSource"/>
+<fullyQualifiedTypeName name="com.sun.corba.se.pept.transport.Connection"/>
+<fullyQualifiedTypeName name="javax.naming.NamingException"/>
+<fullyQualifiedTypeName name="java.sql.SQLException"/>
+<fullyQualifiedTypeName name="java.sql.Connection"/>
+<fullyQualifiedTypeName name="com.cg.tc.controller.PatientServer"/>
+<fullyQualifiedTypeName name="java.sql.ResultSet"/>
+<fullyQualifiedTypeName name="com.cg.tc.dao.IPatientDao"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
+<fullyQualifiedTypeName name="com.cg.tc.dto.PatientDto"/>
+<fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+<fullyQualifiedTypeName name="com.cg.tc.dao.PatientDao"/>
+<fullyQualifiedTypeName name="com.cg.tc.service.PatientService"/>
+</qualifiedTypeNameHistroy>

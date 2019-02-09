@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<!--  Open in Google Chrome-->
+<html>
+    <head>
+        <meta name="viewport" content="height=device-height,width=device-width,user-scalable=no" />
+        <script src="modernizr-1.5.min.js"></script>
+        <meta charset="UTF-8">
+        <title>Modenizer Page</title>
+    </head>
+    <script type="text/javascript">
+   function videoChk()
+   {
+                if (Modernizr.video.mp4) {
+                    alert("You got mp4");
+		} else if (Modernizr.video.ogg){
+                    alert("You got ogg");
+		}else{
+                    alert("No Video Support");
+                }
+   }
+</script>
+
+    <body>
+        <input type="button" value="Check for video" onclick="videoChk()">
+    </body>
+</html>

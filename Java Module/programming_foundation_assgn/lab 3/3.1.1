@@ -1,0 +1,39 @@
+
+/************************************************************************************
+ * File                      : 3.1.txt
+ * Author Name               : GOWTHAM
+ * Desc                      : Storing and displaying entries of a friend
+ * Version                   : 2.0
+ * Last Modified Date        : 09-Feb-2016
+ * Change Description        : No changes
+ ************************************************************************************/
+
+
+RECORD TelephoneBook
+        
+        DECLARE name     AS STRING
+		DECLARE phonenum AS INTEGER
+        DECLARE dob      AS INTEGER
+		
+END RECORD
+
+BEGIN
+
+  DECLARE friend AS TelephoneBook
+
+ FOR index= 1 to 5
+
+     PROMPT "Enter the name"          AND STORE IN friend.name
+     PROMPT "Enter the phone number " AND STORE IN friend.phonenum
+     PROMPT "Enter the date of birth" AND STORE IN friend.dob
+ END FOR
+ 
+ FOR index= 1 to 5
+
+     PRINT "Name" , friend.name
+     PRINT "Phone Number", friend.phonenum
+     PRINT "Date of Birth", friend.dob
+ END FOR
+ 
+END
+

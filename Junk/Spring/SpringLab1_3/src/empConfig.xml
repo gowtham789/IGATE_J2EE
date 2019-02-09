@@ -1,0 +1,43 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+     http://www.springframework.org/schema/context
+     http://www.springframework.org/schema/context/spring-context-3.0.xsd
+     http://www.springframework.org/schema/util 
+     http://www.springframework.org/schema/util/spring-util-3.0.xsd">
+     
+     
+     <context:annotation-config/>
+	
+    <context:component-scan base-package="com.cg"/>
+    
+    <!-- Create an object of java.util.List of List<Employee> object -->
+    <util:list id="employee" >
+    <bean class="com.cg.Employee"
+         p:employeeId="1234" p:employeeName="Gowtham" p:salary="100000"/>
+    <bean class="com.cg.Employee"
+         p:employeeId="1254" p:employeeName="Sanith" p:salary="45000"/>
+    <bean class="com.cg.Employee"
+         p:employeeId="4578" p:employeeName="Kishan" p:salary="45220"/>
+   </util:list>
+   
+   
+   
+	<bean id="sbu" class="com.cg.SBU">
+	<property name="sbuId" value="12345"/>
+	<property name="sbuName" value="Product Engineering Services"/>
+	<property name="sbuHead" value="Kiran Rao"/>
+	<property name="empList" value="#{employee.?[salary gt 50000]}">
+	</property>
+    </bean>  
+	
+	
+	
+	  
+	
+	
+</beans>

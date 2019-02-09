@@ -1,0 +1,101 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>8.2</title>
+		<script language="javascript" type="text/javascript">
+		function populate()
+		{
+			resetProd();
+			var catLevel = document.forms[0].category.value;
+			var products = null;
+			if(catLevel == "electronics")
+			{
+				products = ["Television","Laptop","Phone"];
+			}
+			else if(catLevel == "grocery")
+			{
+				products = ["Soap","Powder"];
+			}
+			for(var index=0;index<products.length;index++)
+			{
+				var option = document.createElement("option");
+				option.text = products[index];
+				option.value = products[index];
+				document.getElementById("product").appendChild(option);
+			}
+		}
+		function resetProd()
+		{
+			var qualSelect = document.getElementById("product");
+			for(var index=qualSelect.length;index>0;index--)
+			{
+				qualSelect.remove(index);
+			}
+		}
+		function check()
+		{
+			var cost = ["20000","30000","10000","40","60"];
+			var produ = ["Television","Laptop","Phone","Soap","Powder"];
+			var find=0;
+			var calc = document.forms[0].prod.value;
+			var qualVal = document.forms[0].quantity.value;
+			for(var pos=0;pos<produ.length;pos++)
+			{
+				//alert(calc+""+produ[pos]);
+				if(calc==produ[pos])
+					find=pos;
+			}
+			if(qualVal>0&&calc!="")
+				document.forms[0].totprice.value=qualVal*cost[find];
+			else
+				alert("Please enter every field");
+		}
+		function openWindow()
+		{
+			var catLevel = document.forms[0].category.value;
+			var calc = document.forms[0].prod.value;
+			var qualVal = document.forms[0].quantity.value;
+			var finalVal = document.forms[0].totprice.value;
+			var preWin = open("","","height=300,width=400,left=300,top=350");
+			var preDoc = preWin.document;			
+			preDoc.write("<p align=center>"+catLevel+"  "+calc+"  "+qualVal+"  "+finalVal+"</p>");
+		}
+		</script>
+	</head>
+	<body bgcolor="royalblue">
+		<h1 align="center"><b style="font-size:50px;color:white">Product Details</b></h1>
+		<form >
+			<table border="10" cellpadding="10" cellspacing="0" bordercolor="white" align="center">
+				<tr>
+					<td>
+					Category :  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<select name="category" onchange="populate()" required>
+							<option value="">Select your option</option>
+							<option value="electronics" >Electronics</option>
+							<option value="grocery" >Grocery</option>
+						</select><br>
+						
+						
+					Product : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<select id="product" name="prod" required>
+							<option value="">Select your product</option>
+						</select><br>
+						
+						
+					Quanity : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<input type="number" name="quantity" onchange="check()" required /><br>
+				
+				
+			
+					Total Price : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<input type="number" name="totprice" readonly /><br>
+			
+				
+					<input type="button" value="Submit" onclick="openWindow()"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<input type="reset" value="Clear" />
+				</td>
+			</tr>
+			</table>
+		</form>
+	</body>
+</html>

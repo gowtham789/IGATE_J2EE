@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>7.0</title>
+		<script type="text/javascript"> 
+			function raiseInvoice()
+			{
+				var barVal = 0,calVal = 0, mobphVal = 0, lgdvdVal = 0;
+				 barVal = document.forms[0].barbie.value;
+				 calVal = document.forms[0].calc.value;
+				 mobphVal = document.forms[0].mobph.value;
+				 lgdvdVal = document.forms[0].lgdvd.value;
+				 display = "<table border=1 cellspacing=3 cellpadding=3 align=center><caption><B>INVOICE</B></caption>";
+				display+="<tr><th> PRODUCT </th><th> QUANTITY </th><th> PRICE </th><th> TOTAL </th></tr>";
+				if(barVal>0)
+				{
+					var barTot = barVal*20;
+					display+="<tr><td>Barbie Doll</td><td>"+barVal+"</td><td>20</td><td>"+barTot+"</td></tr>";
+				}
+				if(calVal>0)
+				{
+					var calTot = calVal*30;
+					display+="<tr><td>Calculator</td><td>"+calVal+"</td><td>30</td><td>"+calTot+"</td></tr>";
+				}
+				if(mobphVal>0)
+				{
+					var mobphTot = mobphVal*40;
+					display+="<tr><td>Mobile Phones</td><td>"+mobphVal+"</td><td>40</td><td>"+mobphTot+"</td></tr>";
+				}
+				if(lgdvdVal>0)
+				{
+					var lgdvdTot = lgdvdVal*50;
+					display+="<tr><td>LG DVD</td><td>"+lgdvdVal+"</td><td>50</td><td>"+lgdvdTot+"</td></tr>";
+				}
+				display+= "</table>";
+				if(barVal>0 || calVal >0 || mobphVal>0 || lgdvdVal>0)
+				{
+						var preWin = open("","Invoice","toolbar=yes,height=300,width=600,left=200,top=350");
+						var preDoc = preWin.document;			
+						preDoc.write(display);
+				}
+				else
+				{
+					alert("No Item Selected");
+				}
+			} 
+		</script>
+	</head>
+	<body bgcolor=aqua>
+		<h1><b>PRODUCTS</h1>
+		<form onsubmit="raiseInvoice()" method="post">
+			<table border=1 cellpadding=5>
+				<tr align="center">
+					<th> Name </th>
+					<th> Description </th>
+					<th> Price </th>
+					<th> Qty </th>
+				</tr>
+				<tr>
+					<td>Barbie Doll</td>
+					<td>Beautiful</td>
+					<td>20</td>
+					<td><input type="number" name="barbie" /></td>
+				</tr>
+				<tr>
+					<td>Calculator</td>
+					<td>Caluclator with latest features</td>
+					<td>30</td>
+					<td><input type="number" name="calc" /></td>
+				</tr>
+				<tr>
+					<td>Mobile Phone</td>
+					<td>Camera,Java Games, GPRS</td>
+					<td>40</td>
+					<td><input type="number" name="mobph" /></td>
+				</tr>
+				<tr>
+					<td>LG DVD</td>
+					<td>5 Disc Changer</td>
+					<td>50</td>
+					<td><input type="number" name="lgdvd" /></td>
+				</tr>
+			</table>
+		</b>
+		<input type="submit" name="submit" value="ORDER" >
+		</form>
+	</body>
+</html>

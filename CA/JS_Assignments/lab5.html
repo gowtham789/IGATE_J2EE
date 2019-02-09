@@ -1,0 +1,63 @@
+﻿<html>
+<head>
+
+<title></title>
+
+<script type="text/javascript">
+    
+    var myWindow;
+
+    function openIt() {
+
+        myWindow = open('', 'mywin', 'scrollbars=yes');
+
+        myWindow.document.writeln("<html><head><title></title></head><body>");
+
+        myWindow.document.writeln("This window is open on clicking of the <b>New window</b> button");
+        myWindow.document.writeln("</body></html>");
+        myWindow.resizeTo(document.testform.width.value, document.testform.height.value);
+        myWindow.moveTo(document.testform.left.value,document.testform.top.value);
+    }
+    
+
+    
+
+</script>
+
+</head>
+
+<body>
+<form name="testform" id="testform" action="#" method="get">
+    <table border="2" style="text-align:center">
+        <tr>
+            <td colspan="4"><h1>Create a new window</h1></td>
+        </tr>
+        <tr>
+            <td colspan="4"><b>Window Size</b></td>
+        </tr>
+        <tr>
+            <td><b>Width:</b></td>
+            <td><input type="text" size="4" name="width" id="width"  /></td>
+            <td><b>Height:</b></td>
+            <td><input type="text" size="4" name="height" id="height" /></td>
+        </tr>
+        <tr>
+            <td colspan="4"><b>POSITION</b></td>
+        </tr>
+        <tr>
+            <td><b>Left:</b></td>
+            <td><input type="text" size="4" name="left" id="left" /></td>
+            <td><b>Top</b></td>
+            <td><input type="text" size="4" name="top" id="top" /></td>
+        </tr>
+        <tr>
+            <td colspan="3"><input type="button" value="New Window" onclick="openIt();" /></td>        
+        <td><input type="reset" value="Reset" /></td>
+            </tr>
+    </table>
+
+</form>
+
+</body>
+
+</html>

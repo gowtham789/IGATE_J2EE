@@ -1,0 +1,19 @@
+h1
+{
+	font-family: calibri;
+	font-size: 30px;
+	font-style: normal;
+	font-weight: bold;
+	color: grey;
+	text-decoration: underline;
+	text-align: center;
+}
+p
+{
+	text-transform:capitalize;
+	text-indent:inherit;
+	font-family: verdana;
+	font-size: 20px;
+	font-style: italic;
+	color:#ff0000;
+}

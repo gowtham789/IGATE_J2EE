@@ -1,0 +1,26 @@
+<html>
+	<head>
+		<title>3.1</title>
+	</head>
+	<body>
+		<script>
+			date = new Date();
+			document.write(date +"<br>");
+			document.write(date.getDate() + " : Day of the month" + "<br>")  	
+			document.write(date.getDay()	+	" : Day of the week  (0-6)" + "<br>" )	
+			document.write(date.getHours()	+	" : Hour of the day " + "<br>")	
+			document.write(date.getMinutes()+	" : Minutes in the hour" + "<br>") 	
+			document.write(date.getMonth()	+	" : The month 	(num)" + "<br>" )
+			document.write(date.getSeconds()	+ " : Seconds in the minute " + "<br>")	
+			document.write(date.getTime()	+	" : Milliseconds since 1-1-1970" + "<br>")	
+			document.write(date.getTimezoneOffset() +	" : Offset between local time and GMT" + "<br>") 	
+			document.write(date.getYear() +		" : The year" + "<br><br><br>") 
+			if(date.getHours() < 12 )
+				document.write("Good Morning");
+			else if(date.getHours() >= 12 && date.getHours() <=17)
+				document.write("Good Afternoon");
+			else if(date.getHOurs() > 17 && date.getHours() <= 20)
+				document.write("Good Evening");
+		</script>
+	</body>
+</html>

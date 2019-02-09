@@ -1,0 +1,26 @@
+DECLARE
+  CURSOR empCUR is SELECT ename,sal FROM emp   WHERE deptno='&dept' FOR UPDATE   OF sal;
+  name emp.ename%TYPE;
+  sal emp.sal%TYPE; 
+  salhike varchar2(20);
+ 
+BEGIN
+  	OPEN empCUR;
+  	LOOP
+                 FETCH empCUR INTO name,sal;
+                 salhike:=sal*0.3;
+	IF(salhike>5000) THEN
+		UPDATE emp SET sal=sal+5000 WHERE current of empCUR;
+		DBMS_OUTPUT.PUT_LINE('Empname' ||'  '||name);
+                                   DBMS_OUTPUT.PUT_LINE('Empsal'||'  '||sal);
+                  ELSIF(salhike<5000) THEN
+		UPDATE emp SET sal=sal+salhike WHERE current of empCUR;
+		DBMS_OUTPUT.PUT_LINE('Empname'||'  '||name);
+                                   DBMS_OUTPUT.PUT_LINE('Empsalx'||'  '||sal);
+                  ELSE
+        	DBMS_OUTPUT.PUT_LINE(name||'  '||sal);
+	END IF;
+        EXIT WHEN empCUR%NOTFOUND;
+  END LOOP;	
+  CLOSE empCUR;
+END;

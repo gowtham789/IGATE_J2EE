@@ -1,0 +1,23 @@
+/************************************************************************************
+ * File                      : 2.1.8.txt
+ * Author Name               : GOWTHAM
+ * Desc                      : To calculate total price of a product including tax
+ * Version                   : 2.0
+ * Last Modified Date        : 09-Feb-2016
+ * Change Description        : No changes
+ ************************************************************************************/
+
+
+
+BEGIN
+
+  DECLARE      price AS FLOAT
+  DECLARE      tax_cost,tax_rate AS FLOAT
+  INITIALIZE   tax_rate to .56
+  
+  PROMPT      "Enter price of your product"
+  ACCEPT      price
+  CALCULATE   tax_cost=price*tax_rate
+  PRINT       "Total price of product is": tax_cost
+
+END

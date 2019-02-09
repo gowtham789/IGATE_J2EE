@@ -1,0 +1,37 @@
+/************************************************************************************
+ * File                      : 3.5.txt
+ * Author Name               : GOWTHAM
+ * Description               : Refactoring The Given Code
+ * Version                   : 2.0
+ * Last Modified Date        : 09-Feb-2016
+ * Change Description        : Modularised 
+ ************************************************************************************/
+
+RECORD Employee
+	DECLARE EmpId as INTEGER
+	DECLARE employmentType AS STRING
+END RECORD
+
+BEGIN
+	DECLARE emp AS Employee
+	//leaves variable is used to store number of leaves per month
+	DECLARE leaves, TotalLeaves AS INTEGER
+	FOR index= 1 to 5
+		PROMPT "Enter the EmployeeId" AND STORE IN emp.EmpId
+		PROMPT "Enter the employmentType" AND STORE IN emp.employmentType
+    END FOR
+	
+	FOR index= 1 to 5
+	IF(employmentType=='PERMANENT') THEN
+			leaves=2;
+			
+	ELSE IF(employmentType=='CONTRACT') THEN
+			leaves=1;
+			
+	END IF
+	    TotalLeaves=leaves*12;
+		PRINT "Employee Id :" , emp.EmpId
+		PRINT "Total Available Leaves are :", TotalLeaves
+END FOR
+	
+END

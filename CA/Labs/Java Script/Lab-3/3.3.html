@@ -1,0 +1,44 @@
+<html>
+	</head>
+		<title>3.3</title>
+		<script type="text/javascript" language="javascript">
+			function findMatch(a)
+			{
+				document.write(a.match("Patni"));
+			}
+			function findSub(x,y,a)
+			{
+				document.write(a.substr(x,y));
+			}
+		</script>
+	</head>
+	<body>
+		<table>
+			<tr>
+				<td>  String is </td>   <td> : PACE at Patni <br></td> </tr>
+			<tr>	
+				<td> Result of str.match('Patni') </td>
+				<td> : <script> 
+							findMatch("PACE at Patni");							
+						</script>
+				<br></td> 
+			</tr>
+			<tr>
+				<td> Result of str.substr(3,6) </td> 
+				<td> :
+					<script>
+						findSub(3,6,"PACE at Patni");
+					"<br>"</script>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<script>
+						document.write("HELLO JAVASCRIPTERS<br>".toLowerCase());
+						document.write("hello javascripters".toUpperCase());
+					</script>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

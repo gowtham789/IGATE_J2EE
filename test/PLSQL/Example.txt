@@ -1,0 +1,25 @@
+Top 2 salaried staffs in every department
+-----------------------------------------
+
+SELECT staff_name,staff_sal,dept_code
+FROM staff_master s
+WHERE (SELECT COUNT(s2.staff_sal) 
+       FROM staff_master s2
+       WHERE s.dept_code=s2.dept_code AND
+	   s2.staff_sal>=s.staff_sal)<3 AND
+      staff_sal IS NOT NULL AND dept_code IS NOT NULL
+ORDER BY dept_code,staff_sal DESC;
+
+
+Manager and the Lowest salaried employee in his dept:
+-----------------------------------------------------
+
+SELECT sm1.staff_code,sm1.staff_name,(SELECT MIN(sm2.staff_sal)
+					                  FROM staff_master sm2
+					                  WHERE sm2.mgr_code=sm1.staff_code)"Lowest Salary"
+FROM staff_master sm1
+WHERE sm1.staff_code IN (SELECT sm2.mgr_code FROM staff_master sm2) AND
+      (SELECT MIN(sm2.staff_sal)
+       FROM staff_master sm2
+	   WHERE sm2.mgr_code=sm1.staff_code)>10000
+ORDER  BY "Lowest Salary";

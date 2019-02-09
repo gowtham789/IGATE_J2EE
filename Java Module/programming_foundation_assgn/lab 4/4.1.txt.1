@@ -1,0 +1,46 @@
+
+/************************************************************************************
+ * File                      : 4.1.txt
+ * Author Name               : GOWTHAM
+ * Description               : Computation,basic operation,Efficiency of given Algorithm
+ * Version                   : 2.0
+ * Last Modified Date        : 11-Feb-2016
+************************************************************************************/
+
+ALGORITHM Check(A[0..n-1])
+//Input: An array A[0..n-1] of n real numbers
+x=A[0]; y=A[0]
+for i=1 to n-1 do
+if A[i]<x
+x= A[i]
+if A[i]>y
+y= A[i]
+return y-x
+
+1.What does this algorithm computes?
+
+Ans:It computes the difference between maximum and minimum element in the array
+
+2.What is its basic operation?
+
+Ans:Its basic operation is (if A[i]<x) and if A[i]>y
+
+3.Check the no of times the basic operation is executed depends only on the size of an input or on any other parameter.
+
+Ans:ALGORITHM Check(A[0..n-1])
+//Input: An array A[0..n-1] of n real numbers
+ x=A[0];
+ y=A[0];
+ sum=0;       //sum variable to count no. of times basic operation is executed
+ for i=1 to n-1 do
+ sum=sum+1;
+ if A[i]<x
+	x= A[i]
+	if A[i]>y
+	y= A[i]
+end for
+return sum;   //print no. of times basic operation is executing	
+return y-x;
+
+4.What is the efficiency class of the given algorithm?
+A.The efficiency class of the given algorithm is Linear O(n).

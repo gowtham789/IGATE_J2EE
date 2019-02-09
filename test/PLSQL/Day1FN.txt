@@ -1,0 +1,244 @@
+SQL> set serveroutput on;
+SQL> BEGIN
+  2  DBMS_OUTPUT.PUT_LINE('Welcome');
+  3  END;
+  4  /
+Welcome
+
+PL/SQL procedure successfully completed.
+
+
+
+SQL> BEGIN
+  2  DELETE FROM staff_master WHERE staff_name='&name';
+  3  DBMS_OUTPUT.PUT_LINE('Deleted successfully!');
+  4  END;
+  5  /
+
+
+
+SQL> SELECT * from emp_new;
+
+     EMPID NAME              SAL
+---------- ---------- ----------
+       101 Sunil           89765
+
+SQL> BEGIN
+  2  INSERT INTO emp_new VALUES(102,'Ajay',9765);
+  3  INSERT INTO emp_new VALUES(103,'Tarun',40000);
+  4  UPDATE emp_new SET sal=sal+10000 WHERE name='Sunil';
+  5  END;
+  6  /
+
+PL/SQL procedure successfully completed.
+
+SQL> SELECT * from emp_new;
+
+     EMPID NAME              SAL
+---------- ---------- ----------
+       101 Sunil           99765
+       102 Ajay             9765
+       103 Tarun           40000
+
+
+
+------------SELECT EXAMPLE-----------
+
+
+SQL> DECLARE
+  2  empName VARCHAR2(10);
+  3  empSal NUMBER(7);
+  4  BEGIN
+  5  SELECT name,sal
+  6  INTO empName,empSal
+  7  FROM emp_new
+  8  WHERE empid=102;
+  9  DBMS_OUTPUT.PUT_LINE('----Employee Details ----');
+ 10  DBMS_OUTPUT.PUT_LINE(' Name    : '||empName);
+ 11  DBMS_OUTPUT.PUT_LINE(' Salary  : '||empSal);
+ 12  DBMS_OUTPUT.PUT_LINE('-----------------------');
+ 13  END;
+ 14  /
+----Employee Details ----
+Name    : Ajay
+Salary  : 9765
+-----------------------
+
+PL/SQL procedure successfully completed.
+
+------------------SELECT COUNT--------
+
+DECLARE
+	counter NUMBER(3);
+BEGIN
+	SELECT COUNT(*) INTO counter FROM staff_master
+	WHERE dept_code=20;
+        DBMS_OUTPUT.PUT_LINE('Number of Emp in dept 20 is'||counter);
+END;
+
+
+
+------------SELECT %TYPE EXAMPLE-----------
+
+
+SQL> DECLARE
+  	empName emp_new.name%TYPE;
+	empSal emp_new.sal%TYPE;
+  BEGIN
+ 	SELECT name,sal
+ 	INTO empName,empSal
+ 	FROM emp_new
+ 	WHERE empid=102;
+	
+ 	DBMS_OUTPUT.PUT_LINE('----Employee Details ----');
+ 	DBMS_OUTPUT.PUT_LINE(' Name    : '||empName);
+ 	DBMS_OUTPUT.PUT_LINE(' Salary  : '||empSal);
+ 	DBMS_OUTPUT.PUT_LINE('-----------------------');
+  END;
+
+------------SELECT %ROWTYPE EXAMPLE-----------
+
+
+SQL> DECLARE
+  	staffDetails staff_master%ROWTYPE;
+  BEGIN
+ 	SELECT *
+	INTO staffDetails
+	FROM staff_master
+	WHERE staff_name='Ram';
+	
+ 	DBMS_OUTPUT.PUT_LINE('----Employee Details ----');
+ 	DBMS_OUTPUT.PUT_LINE(' Name    : '||staffDetails.staff_name);
+ 	DBMS_OUTPUT.PUT_LINE(' Salary  : '||staffDetails.staff_sal);
+ 	DBMS_OUTPUT.PUT_LINE('-----------------------');
+  END;
+
+------------ RECORD TYPE --------------
+
+DECLARE
+  -- Create a Record
+  TYPE empRec IS
+  RECORD
+	( 
+	  name staff_master.staff_name%TYPE,
+	  sal staff_master.staff_sal%TYPE,
+	  dname VARCHAR(20)
+	 );
+  erec empRec;
+
+BEGIN
+  -- Select values
+  SELECT staff_name,staff_sal,dept_name
+  INTO erec
+  FROM staff_master s, department_master d
+  WHERE s.dept_code=d.dept_code
+  AND s.staff_name='Ram';
+ 
+  -- Display Output
+  DBMS_OUTPUT.PUT_LINE(' Name :'||erec.name);
+  DBMS_OUTPUT.PUT_LINE(' Salary :'||erec.sal);
+  DBMS_OUTPUT.PUT_LINE(' Department :'||erec.dname);
+END;
+
+
+----------- ARRAY / TABLE -----------
+
+DECLARE
+	TYPE salArray IS TABLE
+	OF staff_master.staff_sal%TYPE
+	INDEX BY BINARY_INTEGER;
+	
+        salaries salArray;
+BEGIN
+	salaries(0):=10000;
+        salaries(1):=12324;
+	salaries(2):=26560;
+	
+	DBMS_OUTPUT.PUT_LINE(' Salaries:'||salaries(0));
+
+	DBMS_OUTPUT.PUT_LINE(' Salaries:'||salaries(1));
+END;
+
+------IF ELSE EXAMPLE----------
+
+DECLARE
+    staffDetails staff_master%ROWTYPE;
+    staffCode NUMBER(7):=&CODE;
+BEGIN
+    SELECT * 
+    INTO staffDetails
+    FROM staff_master
+    WHERE staff_code=staffCode;
+
+    DBMS_OUTPUT.PUT_LINE('Dear '||staffDetails.staff_name||'...');
+
+    IF (staffDetails.staff_sal <10000)
+    THEN
+        DBMS_OUTPUT.PUT_LINE('Very Less salary...');
+	UPDATE staff_master
+	SET staff_sal=staff_sal+5000
+        WHERE staff_code=staffCode;
+    ELSIF (staffDetails.staff_sal <25000)
+    THEN
+        DBMS_OUTPUT.PUT_LINE('You are better...');
+    ELSIF (staffDetails.staff_sal <40000 AND staffDetails.staff_sal >25000)
+    THEN
+        DBMS_OUTPUT.PUT_LINE('A decent salary...');
+    ELSE
+       DBMS_OUTPUT.PUT_LINE('You earn a lot...');
+	UPDATE staff_master
+	SET staff_sal=staff_sal-5000
+        WHERE staff_code=staffCode;
+    END IF;
+END;
+
+
+----------------LOOP -----------------
+
+DECLARE
+ cntr NUMBER(3); 
+BEGIN
+  cntr:=20;
+  LOOP
+     DBMS_OUTPUT.PUT_LINE(cntr);
+     cntr:=cntr+1;
+     EXIT WHEN cntr>50;
+  END LOOP;
+END;
+
+---------------- FOR LOOP -----------------
+
+
+BEGIN
+  FOR cntr IN 1..20 +2
+  LOOP
+     DBMS_OUTPUT.PUT_LINE(cntr);
+  END LOOP;
+END;
+
+
+---------------- WHILE LOOP -----------------
+DECLARE
+  cntr NUMBER(2):=1;
+BEGIN
+  WHILE(cntr<50)
+  LOOP
+     DBMS_OUTPUT.PUT_LINE(cntr);
+     cntr:=cntr+1;
+     EXIT WHEN cntr=20;
+  END LOOP;
+END;
+	
+	
+	
+
+
+
+
+
+
+
+
+
+
+

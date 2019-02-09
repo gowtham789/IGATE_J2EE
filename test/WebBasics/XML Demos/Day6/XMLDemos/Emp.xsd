@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<!-- Defining Simple Elements -->
+<!-- Element EmployeeName -->
+<xs:element name="ename">
+	<xs:simpleType>
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[A-za-z]+\s[A-za-z]+"></xs:pattern>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:element>
+
+<!-- Element Desig -->
+<xs:element name="desig">
+	<xs:simpleType>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="SE"></xs:enumeration>
+			<xs:enumeration value="SSE"></xs:enumeration>
+			<xs:enumeration value="TL"></xs:enumeration>
+			<xs:enumeration value="AM"></xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:element>
+
+
+<!-- Element salary -->
+<xs:element name="salary">
+	<xs:simpleType>
+		<xs:restriction base="xs:integer">
+			<xs:minExclusive value="20000"></xs:minExclusive>
+			<xs:maxExclusive value="100000"></xs:maxExclusive>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:element>
+
+
+<!-- Element Department -->
+<xs:element name="dept" type="xs:string"></xs:element>
+
+
+<!-- Element Date of Birth -->
+<xs:element name="DOB">
+	<xs:simpleType>
+		<xs:restriction base="xs:date">
+			<xs:minInclusive value="1950-01-01"></xs:minInclusive>
+			<xs:maxInclusive value="1999-12-31"></xs:maxInclusive>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:element>
+
+<!-- Element allowance -->
+<xs:element name="allowance" type="xs:integer">	</xs:element>
+	
+<!-- Defining complex element Employee -->
+<xs:element name="employee">
+<xs:complexType>
+	<xs:sequence>
+		<xs:element ref="ename"></xs:element>
+		<xs:element ref="desig"></xs:element>
+		<xs:element ref="salary"></xs:element>
+		<xs:element ref="dept"></xs:element>
+		<xs:element ref="DOB"></xs:element>
+		<xs:element ref="allowance" minOccurs="0"></xs:element>
+	</xs:sequence>
+	<xs:attribute ref="id" use="required"></xs:attribute>
+</xs:complexType>
+</xs:element>
+
+<!-- Defining complex Root element Employees -->
+<xs:element name="employees">
+<xs:complexType>
+	<xs:sequence>
+		<xs:element ref="employee" 
+		minOccurs="2" maxOccurs="unbounded"></xs:element>
+	</xs:sequence>
+</xs:complexType>
+</xs:element>
+	
+<!-- Attribute id -->	
+<xs:attribute name="id" type="xs:integer"></xs:attribute>
+</xs:schema>

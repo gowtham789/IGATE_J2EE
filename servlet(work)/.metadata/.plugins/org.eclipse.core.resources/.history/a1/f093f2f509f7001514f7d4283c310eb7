@@ -1,0 +1,35 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>    
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<hr/>
+<!-- c:set tag -->
+<c:set var="location" value="Bangalore" scope="application"/>
+
+
+<!-- c:out tag -->
+<c:out value="I am hardcoded Text"/><br/>
+<c:out value="I am from Servlet - Company  :${company}"/><br/>
+<c:out value="I am from same JSP - Location  :${location}"/><br/>
+
+<!-- c:remove tag -->
+<c:remove var="location"/>
+<c:remove var="company"/>
+
+<hr/>
+
+<!-- c:out tag -->
+<c:out value="After removing atributes hardcoded Text"/><br/>
+<c:out value="I am from Servlet - Company  :${company}"/><br/>
+<c:out value="I am from same JSP - Location  :${location}"/><br/>
+
+<hr/>
+</body>
+</html>

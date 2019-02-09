@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style type="text/css">
+        .auto-style1 {
+            width: 153px;
+        }
+        .auto-style2 {
+            width: 139px;
+        }
+    </style>
+    <link href="textshadow.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="div1">
+        <h1>My&nbsp;Shoppee</h1>
+    </div>
+    <form name="form1" method="post" action="store.html">
+        <center>
+            <br />
+            <br />
+            <br />
+        <table border="2"><br />
+            <caption><b>SHOP&nbsp;HERE</b></caption><br /><br />
+            <tr>
+              <td class="auto-style1"><b>ChooseProduct</b></td>
+               <td class="auto-style2">
+                   <select name="pref">
+                       <option value="select your product">select your product</option>
+                       <option value="cloths">Cloths</option>
+                       <option value="shoes">Shoes</option>
+                       <option value="mobiles">Mobiles</option>
+                       <option value="laptops">Laptops</option>
+                       <option value="TV">TV</option>
+                       <option value="AC">AC</option>
+                   </select>
+               </td>
+            </tr>
+            <tr>
+                <td class="auto-style1"><b>Quantity</b>
+                </td>
+                <td class="auto-style2"><input type="number" min="0" max="1000" placeholder="Qty"  required/></td>
+            </tr>
+            <tr>
+                <td class="auto-style1"><b>Customer&nbsp;Name</b></td>
+                <td class="auto-style2"><input type="text" maxlength="15" placeholder="enter customer name" pattern="[A-z]{15}" title="alphabet only" required /> </td>
+            </tr>
+            <tr>
+                <td class="auto-style1"><label for="email"><b>Email ID</b></label>
+                </td>
+                <td class="auto-style2">
+                      <input id="email" name="email" type="email" placeholder="enter email_id" required/>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style1"><b>Mobile&nbsp;No.</b></td>
+                <td class="auto-style2"><input type="text" pattern="[0-9]{10}" title="numbers only" min="10" maxlength="10" placeholder="mobile no." required /> </td>
+           </tr>
+             <tr style="text-align:center">
+            <td colspan="2"> <input type="submit" class="button1" value="Order Now"/></td>
+            </tr>
+        </table>
+            </center>
+    </form>
+    
+</body>
+</html>

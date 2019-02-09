@@ -1,0 +1,30 @@
+BEGIN
+
+  DECLARE arr[5] AS INTEGER ARRAY
+  DECLARE i,j,k,add,sum AS INTEGER
+  INITIALIZE sum TO 0
+  PROMPT "Enter array elements"
+  FOR i=0 TO 5 
+  
+      ACCEPT arr[i]
+	  
+  END FOR
+  
+  FOR i=0 TO 5
+      
+	  FOR j=i+1 TO 5
+	  
+          add=arr[i]+arr[j]
+          
+          FOR k=j+1 TO 5
+              sum=add+arr[k]
+   
+              IF sum==1 THEN
+			  PRINT "triplets are " arr[i],arr[j],arr[k]
+			END FOR
+        END FOR
+    END FOR
+END	
+                   			  
+		   
+  

@@ -1,0 +1,24 @@
+/************************************************************************************
+ * File                      : 4.4.txt
+ * Author Name               : GOWTHAM
+ * Description               : Algorithm to sum of n integers
+ * Version                   : 2.0
+ * Last Modified Date        : 11-Feb-2016
+************************************************************************************/
+
+
+Consider the following Algorithm,
+
+ALGORITHM Sum(n)
+//Input: A nonnegative integer n
+sum=0
+for index=1 to n do
+sum=sum+i
+return sum
+
+************************************************************************************************
+1. What does the above algorithm compute?
+Ans: The above algorithm computes the sum of non negative numbers up to n.
+
+2. What is the efficiency class of the given algorithm?
+Ans: Efficiency class of the given algorithm is Linear i.e O(n).

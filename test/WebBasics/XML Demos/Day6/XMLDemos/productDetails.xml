@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<products xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="prod.xsd">
+<product id="P101">
+	<pname>Freedom251</pname>
+	<category>Mobile</category>
+	<price>251</price>
+	<available>true</available>
+</product>
+<product id="P566">
+	<pname>LG6767</pname>
+	<category>Electronics</category>
+	<price>36000</price>
+	<available>false</available>
+</product>
+<product id="P888">
+	<pname>SamsungS2</pname>
+	<category>Mobile</category>
+	<price>24000</price>
+	<available>true</available>
+</product>
+</products>

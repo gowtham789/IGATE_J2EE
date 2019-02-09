@@ -1,0 +1,23 @@
+BEGIN
+   
+   DECLARE     num,dec,base,rem AS INTEGER
+   INITIALIZE  dec to 0
+   INITIALIZE  rem to 0
+   INITIALIZE  base to 1
+   PROMPT      "Enter a binary number"
+   ACCEPT      num
+   
+   WHILE(num!=0)
+        
+		  rem=num%10;
+		  dec=dec+rem*base;
+		  num=num/10;
+		  base=base*2;
+		  
+	END	 WHILE
+	
+	PRINT "the equivalent decimal number is" +sum
+	
+END	
+		  
+		  

@@ -1,0 +1,26 @@
+@CHARSET "ISO-8859-1";
+#header{
+	margin-left:15px;
+	border-color:navy;
+	border-style:groove;
+}
+#left{
+	margin-left:15px;
+	border-color:navy;
+	border-style:groove;
+	position:relative;
+}
+#right{
+	margin-left:0px;
+	border-color:navy;
+	border-style:groove;
+	position: absolute;
+}
+#footer{
+	margin-left:15px;
+	border-color:navy;
+	border-style:groove;
+}
+#view{
+	background-color:#c0c0c0;
+}

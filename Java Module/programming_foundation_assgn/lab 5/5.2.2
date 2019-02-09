@@ -1,0 +1,125 @@
+/************************************************************************************
+ * File                      : 5.2.txt
+ * Author Name               : GOWTHAM
+ * Description               : Price of Product with Exception Handling
+ * Version                   : 2.0
+ * Last Modified Date        : 10-Feb-2016
+ * Change Description        : No changes
+ ************************************************************************************/
+
+ 
+BEGIN
+
+  DECLARE   price     AS REAL
+  DECLARE   quantity  AS INTEGER
+  DECLARE   productId AS INTEGER
+  
+  PROMPT "Enter productId" AND STORE IN productId
+  
+  IF(isValid(productId)) THEN
+   
+	
+	PROMPT    "Enter price of your product"
+	ACCEPT    price
+	IF(isValid(price)) THEN
+	
+        getProductPrice(productId,price);
+	    
+			
+	 ELSE
+	
+       PRINT"Price value should contain numbers"
+	  END IF   
+	   
+	  PROMPT    "Enter quantity of your product"
+	  ACCEPT    quantity  
+		
+	    IF(isValid(quantity)) THEN
+		 
+			
+			
+	     
+		tax_cost(productId,quantity);
+	  
+         ELSE
+	
+         PRINT"quantity value should contain numbers"
+
+        END IF
+	
+	
+	 ELSE 
+	
+         PRINT"Product Id should contain numbers"
+  END IF
+ 
+  
+  
+END  
+
+/*********************************************************************
+* Module Name : taxcost()
+* Input Parameters : productID,quantity
+* Return Type : REAL
+* Author : GOWTHAM
+* Creation Date : 10-Feb-2016
+* Description : calculating tax cost for the given price and quantity
+*********************************************************************/
+
+
+SUB tax_cost(productId,quantity)
+
+	DECLARE taxcost AS REAL
+	DECLARE taxrate AS REAL
+	INITIALIZE taxrate TO 0.56
+	taxcost=getProductPrice(productId)*quantity*taxrate
+	PRINT "Total Product Price" + taxcost;
+	
+EXCEPTION
+WHEN NoSuchElement THEN
+	PRINT errormessage //Errormessage returned from exception
+END SUB
+
+
+/*********************************************************************
+* Module Name : getProductPrice()
+* Input Parameters : productID
+* Return Type : INTEGER
+* Author : GOWTHAM
+* Creation Date : 10-Feb-2016
+* Description : Getting product price
+*********************************************************************/
+
+SUB getProductPrice(productId)
+
+    DECLARE errorcode AS INTEGER AND STORE 0
+    IF(elementfound(productId)) THEN
+    RETURN productPrice
+    ELSE
+   RAISE "Product doesn’t exist with this id" + productId
+   END IF   
+   
+END SUB
+
+
+
+/*********************************************************************
+* Module Name : isValid()
+* Input Parameters : data
+* Return Type : BOOLEAN
+* Author : GOWTHAM
+* Creation Date : 11-FEB-2016
+* Description : To validate data for accepting only digits
+*********************************************************************/
+SUB isValid(data)
+	IF(isDigits(data)) THEN
+		RETURN true
+	ELSE
+		RETURN false
+	END IF	
+    
+END SUB
+  
+  
+
+    

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>online form</title>
+</head>
+<body>
+	<h3 align="center"><u>Patient Information</u></h3>
+	<form method="post" name="f1" action="AddPatient">
+	<table>
+	<tr>
+	<td>Patient Name</td>
+	<td><input type="text"  name="pname"  required/></td>
+	</tr>
+	<tr>
+	<td>Patient Age</td>
+	<td><input type="text"  name="age" required/></td>
+	</tr>
+	<tr>
+	<td>Mobile number</td>
+	<td><input type="text" name="mno" pattern="[9][0-9]{9}" required/></td>
+	</tr>
+	<tr>
+	<td>Description</td>
+	<td><textarea name="desc" required ></textarea></td>
+	</tr>
+	<tr>
+	<td align="right"><input type="submit" name="submit" value="Add Patient"></td>
+	</tr>
+	</table>
+	</form>
+</body>
+</html>

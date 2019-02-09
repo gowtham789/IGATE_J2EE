@@ -1,0 +1,21 @@
+@CHARSET "ISO-8859-1";
+@-webkit-keyframes aniEx1
+{  
+0%   {background: red;}
+25%  {background: yellow;}
+50%  {background: blue;}
+100% {background: green;}
+}
+
+.d1
+{
+   border-style:solid;
+   border-color:black;
+   border-radius:30px;
+   height:200px;
+   width:200px;
+   text-align:center;
+   -webkit-animation: aniEx1 2s;
+   -webkit-animation-play-state: running;
+   -webkit-animation-iteration-count: 2;
+}

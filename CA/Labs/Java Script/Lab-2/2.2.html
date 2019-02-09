@@ -1,0 +1,44 @@
+.<html>
+	<head>
+	<script type="text/javascript">
+		function compInt(prin,interest,year)
+		{
+			var total=1,comp_int=0;
+			for(var i=1;i<=year;i++)
+				total=total*(1+(interest/100));
+			comp_int = (prin*total)-prin;
+			return(comp_int);
+		}
+	</script>
+	</head>
+
+	<body>
+	---------------------------------------------------------------------------------------------------------</br>
+		************************Calculate Compound Interest**********************</br>
+		---------------------------------------------------------------------------------------------------------</br>
+		<table border=0>
+		<tr>
+			<td> Principal 	 </td>
+			<td> - 1000 rs </td>
+		</tr>
+		<tr>
+			<td> Rate of Interest 	 </td>
+			<td> - 10% </td>
+		</tr>
+		<tr>
+			<td> Period 	 </td>
+			<td> - 1 yr </td>
+		</tr>
+		<tr>
+			<td> Comp Interest 	 </td>
+			<td> - <script type="text/javascript">
+		
+				document.write(compInt(1000,10,1));
+				</script> </td>
+		</tr>
+		</table>
+		
+		
+		<p>The script in the body section calls function with three parameters (1000, 10% and 1).</p>
+	</body>
+</html>

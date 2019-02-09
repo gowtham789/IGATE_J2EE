@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>User Page</title>
+</head>
+<body style="text-align: center">
+<form action="RegisterServlet" method="post">
+<table  style="text-align: center">
+<tr>
+<td>First name: </td>
+<td><input type="text" name="fname"/></td>
+</tr>
+<tr>
+<td>Second name: </td>
+<td><input type="text" name="lname"/></td>
+</tr>
+<tr>
+<td>Password: </td>
+<td><input type="password" name="pwd"></td>
+</tr>
+<tr>
+<td>Select Gender:</td>
+<td><input type="radio" name="gender" value="m">Male
+<input type="radio" name="gender" value="f">Female
+</td>
+</tr>
+<tr>
+<td>Select Skills:</td>
+<td><input type="checkbox" name="skills" value="java"/>java
+<input type="checkbox" name="skills" value=".net"/>.net
+<input type="checkbox" name="skills" value="testing"/>testing
+<input type="checkbox" name="skills" value="mainframe"/>mainframe
+ </td>
+</tr>
+<tr>
+<td>Select Skills:</td>
+<td><select name="city">
+<option value="hyd">Hyderabad</option>
+<option value="chennai">Chennai</option>
+<option value="bangalore">Bangalore</option>
+<option value="mumbai">Mumbai</option>
+</select>
+</td>
+</tr>
+<tr>
+<td></td>
+<td><input type="submit" value="Submit"/>
+<input type="reset" value="Clear"/>
+</td>
+</tr>
+</table>
+</form>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+    <%@page import="com.pms.dto.PatientDTO" %>    
+<%@page import="com.pms.service.PatientService" %> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>View Patient</title>
+</head>
+<body>
+<form action="ViewId" method="post">
+<table bgcolor="lightgray" align="center">
+<tr>
+<th>Enter the Patient Id</th>
+<td><input type="text" name="id"/></td>
+</tr>
+<tr><th><input type="submit" value="view"/></th></tr>
+</table>
+</form>
+<% PatientDTO pdt=(PatientDTO)session.getAttribute("patient");%>
+<%if(pdt!=null) 
+{ %>
+	<table>
+	<tr>
+	<th>Patient Id</th><th>Patient Name</th><th>Age</th><th>Phone Number</th><th>Description</th><th>Consultation Date</th>
+	</tr>
+	<tr><td><%pdt.getPatientId();%></td><td><%pdt.getPatientName();%></td><td><%pdt.getAge();%></td><td><%pdt.getPhoneNum();%></td><td><%pdt.getDescription();%></td><td><%pdt.getConsultDate();%></td></tr>
+	</table>
+	<%}
+else %>
+<%{ %>
+	<h2>There is no record with this id</h2>
+<%}%>
+	
+</body>
+</html>

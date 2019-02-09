@@ -1,0 +1,18 @@
+CREATE TABLE employees (employee_code NUMBER PRIMARY KEY, employee_name VARCHAR2(15), date_of_joining DATE, employee_salary NUMBER, grade CHAR(2) references salgrade(grade));
+
+CREATE TABLE salgrade(grade CHAR(2) PRIMARY KEY, minsal NUMBER, maxsal NUMBER);
+
+
+INSERT INTO employees VALUES(101,'Preetham','10-JAN-2010',18000,'A');
+INSERT INTO employees VALUES(102,'Aakash','10-NOV-2005',48000, 'C');
+INSERT INTO employees VALUES(103,'Kishore','19-DEC-2011',21000,'B');
+INSERT INTO employees VALUES(104,'Reena','23-JUN-2006',42000,'C');
+INSERT INTO employees VALUES(105,'Kailash','05-FEB-2004',46000,'C');
+INSERT INTO employees VALUES(106,'Sahana','18-NOV-2003',52000,'C');
+INSERT INTO employees VALUES(107,'Keerthana','25-JUL-2006',27000,'B');
+
+INSERT INTO salgrade VALUES('A',10000,20000);
+INSERT INTO salgrade VALUES('B',20001,40000);
+INSERT INTO salgrade VALUES('C',40001,60000);
+
+CREATE SEQUENCE empCode_Seq START WITH 108;

@@ -1,0 +1,26 @@
+BEGIN
+   
+   DECLARE num,sum,n,rem AS INTEGER
+   INITIALIZE sum TO 0
+   PROMT "Enter the value to check armstrong number" 
+   ACCEPT num
+   WHILE(num!=0)
+   
+      rem=num%10;
+	  sum=sum+rem*rem*rem;
+	  num=num/10;
+	  
+	END WHILE
+	
+    IF(num==sum) THEN 
+	
+	    PRINT "It is Armstrong Number."
+	ELSE
+        PRINT "The number is not a armstrong number"
+END		
+      	
+	  
+   
+       
+
+    

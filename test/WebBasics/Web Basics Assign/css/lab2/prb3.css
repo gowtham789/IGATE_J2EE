@@ -1,0 +1,25 @@
+h1 {
+	color:#D2691E;
+	text-transform:uppercase;
+	text-indent: 100px; 
+	font-family: calibri;
+	font-size: 30px;
+	font-style: normal;
+	font-weight: bold;
+	text-decoration: underline;
+	text-align: center;
+	text-shadow: 5px 5px 5px #8B0000;
+
+}
+p {
+	text-transform:lowercase;
+	text-indent: 150px; 
+	color:#00008B;
+	font-family:verdena;
+	font-size: 20px;
+    font-style: italic;	
+
+}
+body {
+background-color:Lightgrey;
+}

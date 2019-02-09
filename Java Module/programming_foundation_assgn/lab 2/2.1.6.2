@@ -1,0 +1,70 @@
+
+/************************************************************************************
+ * File                      : 2.1.6.2.txt
+ * Author Name               : GOWTHAM
+ * Desc                      : Printing odd and even numbers in an array
+ * Version                   : 2.0
+ * Last Modified Date        : 09-Feb-2016
+ * Change Description        : No changes
+ ************************************************************************************/
+
+
+BEGIN 
+
+  DECLARE num[10] AS INTEGER ARRAY
+
+  FOR index=1 TO 10
+  
+       ACCEPT num[index]
+  
+  END FOR
+  
+  even(num[10]);
+  odd(num[10]);
+ 
+
+END  
+
+/*********************************************************************
+* Module Name : even()
+* Input Parameters : num array
+* Return Type : array
+* Author : GOWTHAM
+* Creation Date : 09-Feb-2016
+*********************************************************************/
+  
+  SUB even(num[index])
+  
+     FOR index=1 TO 10
+           IF(num[index]%2==0) THEN
+	     
+		     PRINT "Even numbers are" num[index]
+		     index=index+1
+           END IF
+     END FOR
+  
+   END SUB
+   
+/*********************************************************************
+* Module Name : odd()
+* Input Parameters : num array
+* Return Type : array
+* Author : GOWTHAM
+* Creation Date : 09-Feb-2016
+*********************************************************************/
+  
+  SUB odd(num[index])
+  
+     FOR index=1 TO 10
+             IF(num[index]%2!=0) THEN
+	     
+		      PRINT "Odd numbers are" num[index]
+		       index=index+1
+             END IF
+     END FOR
+  END SUB
+ 
+	     
+  
+  
+ 

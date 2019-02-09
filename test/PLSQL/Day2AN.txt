@@ -1,0 +1,247 @@
+********Example 1**********
+
+CREATE OR REPLACE PROCEDURE proc1
+AS
+ sal NUMBER(5);
+BEGIN
+  SELECT staff_sal INTO sal FROM staff_master
+	WHERE staff_name='Allen';
+  DBMS_OUTPUT.PUT_LINE('Salary :'||sal);
+END proc1;
+
+
+SQL> exec proc1();
+Salary :42000
+
+PL/SQL procedure successfully completed.
+
+SQL> BEGIN
+  2   proc1();
+  3  END;
+  4  /
+Salary :42000
+
+PL/SQL procedure successfully completed.
+
+
+Example2:
+//Find the salary of an employee whose name is given as input
+
+CREATE OR REPLACE PROCEDURE proc2(ename VARCHAR2)
+AS
+ sal NUMBER(5);
+BEGIN
+  SELECT staff_sal INTO sal FROM staff_master
+	WHERE staff_name=ename;
+  DBMS_OUTPUT.PUT_LINE('Salary :'||sal);
+END proc2;
+
+Example2:
+//Find the salary of an employee whose name is given as input - Keep the salary in OUT parameter
+
+--The output value will be available in a variable sal
+CREATE OR REPLACE PROCEDURE proc3(ename VARCHAR2,sal OUT NUMBER)
+AS
+BEGIN
+  SELECT staff_sal INTO sal FROM staff_master
+	WHERE staff_name=ename;
+END proc2;
+
+
+---- Anonymous block---
+DECLARE
+  empSal NUMBER(5);
+  empName VARCHAR2(10);
+BEGIN
+  empName:='Smith';
+  proc3(empName,empSal);
+   DBMS_OUTPUT.PUT_LINE('Salary :'||empSal);
+END;
+
+
+SQL> var salary NUMBER;
+SQL> exec proc3('Allen',:salary);
+
+PL/SQL procedure successfully completed.
+
+SQL> print salary
+
+    SALARY
+----------
+     42000
+
+SQL> exec proc3('Smith',:salary);
+
+PL/SQL procedure successfully completed.
+
+SQL> print salary
+
+    SALARY
+----------
+     62000
+
+SQL> var empName VARCHAR2(10);
+SQL> begin
+  2  :empName:='Allen';
+  3  end;
+  4  /
+
+PL/SQL procedure successfully completed.
+
+SQL> exec proc3(:empName,:salary);
+
+PL/SQL procedure successfully completed.
+
+SQL> print salary;
+
+    SALARY
+----------
+     42000
+
+-------------------
+
+1) Display name,salary and deptname of a staff_code from staff_master and department master
+
+CREATE OR REPLACE PROCEDURE
+display_Staff_Details(sCode NUMBER)
+AS
+  name staff_master.staff_name%TYPE;
+  sal staff_master.staff_sal%TYPE;
+  dname department_master.dept_name%TYPE;
+ 
+BEGIN
+  SELECT staff_name,staff_sal,dept_name
+  INTO name,sal,dname
+  FROM staff_master s,department_master d
+  WHERE s.dept_code=d.dept_code
+  AND s.staff_code=sCode;
+
+  
+  DBMS_OUTPUT.PUT_LINE(' '||name||' '||sal||'  '||dname);
+EXCEPTION
+  WHEN NO_DATA_FOUND THEN
+     DBMS_OUTPUT.PUT_LINE('Invalid Staff Code!!!');
+END display_Staff_Details;
+
+
+****** FUnction 1*******
+
+CREATE OR REPLACE FUNCTION
+ addition(n1 NUMBER,n2 NUMBER)
+ RETURN NUMBER
+ AS
+  Answer NUMBER;
+ BEGIN
+   Answer:=n1+n2;
+   RETURN Answer;
+ END addition;
+
+
+//Function
+
+2. Function to print the staff details in a department and return the average sal in a dept
+
+CREATE OR REPLACE FUNCTION
+ display_Staffs(dcode NUMBER)
+ RETURN NUMBER
+ AS
+  
+ -- Declare variables and cursor
+
+ sname VARCHAR2(10);
+ salary NUMBER(6);
+ sumOfSal NUMBER(7):=0;
+ avgSal NUMBER(7);
+ counter NUMBER(3);
+
+ NO_EMP_DATA EXCEPTION;
+ 
+ CURSOR eCur is 
+	SELECT staff_name,staff_sal 
+	FROM staff_master
+        WHERE dept_code=dcode;
+
+ BEGIN
+   OPEN eCur;
+  DBMS_OUTPUT.PUT_LINE('--------------------');
+   LOOP
+	FETCH eCur INTO sname,salary;
+        EXIT WHEN eCur%NOTFOUND;
+	
+        DBMS_OUTPUT.PUT_LINE(' '||sname||' '||salary);
+	IF(salary<20000) THEN
+       		DBMS_OUTPUT.PUT_LINE('Grade : SE');
+	ELSIF(salary<35000) THEN
+      		 DBMS_OUTPUT.PUT_LINE('Grade : SSE');
+	ELSIF(salary<50000) THEN
+       		DBMS_OUTPUT.PUT_LINE('Grade : AM');
+	ELSIF(salary<70000) THEN
+      		 DBMS_OUTPUT.PUT_LINE('Grade : DM');
+	END IF;
+	sumOfSal:=sumOfSal+salary;
+
+   END LOOP;
+    DBMS_OUTPUT.PUT_LINE('--------------------');
+   counter:=eCur%ROWCOUNT;
+   IF(counter=0) THEN
+	RAISE NO_EMP_DATA;
+   END IF;
+   
+   avgSal:=sumOfSal/counter;
+   CLOSE eCur;
+    RETURN avgSal;
+EXCEPTION
+	WHEN NO_EMP_DATA THEN
+ DBMS_OUTPUT.PUT_LINE('No employee details found');
+  RETURN 0;
+END display_Staffs;
+	
+    
+
+--- Calling the function ----
+
+DECLARE
+  avgSal NUMBER(6);
+  dcode NUMBER(3);
+BEGIN
+  dcode:=&deptCode;
+  avgSal:=display_Staffs(dcode);
+  DBMS_OUTPUT.PUT_LINE('Average sal in dept '||dcode ||' is '||avgSal);
+END;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

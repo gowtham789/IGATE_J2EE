@@ -1,0 +1,32 @@
+<log4j:event logger="XMLLayoutExample.class" timestamp="1458111028145" level="INFO" thread="main">
+<log4j:message><![CDATA[Welcome]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="XMLLayoutExample.class" timestamp="1458111028145" level="INFO" thread="main">
+<log4j:message><![CDATA[to]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="XMLLayoutExample.class" timestamp="1458111028145" level="INFO" thread="main">
+<log4j:message><![CDATA[Log4J]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="XMLLayoutExample.class" timestamp="1458111028145" level="INFO" thread="main">
+<log4j:message><![CDATA[Writer Appender]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="XMLLayoutExample.class" timestamp="1458111028145" level="INFO" thread="main">
+<log4j:message><![CDATA[Example]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="XMLLayoutExample.class" timestamp="1458111028145" level="INFO" thread="main">
+<log4j:message><![CDATA[-----------]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="XMLLayoutExample.class" timestamp="1458111028145" level="WARN" thread="main">
+<log4j:message><![CDATA[Name not initialized]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="XMLLayoutExample.class" timestamp="1458111028145" level="DEBUG" thread="main">
+<log4j:message><![CDATA[Value of x initialized to 0]]></log4j:message>
+</log4j:event>
+

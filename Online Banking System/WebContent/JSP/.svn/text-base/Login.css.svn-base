@@ -1,0 +1,130 @@
+.d
+{
+	position:relative;
+	margin-top: 0px;
+	margin-left: 0px;
+	width:980px;
+	height:650px;	
+}
+
+.d1
+{  
+	position:relative;
+	margin-top:5px;
+	margin-left:5px;
+	margin-right:10px;
+	font-family:Monotype Corsiva;
+	width:967px;
+	height:100px;
+	background-color: white;
+	text-align:center;
+	font: italic;
+	font-size: 40px;
+	background-color: #00ffff;
+	border-radius:15px;
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#b9ffff), color-stop(50%,#91ffff), color-stop(71%,#5effff), color-stop(100%,#00ffff));
+	text-align: center;
+	
+}
+.bank
+{
+	position:relative;
+	margin-top:15px;
+	margin-left:50px;
+	
+}
+ 
+.d2
+ {
+ 	position:relative;
+    margin-top:10px;
+	margin-left:5px;
+	margin-right:15px;
+	border-style:solid;
+	border-color: #00ffff;
+	width:450px;
+	height:440px;
+	background-color: white;
+	border-radius:25px;
+ }
+ .d3
+ {
+ 	position:relative;
+    margin-top:-444px;
+	margin-left:350px;
+	margin-right:5px;
+	border-style:solid;
+	float:right;
+	border-color: #00ffff;
+	width:500px;
+	height:440px;
+	background-color: white;
+	text-align: center;
+	font:bold;
+	border-radius:25px; 
+ }
+ .user
+ {
+ 	position:relative;
+    margin-top:90px;
+	margin-left:400px;
+	margin-right:100px;
+	float:right;
+	width:400px;
+	height:240px;
+	text-align: center;
+	font:bold;
+	border-radius:50px;
+	 	
+ }
+
+ .table
+ {	
+ 	position:relative;
+    margin-top:50px;
+	margin-left:10px;
+	margin-right:100px;
+ }
+ 
+ 
+ .d4
+ {  
+ 	position:relative;
+    margin-top:10px;
+ 	margin-left:5px;
+ 	margin-right:5px;
+    border-style:solid;
+	border-color:#00ffff ;
+	border-radius:15px;
+ }
+
+.frgt
+{
+	position:relative;	
+    margin-top:100px;
+ 	margin-left:150px;
+ 	margin-right:150px;
+    border-style:solid;
+	background-color:#8ba9b4 ;
+	border-radius:45px;
+	height:300px;
+	width:500px;
+	text-align:center;
+}
+select,input 
+{
+	border-radius:10px;	
+}
+
+#button
+{
+border-radius:15px;
+width: 100px;
+height:40px;
+font-family:Monotype Corsiva;
+font-weight:bold;
+font-size:20px;
+background-color:#c4ffff;
+}
+
+ 

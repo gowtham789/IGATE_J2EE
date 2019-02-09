@@ -1,0 +1,45 @@
+<%@ page import="com.cg.tc.dto.PatientDto "%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="ViewPatient" name="f1" method="post">
+<table>
+<tr>
+<td>Enter Patient id</td>
+<td><input type="text" name="id" value=""/></td>
+</tr>
+<tr>
+<td><input type="submit" name="submit" value="submit"/></td>
+</tr>
+</table>
+</form>
+<%
+	PatientDto patient=(PatientDto)session.getAttribute("pat1");
+	if(patient!=null)
+	{
+%>
+<table>
+<tr>
+<td>PatientId</td>
+<td>PatientName</td>
+<td>Age</td>
+<td>Phoneno</td>
+<td>Description</td>
+<td>Date</td>
+</tr>
+<tr>
+<td><%= patient.getPatientId() %></td>
+<td><%=	pdto.getPatientName() %></td>
+<td><%=	pdto.getAge()  %></td>
+<td><%=	pdto.getPhoneNo()  %></td>
+<td><%= pdto.getDescription() %></td>
+<td><%=	pdto.getConsultationDate() %></td>
+</tr>
+</table>
+<% } %>
+</body>
+</html>

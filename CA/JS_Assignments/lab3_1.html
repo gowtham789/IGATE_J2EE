@@ -1,0 +1,20 @@
+﻿<html>
+<body>
+
+<script type="text/javascript">
+    var d = new Date();
+    document.write("<b>" +d +"<br>");
+    var time = d.getHours();
+    document.write("" + time +"<br>");
+    if (time < 12) {
+        document.write("<b>Good Morning</b>");}
+    
+    else if(12<=time<=17 ){
+        document.write("<b>Good Afternoon</b>");}
+    else if (time > 17) { document.write("<b>Good Evening"); }
+    else { document.write("Good Bye"); }
+    
+</script>
+</body>
+</html>
+

@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script type="text/javascript">
+        function doSearch() {
+        var barbie = document.form1.searchByTxt.value;
+        var calcu = document.form1.searchByTxt1.value;
+        var mob = document.form1.searchByTxt2.value;
+        var lg = document.form1.searchByTxt3.value;
+        var myWindow;
+        
+            
+            if ((barbie == 0) && (calcu == 0) && (mob == 0) && (lg == 0)){
+                alert("no item selected");
+            }
+            else {
+                    myWindow = open('', 'mywin', 'height=300,width=300,scrollbars=yes');
+                    myWindow.document.writeln("<html><head><title></title></head><body><center><h1>INVOICE</h1><br>");
+                    myWindow.document.writeln("<table border=2>")
+                    myWindow.document.writeln("<tr><th><b>PRODUCT</b></th><th><b>QUANTITY</b></th><th><b>PRICE</b></th><th><b>TOTAL<b></th></tr>");
+                   
+                    if (barbie != 0) {
+                        myWindow.document.writeln("<tr><td>Barbie Doll</td><td>" + barbie + "</td><td>20</td><td>" + 20 * barbie + "</td></tr>");
+                    }
+                    if (calcu != 0) {
+                        myWindow.document.writeln("<tr><td>Calculator</td><td>" + calcu + "</td><td>30</td><td>" + 30 * calcu + "</td></tr>");
+                    }
+                    if (mob != 0) {
+                        myWindow.document.writeln("<tr><td>Mobile Phone</td><td>" + mob + "</td><td>40</td><td>" + 40 * mob + "</td></tr>");
+                    }
+                    if (lg != 0) {
+                        myWindow.document.writeln("<tr><td>LG DVD</td><td>" + lg + "</td><td>50</td><td>" + 50 * lg + "</td></tr>");
+                    }
+            }
+           
+            }
+            
+        myWindow.document.writeln("</table></center></body></html>");
+    </script> 
+</head>
+<body>
+
+    <form name="form1" method="post" onsubmit="doSearch();">
+        <h1>Products</h1><br />
+        <table border="1">
+            <tr>
+                <th><h2>Name</h2></th>
+                <th><h2>Description</h2></th>
+                <th><h2>Price</h2></th>
+                <th><h2>Qty</h2></th>
+            </tr>
+            <tr>
+                <td><b>Barbie Doll</b></td>
+                <td><b>Beautiful</b></td>
+                <td><b>20</b></td>
+                <td><input type="number" name="searchByTxt" value="0" /></td>
+            </tr>
+            <tr>
+                <td><b>Calculator</b></td>
+                <td><b>Calculator with<br /> latest features</b></td>
+                <td><b>30</b></td>
+                <td><input type="number" name="searchByTxt1" value="0"/></td>
+            </tr>
+            <tr>
+                <td><b>Mobile Phone</b></td>
+                <td><b>Camera,Java<br />Games,GPRS</b></td>
+                <td><b>40</b></td>
+                <td><input type="number" name="searchByTxt2" value="0"/></td>
+            </tr>
+            <tr>
+                <td><b>LG DVD</b></td>
+                <td><b>5 disc changer</b></td>
+                <td><b>50</b></td>
+                <td><input type="number" name="searchByTxt3" value="0" /></td>
+            </tr>      
+        </table><br />
+        <input type="submit" value="ORDER" />
+    </form>
+</body>
+</html>

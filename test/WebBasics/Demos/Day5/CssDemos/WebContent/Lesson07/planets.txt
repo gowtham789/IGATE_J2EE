@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="height=device-height,width=device-width,target-densitydpi=device-dpi, initial-scale=1.0,user-scalable=no" />
+     <link rel="stylesheet" href="animation5.css" type="text/css" media="screen">
+     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+     <title>Animation </title>
+</head>
+<body>
+<div class="container">
+	<div class="planet"></div>
+	<div class="rocket"></div>
+</div>
+</body>
+</html>

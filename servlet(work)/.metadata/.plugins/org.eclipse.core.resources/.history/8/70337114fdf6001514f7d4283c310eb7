@@ -1,0 +1,5 @@
+package com.cg.tc.controller;
+
+public class PatientController {
+
+}

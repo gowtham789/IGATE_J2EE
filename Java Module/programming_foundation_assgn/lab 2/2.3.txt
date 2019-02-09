@@ -1,0 +1,54 @@
+
+
+/************************************************************************************
+ * File                      : 2.3.txt
+ * Author Name               : GOWTHAM
+ * Desc                      : To calculate unique elements in an array
+ * Version                   : 2.0
+ * Last Modified Date        : 09-Feb-2016
+ * Change Description        : No changes
+ ************************************************************************************/
+
+
+
+BEGIN 
+       DECLARE arr[10] as INTEGER ARRAY
+	   DECLARE index,j,num,count as INTEGER
+	   INITIALIZE num to 0
+	   PROMPT "Enter an array of elements"
+	   FOR index=1 to 10
+	         ACCEPT arr[index]
+	   END FOR	
+       unique(arr[10])
+	   
+END    	   
+
+/*********************************************************************
+* Module Name : unique()
+* Input Parameters : array
+* Return Type : INTEGER
+* Author : GOWTHAM
+* Creation Date : 11-Feb-2016
+*********************************************************************/
+
+   SUB unique(arr[10])
+        
+		    FOR index=1 to 10
+			    count=0;
+				FOR j=index+1 to 10
+				    
+				   IF(arr[index]==arr[j]) THEN
+				    count++
+				   END IF
+                END FOR
+				
+				IF(count==0) THEN
+				   num++
+				   
+                END IF
+            END FOR
+			PRINT "Unique Elements are " num;
+    END SUB			
+				     
+			    
+                			

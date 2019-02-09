@@ -1,0 +1,100 @@
+
+/************************************************************************************
+ * File                      : 3.2.txt
+ * Author Name               : GOWTHAM
+ * Desc                      : Calculate and print grade for a student based on criteria
+ * Version                   : 2.0
+ * Last Modified Date        : 09-Feb-2016
+ * Change Description        : No changes
+ ************************************************************************************/
+
+
+RECORD StudentDetails
+        
+        DECLARE id     AS INTEGER
+		DECLARE name   AS STRING
+        DECLARE sub1   AS INTEGER
+		DECLARE sub2   AS INTEGER
+		DECLARE sub3   AS INTEGER
+END RECORD
+
+BEGIN
+
+  DECLARE student AS StudentDetails
+  DECLARE total AS INTEGER
+   FOR index= 1 to 5
+
+     PROMPT "Enter the name"               AND STORE IN student.name
+     PROMPT "Enter the id  "               AND STORE IN student.id
+     PROMPT "Enter the marks in subject1"  AND STORE IN student.sub1
+	 PROMPT "Enter the marks in subject2"  AND STORE IN student.sub2
+	 PROMPT "Enter the marks in subject3"  AND STORE IN student.sub3
+   END FOR
+    
+   Total(student.sub1,student.sub2,student.sub3);
+   grade(total);
+   
+END
+
+/*********************************************************************
+* Module Name : total()
+* Input Parameters : student.sub1,student.sub2,student.sub3
+* Return Type : INTEGER
+* Author : GOWTHAM
+* Creation Date : 09-Feb-2016
+*********************************************************************/
+
+ /*Module to calculate total marks of students */
+ 
+   SUB Total(student.sub1,student.sub2,student.sub3)
+      
+	  total=student.sub1+student.sub2+student.sub3
+	  return total
+	  
+   END SUB 
+
+/*Module to calculate grade of the student */  
+
+/************************************************************************************
+* Module Name       :Grade
+* Input Parameters  :Total
+* Return Type       :Grade of student
+* Author            :GOWTHAM
+* Creation Date     :09-Feb-2015
+* Description       :Retrieval of Grade of the Student
+ ************************************************************************************/ 
+   
+   SUB grade(total)
+      
+	  IF(total>=90||total<=100) THEN 
+	     
+	     PRINT "The grade of student is A"
+		 
+	  ELSE IF(total>=79||total<=89) THEN 
+	  
+	     PRINT "The grade of student is A"
+		 
+	  ELSE IF(total>=68||total<=78) THEN	
+	  
+          PRINT "The grade of student is A"
+      
+	  ELSE 
+          PRINT "The student is failed"	
+		  
+	  END IF
+  END SUB
+	
+        
+ 
+  
+   
+   
+   
+ 
+ 
+ 
+ 
+
+ 
+
+

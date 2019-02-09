@@ -1,0 +1,2 @@
+D:\Ritesh_842812\Assignments_html\JS_Assignments\JS_Assignments\bin\Debug\JS_Assignments.exe.config
+D:\Ritesh_842812\Assignments_html\JS_Assignments\JS_Assignments\obj\Debug\JS_Assignments.csprojResolveAssemblyReference.cache

@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>9.1</title>
+		<script style="text/javascript">
+			function testMatch()
+			{
+				var regExpr = document.forms[0].regexp.value;
+				var subStr = document.forms[0].substr.value;
+				if(regExpr != "" && subStr != "")
+				{
+					var regOb = new RegExp(regExpr);
+					if(regOb.test(subStr))
+					{
+						alert("Match Found");
+					}
+					if(!regOb.test(subStr))
+					{
+						alert("Match Not Found");
+					}
+				}
+				else
+				{
+					alert("Please enter all fields");
+				}
+			}
+			function showMatch()
+			{
+				var regExpr = document.forms[0].regexp.value;
+				var subStr = document.forms[0].substr.value;
+				if(regExpr != "" && subStr != "")
+				{
+					var regOb = new RegExp(regExpr);
+					if(regOb.test(subStr))
+					{
+						var abc = regOb.exec(subStr);
+						alert("The match is found at index"+subStr.indexOf(abc));
+					}
+				}
+				else
+				{
+					alert("Please enter all fields");
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<form>
+			<b> Regexp : <input type="text" name="regexp" size="40"><br><br>
+				Subject String : <input type="text" name="substr" size="40"><br><br>
+				<input type="button" value="Test Match" onclick="testMatch()" > &nbsp; 
+				<input type="button" value="Show Match" onclick="showMatch()" >
+			</b>
+		</form>
+	</body>
+</html>

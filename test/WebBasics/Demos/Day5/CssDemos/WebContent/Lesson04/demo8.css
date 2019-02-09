@@ -1,0 +1,15 @@
+@CHARSET "ISO-8859-1";
+
+h1
+{
+	background-color: lightgrey;
+	color: #E9967A;
+}
+
+.wol
+ {
+ -webkit-column-count:3;
+ -webkit-column-gap: 2em; 
+ -webkit-column-rule: 1px solid red;
+ 
+ }

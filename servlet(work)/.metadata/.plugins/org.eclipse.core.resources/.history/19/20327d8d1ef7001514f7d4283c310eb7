@@ -1,0 +1,5 @@
+package com.cg.tc.dao;
+
+public class PatientDao {
+
+}

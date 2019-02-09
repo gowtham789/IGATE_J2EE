@@ -1,0 +1,37 @@
+/************************************************************************************
+ * File                      : 6.1.1 txt
+ * Author Name               : GOWTHAM
+ * Desc                      : Printing tag color based on employee experience
+ * Version                   : 2.0
+ * Last Modified Date        : 09-Feb-2016
+ * Change Description        : Self and peer reviewed based on review checklist
+ ************************************************************************************/
+
+
+
+BEGIN
+
+   DECLARE EXP AS INTEGER
+   PROMPT "Enter the experience of employee:"
+   ACCEPT EXP
+   
+   IF ( EXP== 0 || EXP<3)THEN
+		PRINT "The tag color is blue"
+	ELSE IF ( EXp==3 || EXP<5 ) THEN
+		PRINT  "The tag color is grey."
+	ELSE IF ( EXp==5 || EXP<10 ) THEN
+		PRINT  "The tag color is Yellow."	
+    ELSE
+        PRINT  "The tag color is red."		
+	END IF
+END
+
+********************************************************************************************
+
+1.Self Review:
+	-All variables are properly defined.
+	-No floating point numbers comparison
+	-No variables are redundant and unused
+	-There is no unreachable code
+	-
+	

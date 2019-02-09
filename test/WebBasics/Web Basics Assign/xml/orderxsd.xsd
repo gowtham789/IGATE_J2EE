@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<!-- Simple Element cusname -->
+<xs:element name="cusname">
+<xs:simpleType>
+	<xs:restriction base="xs:string">
+		<xs:pattern value="[A-Za-z0-9]+"></xs:pattern>
+	</xs:restriction>
+</xs:simpleType>
+</xs:element>
+
+<!-- Element Date of Birth -->
+<xs:element name="dob">
+	<xs:simpleType>
+		<xs:restriction base="xs:date">
+			<xs:minInclusive value="1950-01-01"></xs:minInclusive>
+			<xs:maxInclusive value="2016-12-31"></xs:maxInclusive>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:element>
+
+
+<!-- Simple Element Gender -->
+<xs:element name="gender">
+<xs:simpleType>
+	<xs:restriction base="xs:string">
+		<xs:enumeration value="male"></xs:enumeration>
+		<xs:enumeration value="female"></xs:enumeration>
+		<xs:enumeration value="transgender"></xs:enumeration>
+	</xs:restriction>
+</xs:simpleType>
+</xs:element>
+
+<!-- Simple Element MobileNo -->
+<xs:element name="mobileno">
+<xs:simpleType>
+	<xs:restriction base="xs:integer">
+		<xs:pattern value="[8/9][0-9]{9}"></xs:pattern>
+		
+	</xs:restriction>
+</xs:simpleType>
+</xs:element>
+
+
+<!-- Simple Element category -->
+<xs:element name="select_a_product">
+<xs:simpleType>
+	<xs:restriction base="xs:string">
+		<xs:enumeration value="television"></xs:enumeration>
+		<xs:enumeration value="laptop"></xs:enumeration>
+		<xs:enumeration value="refrigerator"></xs:enumeration>
+	</xs:restriction>
+</xs:simpleType>
+</xs:element>
+
+
+<!-- Simple Element quantity -->
+<xs:element name="quantity">
+<xs:simpleType>
+	<xs:restriction base="xs:integer">
+		<xs:minInclusive value="0"></xs:minInclusive>
+		
+	</xs:restriction>
+</xs:simpleType>
+</xs:element>
+
+
+<!-- Simple Element services -->
+<xs:element name="services">
+<xs:simpleType>
+	<xs:restriction base="xs:string">
+		<xs:enumeration value="COD"></xs:enumeration>
+		<xs:enumeration value="Giftwrap"></xs:enumeration>
+		<xs:enumeration value="warranty"></xs:enumeration>
+	</xs:restriction>
+</xs:simpleType>
+</xs:element>
+
+
+
+
+<!-- Attribute id -->
+<xs:attribute name="id" type="xs:integer">
+</xs:attribute>
+
+
+
+
+<!-- Complex Type Order -->
+<xs:element name="order">
+<xs:complexType>
+	<xs:sequence>
+		<xs:element ref="cusname"></xs:element>
+		<xs:element ref="dob"></xs:element>
+		<xs:element ref="gender"></xs:element>
+		<xs:element ref="mobileno"></xs:element>
+		<xs:element ref="select_a_product"></xs:element>
+		<xs:element ref="quantity"></xs:element>
+		<xs:element ref="services"></xs:element>
+	</xs:sequence>
+	<xs:attribute ref="id" use="required"></xs:attribute>
+</xs:complexType>
+</xs:element>
+
+<!-- Root element OrderDetails -->
+<xs:element name="orderdetails">
+<xs:complexType>
+	<xs:sequence>
+		<xs:element ref="order" maxOccurs="unbounded"></xs:element>
+	</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:schema>

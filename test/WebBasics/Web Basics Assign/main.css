@@ -1,0 +1,38 @@
+h1 {
+	color: white;
+	text-align: center;
+}
+
+body {
+	background-color:dodgerblue;
+	align:center;
+	font-size: 16pt;
+	font-width: bold;
+	width: 400px;
+	padding: 30px;
+	margin: 0px;
+}
+
+table {
+	align:center;
+	border-collapse: collapse;
+	width: 100%;
+	border: 15px white solid;
+	font-size: 16pt;
+	table-layout:auto;
+}
+
+td,th {
+
+	font-size: 14pt;
+}
+
+Label
+{
+		color: white;
+	}
+	span
+	{
+	color:red;
+	font-size: 10pt;
+	}

@@ -1,0 +1,12 @@
+@CHARSET "ISO-8859-1";
+h3{
+	color:purple;
+	font-style:italic;
+}
+#but{
+	background-color:#808080;
+}
+body{
+	background-color:#c0c0c0;
+	font-style:oblique;
+}

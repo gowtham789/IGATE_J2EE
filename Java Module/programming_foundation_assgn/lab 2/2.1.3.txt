@@ -1,0 +1,38 @@
+
+/************************************************************************************
+ * File                      : 2.1.3.txt
+ * Author Name               : GOWTHAM
+ * Desc                      : pseudo code to print the fibonnoci series upto n numbers
+ * Version                   : 2.0
+ * Last Modified Date        : 09-Feb-2016
+ * Change Description        : No changes
+ ************************************************************************************/
+
+
+
+
+BEGIN 
+  
+  DECLARE fn,sn,sum,i,N AS INTEGER //fn,sn as first and second numbers
+  
+  INITIALIZE fn AS 0 
+  INITIALIZE sn AS 1
+  PROMPT "Enter N value" AND STORE IN N  //how many numbers have to be printed
+  IF(N==1) THEN 
+    PRINT +fn
+  ELSE IF(N==2) THEN
+    PRINT +fn,+sn
+  ELSE 
+  
+  FOR i = 3 TO N AND i<N 
+		sum=fn+sn
+		
+		fn=sn
+		sn=sum
+		PRINT "The Series is " sum
+		
+	END FOR
+  END IF	
+  
+END
+    

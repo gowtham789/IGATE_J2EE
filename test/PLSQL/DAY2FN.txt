@@ -1,0 +1,226 @@
+********* CURSOR VARIABLE************
+DECLARE
+   
+   TYPE cur1 is REF CURSOR;
+   c1 cur1;
+   
+   sname staff_master.staff_name%TYPE;
+   sal NUMBER(7);
+   dname VARCHAR2(20);
+  
+BEGIN
+ 
+   -- Open cursor to fetch staff details
+   OPEN c1 FOR 
+   SELECT staff_name,staff_sal
+   FROM staff_master
+   WHERE staff_sal>30000;
+
+       DBMS_OUTPUT.PUT_LINE('*****EMPLOYEE DETAILS***');
+   LOOP
+       FETCH c1 into sname,sal;
+       EXIT WHEN c1%NOTFOUND;
+	
+
+DBMS_OUTPUT.PUT_LINE('    '||sname||'    '||sal);
+
+    END LOOP;
+	 DBMS_OUTPUT.PUT_LINE('**********************');
+    CLOSE c1;
+
+
+	-- Open cursor to fetch dept names
+   OPEN c1 FOR 
+   SELECT dept_name
+   FROM department_master;
+
+	
+       DBMS_OUTPUT.PUT_LINE('*****Departments***');
+   LOOP
+       FETCH c1 into dname;
+       EXIT WHEN c1%NOTFOUND;
+
+	DBMS_OUTPUT.PUT_LINE('    '||Dname);
+
+    END LOOP;
+	 DBMS_OUTPUT.PUT_LINE('**************');
+    CLOSE c1;
+END;		
+
+
+********PREDEFINED EXCEPTION*************
+
+DECLARE
+  
+  staff staff_master%ROWTYPE;
+  CURSOR c1 is SELECT * FROM staff_master;
+  choice NUMBER(2);
+  temp NUMBER(2);
+  Err_Num NUMBER(8);
+  Err_Msg VARCHAR2(120);
+
+BEGIN
+  
+  choice:=&ch;
+
+  IF(choice=1) THEN
+  	SELECT * INTO staff
+  	FROM staff_master WHERE staff_code=100;
+
+ 	 DBMS_OUTPUT.PUT_LINE(staff.staff_name);
+  ELSIF (choice=2) THEN
+      OPEN c1;
+      OPEN c1;
+      CLOSE c1;
+  ELSE
+      temp:=5/0;
+  END IF;
+
+EXCEPTION
+  WHEN NO_DATA_FOUND THEN
+	DBMS_OUTPUT.PUT_LINE('No staff Exist with the given code');
+   WHEN CURSOR_ALREADY_OPEN THEN
+	DBMS_OUTPUT.PUT_LINE('Opening the wrong cursor');
+   WHEN OTHERS THEN
+	Err_Num := SQLCODE;
+        Err_Msg :=SUBSTR( SQLERRM, 1, 100);
+
+	DBMS_OUTPUT.PUT_LINE('Error!!! '||err_num||'  '|| err_msg ); 
+
+END;
+
+
+************** USER DEFINED EXCEPTION**********
+
+1) If salary<25000 invalid exception is raised
+
+DECLARE
+  
+    sname VARCHAR2(10);
+    sal NUMBER(7);
+
+    Err_Num NUMBER(8);
+    Err_Msg VARCHAR2(120);
+
+    --- DECLARE EXCEPTION
+    Low_Sal EXCEPTION;
+
+    --- CREATE A CURSOR
+    CURSOR c1 is SELECT staff_name,staff_sal
+	FROM staff_master
+	WHERE dept_code IN (10,20);
+
+BEGIN
+    OPEN c1;
+    LOOP
+	FETCH c1 INTO sname,sal;
+	EXIT WHEN c1%NOTFOUND;
+
+	IF(sal<25000) THEN
+          RAISE Low_Sal;
+	END IF;
+	
+	DBMS_OUTPUT.PUT_LINE('EMPLOYEE DETAILS');
+	DBMS_OUTPUT.PUT_LINE('   '||sname||'  '||sal);
+
+    END LOOP;
+    CLOSE c1;
+EXCEPTION
+    WHEN Low_Sal THEN
+	INSERT INTO Low_Sal_Emp VALUES(sname,sal);
+	DBMS_OUTPUT.PUT_LINE('Employee   '||sname||' gets a low salary of Rs  '||sal);
+ 	WHEN OTHERS THEN
+	Err_Num := SQLCODE;
+        Err_Msg :=SUBSTR( SQLERRM, 1, 100);
+	DBMS_OUTPUT.PUT_LINE('Error!!! '||err_num||'  '|| err_msg ); 
+
+END;
+
+
+************** RAISE APPLICATION ERROR*********
+
+1) If salary<25000 invalid exception is raised - and a number is attached to that exception
+
+DECLARE
+  
+    sname VARCHAR2(10);
+    sal NUMBER(7);
+
+    Err_Num NUMBER(8);
+    Err_Msg VARCHAR2(120);
+
+    --- DECLARE EXCEPTION
+    Low_Sal EXCEPTION;
+
+    --- CREATE A CURSOR
+    CURSOR c1 is SELECT staff_name,staff_sal
+	FROM staff_master
+	WHERE dept_code IN (10,20);
+
+BEGIN
+    OPEN c1;
+    LOOP
+	FETCH c1 INTO sname,sal;
+	EXIT WHEN c1%NOTFOUND;
+
+	IF(sal<25000) THEN
+          RAISE Low_Sal;
+	END IF;
+	
+	DBMS_OUTPUT.PUT_LINE('EMPLOYEE DETAILS');
+	DBMS_OUTPUT.PUT_LINE('   '||sname||'  '||sal);
+
+    END LOOP;
+    CLOSE c1;
+EXCEPTION
+    WHEN Low_Sal THEN
+	INSERT INTO Low_Sal_Emp VALUES(sname,sal);
+	RAISE_APPLICATION_ERROR(-20660,'Employee   '||sname||' gets a low salary of Rs  '||sal);
+ 	WHEN OTHERS THEN
+	Err_Num := SQLCODE;
+        Err_Msg :=SUBSTR( SQLERRM, 1, 100);
+	DBMS_OUTPUT.PUT_LINE('Error!!! '||err_num||'  '|| err_msg ); 
+
+END;
+
+******** NUMBERED EXCEPTION***********
+
+
+DECLARE
+  child_rec_exc EXCEPTION;  
+  PRAGMA EXCEPTION_INIT(child_rec_exc,-2292);
+
+BEGIN
+  DELETE FROM staff_master
+	WHERE staff_name='Ram';
+
+EXCEPTION
+  WHEN child_rec_exc THEN
+	DBMS_OUTPUT.PUT_LINE('Cannot Delete the Employee details ! It is used by other tables');
+
+END;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+
+
+
+
+

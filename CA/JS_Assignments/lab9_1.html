@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script type="text/javascript">            
+        function matchClick() {
+            var re = new RegExp(document.form1.exp.value);
+            var str = document.form1.string.value;
+            if (re.test(str)) { alert("Successful match"); }
+            else { alert("Not match")}
+        }
+        function showClick() {
+            var re = new RegExp(document.form1.exp.value);
+            var str = document.form1.string.value;
+            var matcharray = re.exec(str);
+            var ind = matcharray.index;
+            alert("match at the position "+ind +" " + ": "+matcharray);
+        }
+
+
+    </script>
+</head>
+<body>
+    <form name="form1">
+        <h1>Regexp :  <input type="text" name="exp"  maxlength="100" size="100" /></h1>
+        <h1>Subject String : <input type="text" name="string" maxlength="100" size="100" /></h1>
+        <button type="button" name="test_match" value="test_match" onclick="matchClick()">Test Match</button> 
+        <button type="button" name="show_match" value="show_match" onclick="showClick()">Show Match</button> 
+    </form>
+</body>
+</html>

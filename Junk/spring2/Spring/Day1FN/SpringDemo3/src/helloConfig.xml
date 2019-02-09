@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+
+     <!--  Create a bean for Customer Class -->
+     <bean id="c1" class="com.igate.Customer">
+     	<property name="cname" value="Ram"/>
+     	<property name="loc" value="Chennai"/>
+     </bean>
+     
+     <!-- <bean id="customer2" class="com.igate.Customer">
+     	<property name="cname" value="Sita"/>
+     	<property name="loc" value="Pune"/>
+     </bean> -->
+
+
+	<!-- Create an Account object and wire the customer1 bean 
+	
+	<bean id="myAccount" class="com.igate.Account">
+		<property name="balance" value="36000.50"/>
+		<property name="accId" value="SA876"/>
+		<property name="noOfYears" value="3"/>
+		<property name=c1 ref="customer2"/>
+	</bean>
+	
+	-->
+	
+	
+	<!-- Create an Account object and autowire the customer bean -->
+	<bean id="myAccount" class="com.igate.Account" autowire="byName">
+		<property name="balance" value="36000.50"/>
+		<property name="accId" value="SA876"/>
+		<property name="noOfYears" value="3"/>
+	</bean>
+	
+	
+</beans>

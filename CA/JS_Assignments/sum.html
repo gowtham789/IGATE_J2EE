@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script type="text/javascript">
+        function sum() {
+            var sum = 0;
+            for (var index = 1; index < arguments.length; index++) {
+                sum += arguments[index];
+            } return sum;
+        }
+    </script>
+</head>
+<body>
+    <script>
+        document.write("<h1>Total is:");
+        document.write("</br>" + sum(2, 4, 5, 10, 22));
+        document.write("</br>" + sum(2, 4));
+        document.write("</br>" + sum(2, 10, 22));
+        document.write("</br>" + sum(5, 10, 22));
+        
+    </script>
+
+
+</body>
+</html>

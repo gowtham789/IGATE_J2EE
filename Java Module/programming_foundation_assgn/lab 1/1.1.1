@@ -1,0 +1,24 @@
+BEGIN
+  DECLARE User_id   AS INTEGER
+  DECLARE User_name AS STRING
+  DECLARE Last_month_mtr_rdg AS REAL
+  DECLARE Curr_month_mtr_rdg AS REAL
+  DECLARE unit_cnsmd AS REAL
+  DECLARE Net_Amt AS REAL
+  
+  INITIALIZE fixd_chrg TO 100
+  
+  PROMPT "Enter User_id,User_name,Last_month_mtr_rdg,Curr_month_mtr_rdg,unit_cnsmd"
+  
+  ACCEPT User_id,User_name,Last_month_mtr_rdg,Curr_month_mtr_rdg,unit_cnsmd
+  
+  CALCULATE unit_cnsmd = (Last_month_mtr_rdg)–(Curr_month_mtr_rdg)  
+  CALCULATE Net_Amt = (unit_cnsmd * 1.15 )+fixd_chrg
+  
+  PRINT User_id
+  PRINT User_name
+  PRINT unit_cnsmd
+  PRINT Net_Amt
+  
+ END
+  

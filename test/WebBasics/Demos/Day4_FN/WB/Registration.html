@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script>
+function validateHobbies()
+{
+	//alert("Test");
+	var len1=document.frm.hobbies.length;
+	var hobbiesList='';
+	var count=0;
+	for(index1=0;index1<len1;index1++)
+	{
+		if(document.frm.hobbies[index1].checked)
+			{
+			count++;
+			hobbiesList=hobbiesList+" , "+document.frm.hobbies[index1].value;
+			}
+	}
+	if(count==0)
+		{
+			alert("Select hobbies");
+			//document.getElementById("errHobbies").innerHTML="Please select any one of the checkbox";
+		}
+	else
+		{
+			alert("Selected Hobbies:"+hobbiesList+" "+"State:"+document.frm.state.value+""+"City:"+document.frm.city.value);
+		}
+}
+function populateCity()
+{
+	var state=document.frm.state.value;
+	//alert(document.frm.state.options[1].value);
+	if(state.match("Tamilnadu"))
+	{
+		//alert("T");
+		document.frm.city.options[0].value="Chennai";
+		document.frm.city.options[0].text="Chennai";
+		document.frm.city.options[1].text="Coimbatore";
+		document.frm.city.options[1].value="Coimbatore";
+	}
+	else if(state.match("Karnataka"))
+	{
+		document.frm.city.options[0].text="Bangalore";
+		document.frm.city.options[1].text="Mysore";
+		document.frm.city.options[0].value="Bangalore";
+		document.frm.city.options[1].value="Mysore";
+	}
+}
+</script>
+</head>
+<body>
+<form name="frm" onsubmit="validateHobbies()">
+Hobbies:<input type="checkbox" name="hobbies" value="Cooking">Cooking
+<input type="checkbox" name="hobbies" value="Dancing">Dancing
+<input type="checkbox" name="hobbies" value="Singing">Singing<BR>
+<BR>
+State:<select name="state" onchange="populateCity()">
+			<option value="Tamilnadu">Tamilnadu</option>
+			<option value="Karnataka">Karnataka</option>
+		</select><BR>
+		City:<select name="city">
+			<option value="---------">--------</option>
+				<option value="---------">--------</option>
+		</select>
+		<BR>
+<input type="submit" value="Register"/>
+</form>
+</body>
+</html>

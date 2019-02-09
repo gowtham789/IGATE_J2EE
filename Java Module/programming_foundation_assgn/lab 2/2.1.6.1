@@ -1,0 +1,31 @@
+
+/************************************************************************************
+ * File                      : 2.1.6.1.txt
+ * Author Name               : GOWTHAM
+ * Desc                      : Psuedo code to print minimum element in an array
+ * Version                   : 2.0
+ * Last Modified Date        : 09-Feb-2016
+ * Change Description        :No changes
+ ************************************************************************************/
+
+BEGIN
+ 
+  DECLARE numbers[10] AS INTEGER ARRAY
+  DECLARE min AS INTEGER
+  INITIALIZE min TO 0
+  
+  FOR index=1 to 10
+  
+    ACCEPT numbers[index]
+	
+  END FOR
+  min=numbers[0]
+  FOR index=1 to 10
+    IF numbers[index]<min THEN
+	   min=numbers[index]
+	END IF
+  END FOR
+  PRINT min
+END  
+	
+    

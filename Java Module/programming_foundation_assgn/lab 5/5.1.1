@@ -1,0 +1,76 @@
+/************************************************************************************
+ * File                      : 5.1.txt
+ * Author Name               : GOWTHAM
+ * Description               : Displaying  the contents in toggle case with Exception Handling
+ * Version                   : 2.0
+ * Last Modified Date        : 10-Feb-2016
+ ************************************************************************************/
+ 
+BEGIN  
+	DECLARE togglefile  AS FILE
+	DECLARE index    AS CHARACTER
+    PROMPT "Enter the file name" AND STORE IN togglefile
+	
+	toggle(togglefile);
+	
+	EXCEPTION
+		WHEN NoFileFound THEN
+		PRINT errormessage //Errormessage returned from exception
+		
+	EXCEPTION
+		WHEN FileIsEmpty THEN
+		PRINT errormessage //Errormessage returned from exception
+	EXCEPTION
+		WHEN WrongElementFound THEN
+		PRINT errormessage //Errormessage returned from exception
+	
+END	
+
+
+/*********************************************************************
+* Module Name : toggle()
+* Input Parameters : togglefile
+* Return Type : FILE
+* Author : GOWTHAM
+* Creation Date : 10-Feb-2016
+* Description : Displaying  the contents of files in toggle case
+*********************************************************************/
+
+	
+SUB toggle(togglefile)
+	
+	IF(fileExists(togglefile)) THEN
+	
+	    OPEN FILE
+		
+		     IF(fileSize(togglefile)!=0) THEN
+			
+			     WHILE (togglefile!=EOF) 
+				 DO
+				     READ DATA from togglefile AND STORE IN index
+					 IF(read>=97&&read<=122) THEN
+						read=read-32
+						DISPLAY read
+						
+						 
+					 ELSE IF(read>=65&&read<=95) THEN
+						read=read+32
+						DISPLAY read
+				     ELSE
+                       
+                        RAISE "Provide valid number within the range"
+                     END IF
+					 
+                 END WHILE
+            ELSE
+		    RAISE “File is empty”
+            END IF
+    ELSE
+	
+     RAISE “File doesn’t exists”
+	 
+	END IF 			 
+END 
+                     
+                
+	

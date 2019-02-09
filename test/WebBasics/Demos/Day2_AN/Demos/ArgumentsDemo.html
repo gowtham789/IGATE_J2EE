@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script>
+ function sumOfNum()
+ {
+	 var sum=0;
+	 for(i=0;i<arguments.length;i++)
+		 {
+		 sum=sum+arguments[i];
+		 }
+	alert("The sum is "+sum)	 
+ }
+</script>
+</head>
+<body>
+<h3>Sum of numbers</h3>
+<br/><br/>
+<input type="button" value="Call1" onclick="sumOfNum(6,4,3,4,5)"/>
+<br/><br/>
+<input type="button" value="Call2" onclick="sumOfNum(6,78,41,5,10,3,24)"/>
+
+</body>
+</html>

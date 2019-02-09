@@ -1,0 +1,121 @@
+						
+										LAB 2 PLSQL
+										
+Lab 2.2 
+    DECLARE 
+	  BONUS NUMBER(10,2);
+	  SAL STAFF_MASTER.STAFF_SAL%TYPE;
+	  
+	 BEGIN
+	 SELECT STAFF_SAL INTO SAL
+	 FROM STAFF_MASTER
+	 WHERE MGR_CODE=100006;
+	 
+	 BONUS:=2*SAL;
+	 DBMS_OUTPUT.PUT_LINE('STAFF SALARY IS' || SAL);
+	 DBMS_OUTPUT.PUT_LINE('STAFF BONUS IS ' || BONUS);
+	 
+	 EXCEPTION
+	  WHEN TOO_MANY_ROWS THEN
+	  DBMS_OUTPUT.PUT_LINE('TOO MUCH DATA FETCHED');
+	  
+	  END;
+	  
+	  
+Lab 2.3
+
+		DECLARE
+		 V_SAL STAFF_MASTER.STAFF_SAL%TYPE;
+		 V_BONUS V_SAL%TYPE;
+		 SCODE NUMBER;
+		 EXP EXCEPTION;
+		 CURSOR CNAME IS SELECT STAFF_SAL,STAFF_CODE FROM STAFF_MASTER WHERE MGR_CODE=&CODE;
+		BEGIN
+		  IF CNAME%ISOPEN THEN
+		   NULL;
+		  ELSE
+		   OPEN CNAME;													--cursor opened
+		  END IF;
+		  FETCH CNAME INTO V_SAL,SCODE;
+		  IF CNAME%ROWCOUNT>0 THEN
+			WHILE CNAME%FOUND
+			LOOP
+			  V_BONUS := 2*V_SAL;
+			  DBMS_OUTPUT.PUT_LINE('STAFF CODE IS '||SCODE);
+			  DBMS_OUTPUT.PUT_LINE('STAFF SALARY IS '||V_SAL);
+			  DBMS_OUTPUT.PUT_LINE('STAFF BONUS IS '||V_BONUS);
+			  DBMS_OUTPUT.PUT_LINE('---------------');
+			  FETCH CNAME INTO V_SAL,SCODE;
+			END LOOP;
+		  ELSE
+			RAISE EXP;
+		  END IF;
+		 CLOSE CNAME;
+		EXCEPTION
+		 WHEN EXP THEN
+		  DBMS_OUTPUT.PUT_LINE('GIVEN CODE IS NOT VALID. ENTER VALID CODE');
+		END;
+
+Lab 2.4
+
+		OUTPUT: Some inner block error
+
+		CORRECTION :
+				There should be some error message in the inner block 
+				if the employee name is not found in the table. And the condition is to be satisfied in the sql statement.
+				
+		Lab 2.5
+
+		BEGIN
+
+		   DECLARE
+			  fname emp.ename%TYPE;
+			BEGIN
+			  select ename INTO fname
+			  from emp
+			  where empno = &empno;
+			  
+			  DBMS_OUTPUT.PUT_LINE('This statement will print');
+			  DBMS_OUTPUT.PUT_LINE('Empname '|| fname);
+
+			  EXCEPTION
+			  WHEN NO_DATA_FOUND THEN
+			  DBMS_OUTPUT.PUT_LINE('NO data found in fname');
+			
+			  WHEN OTHERS THEN
+			  DBMS_OUTPUT.PUT_LINE('some inner block error');
+			END;
+
+		EXCEPTION
+			  WHEN NO_DATA_FOUND THEN
+			  DBMS_OUTPUT.PUT_LINE('NO data found in fname');
+			
+			  WHEN OTHERS THEN
+			  DBMS_OUTPUT.PUT_LINE('some outer block error');
+			  
+		END;
+
+Lab 2.6
+
+		DECLARE
+			  commission emp.comm%TYPE;
+			  empnumber emp.empno%TYPE;
+			  excp EXCEPTION;
+		BEGIN
+			  select comm,empno INTO commission,empnumber
+			  from emp
+			  where empno = &empno;
+			  IF commission IS NULL THEN
+			  RAISE excp;
+			  END IF;
+			  
+			  DBMS_OUTPUT.PUT_LINE('Commission for empno'|| empnumber || 'is' ||commission);
+
+			  EXCEPTION
+			  WHEN NO_DATA_FOUND THEN
+			  DBMS_OUTPUT.PUT_LINE('The given employee code is not valid');
+			
+			 
+			 WHEN excp THEN
+			  DBMS_OUTPUT.PUT_LINE('Commission is not available for the employee');
+		END;

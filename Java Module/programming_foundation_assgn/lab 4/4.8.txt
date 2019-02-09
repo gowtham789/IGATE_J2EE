@@ -1,0 +1,76 @@
+/************************************************************************************
+ * File                      :4.8.txt
+ * Author Name               :GOWTHAM
+ * Desc                      : Operations on student details
+ * Version                   : 2.0
+ * Last Modified Date        : 12-Feb-2016
+ ************************************************************************************/
+
+
+RECORD studentdetails
+	DECLARE name       AS STRING
+	DECLARE studentid  AS INTEGER
+	DECLARE marks      AS INTEGER
+END RECORD
+
+BEGIN
+	DECLARE student AS STUDENT
+	DECLARE id      AS INTEGER
+	DECLARE ch 		AS INTEGER
+	PRINT "choices are"
+		1.Accept all the student details
+		2.Print all the student details
+		3.Search a student by his/her ID
+		4.Sort the student details based on his/her marks
+	PROMPT "enter the choice of operation AND STORE IN ch
+		WHILE(yes)
+			SWITCH(ch)
+				CASE 1:
+					FOR index=0 to 4
+						PROMPT "enter the name" AN STORE IN student.name
+						PROMPT "enter the studentid" AND STORE IN student.studentid
+						PROMPT "enter the namrks" AN STORE IN student.marks
+					END FOR
+				BREAK;
+				
+				CASE 2:
+					FOR index=0 to 4
+						PRINT "student  name" student.name
+						PRINT "student  id"   student.studentid
+						PRINT "student  marks" student.marks
+					END FOR
+				BREAK;
+				CASE 3:
+					PROMPT "enter the studentid" AND STORE IN id
+					FOR index=0 to 4
+						IF(id==student.studentid) THEN
+							PRINT "Required student is " student.name
+						ELSE
+							PRINT "Required student not in record"
+						END IF
+					END FOR
+				BREAK;
+				
+				CASE 4:
+					FOR index=0 TO 3
+						IF(student[index].marks<student[index+1].mark)
+							temp=student[index].marks
+							student[index].marks=student[index+1].marks
+							student[index+1].marks=temp;
+						END IF
+					END FOR
+				BREAK;
+				
+				DEFAULT:
+					PROMPT "For continuing Press yes"
+			
+							
+						
+					END FOR
+				BREAK;
+				
+			END SWITCH
+	    END WHILE
+	
+END		
+			

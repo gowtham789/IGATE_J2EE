@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>Lesson5-JSPActions</display-name>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>ActionController</display-name>
+    <servlet-name>ActionController</servlet-name>
+    <servlet-class>com.igate.controller.ActionController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ActionController</servlet-name>
+    <url-pattern>/useBean/ActionController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+      <servlet-name>default</servlet-name>
+      <servlet-class>io.undertow.servlet.handlers.DefaultServlet</servlet-class>
+       <init-param>
+          <param-name>allowed-extensions</param-name>
+          <param-value>js, css, png, jpg, gif, html, htm, txt, pdf, jpeg, xml, zip,class</param-value>
+      </init-param>
+       <init-param>
+          <param-name>disallowed-extensions</param-name>
+          <param-value>jar, war</param-value>
+      </init-param>      
+</servlet>
+</web-app>

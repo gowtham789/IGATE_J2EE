@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Login Page</title>
+<link rel="stylesheet" href="home.css"/>
+<script type="text/javascript">
+	document.onmousedown=disableclick;
+	function disableclick()
+	{
+	if(event.button==2)
+		{
+		alert("Right Click Disabled for security purpose");
+		return false;
+		}
+	}
+</script>
+</head>
+<body onload="disableclick();" >
+
+<iframe name="header" id="header" height="30%" src="header.htm" width="96%" onload="disableclick();"></iframe>
+<iframe name="left" id="left" src="left.htm" height="400px" width="25%" >
+</iframe>
+<iframe name="right"id="right" height="400px" width="69%" >
+</iframe>
+<iframe name="footer" id="footer" height="70px" width="96%" src="footer.htm" ></iframe>
+</body>
+</html>

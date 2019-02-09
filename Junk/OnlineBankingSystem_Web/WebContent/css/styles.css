@@ -1,0 +1,77 @@
+/*-------------------------------------------------
+GLOBALS CLASSES
+-------------------------------------------------*/
+*{margin:0; padding:0;}
+body{background:white;}
+a{color:black;}
+a:hover{ color:black;}
+div.row label {float:left;display:block;width:15em;font-weight:bold;padding:6px;}
+.marRight30{margin-right:30px;}
+.martop{margin-top:30px;}
+.marbottom30{ margin-bottom:30px;}
+.padding-bottom{padding-bottom:10px;}
+.floatRight{float:right;}
+.floatLeft{float:left;}
+.clear{clear:both;}
+.row{ width:970px; margin:0 auto; overflow:hidden; }
+.page{width:970px; background:white; margin:0 auto;}
+
+
+/*-------------------------------------------------
+MENU  CLASSES
+-------------------------------------------------*/
+.header{background:white; height:60px; padding-top:30px; padding-bottom:30px; overflow:hidden;}
+.logo{float:left; width:240px;}
+.logo h1{ font-size:45px; color:black;}
+.menu{float:right; width:auto; }
+.menu ul li{ width:auto; float:left; list-style:none; }
+.menu ul li a{float:left;  color:black; font-size:14px; padding-left:20px; padding-right:20px; background:white; border-right:1px solid blue	;}
+/*-------------------------------------------------
+BANNER  CLASSES
+-------------------------------------------------*/
+.banner-wrapper{width:1030px; margin:0 auto;}
+.banner-wrapper .row{background:white;}
+.banner-wrapper .controller{padding-top:30px; padding-bottom:30px; float:right;}
+.banner-wrapper .controller ul li{padding-right:10px; float:left; list-style:none;}
+.banner-wrapper .banner{width:1030px; margin:0 auto;}
+.banner .banner-bg{background:url(../images/banner-bg.jpg) no-repeat center; width:910px; height:498px; padding:0px 60px 0px 60px;}
+.banner-bg .panel{float:left; width:450px; padding-top:100px;}
+.banner-bg .panel .title h1{ color:black; font-size:33px;}
+.banner-bg .panel .content p{ font-size:20px; color:black; padding-top:30px;}
+.banner-button{width:200px; height:50px; background:white; border-left:#9cff00 solid 10px; text-align:center;margin-top:35px;}
+.banner-button a{color:black; line-height:50px; text-align:center; text-decoration:none; font-family: 'Oswald', sans-serif; font-size:18px;}
+
+/*-------------------------------------------------
+BOX CLASSES
+-------------------------------------------------*/
+
+.boxs{float:left; background:white; width:263px; padding:50px 30px 50px 30px;}
+.title h1{ font-size:22px; color:black; font-weight:normal;}
+.title h2{ font-size:16px; color:black;}
+.content p{ color:black;}
+
+/*-------------------------------------------------
+CONTENT CLASSES
+-------------------------------------------------*/
+.content_wrap{margin:0 auto; padding:30px 30px 0px 30px;}
+/*-------------------------------------------------
+LEFT-PANEL CLASSES
+-------------------------------------------------*/
+.left-panel{width:595px; float:left; margin-right:35px;}
+.left-panel .panel .title{ border-bottom:#25314c solid 1px; padding-bottom:20px; margin-bottom:30px;}
+.left-panel .panel .title.content marbottom30{font-size:16px; color:black;}
+/*-------------------------------------------------
+RIGHT-PANEL CLASSES
+-------------------------------------------------*/
+.right-panel{width:280px; float:left;}
+.right-panel .panel .title{ border-bottom:#25314c solid 1px; padding-bottom:20px;}
+.right-panel .panel .content ul{padding-left:0px;}
+.right-panel .panel .content ul li a{text-decoration:none; font-family: 'Open Sans', sans-serif; font-size:13px; color:black;}
+
+/*-------------------------------------------------
+FOOTER CLASSES
+-------------------------------------------------*/
+.footer-wrapper{ background:white; margin-top:40px;}
+.footer{ width:970px;margin:0 auto;} 
+.footer .panel{border-right:;float:left; width:290px; padding-left:30px; padding-top:60px;padding-bottom:60px; background:white;} 
+.footer .panel.title{background:none;}

@@ -1,0 +1,71 @@
+@CHARSET "ISO-8859-1";
+
+.d1
+{
+	background-color: #292929; 
+	color: white; 
+	position: absolute; 
+	left: 0px; 
+	top: 80px; 
+	width: 100px; 
+	height: 300px; 
+	padding: 5px; 
+	padding-right: 20px;
+}
+
+.d2
+{
+	position: absolute; 
+	left: 120px; 
+	top: 90px; 
+	background-color: orange; 
+	width: 620px; 
+	padding: 15px;
+}
+
+.d3
+{
+	z-index: 2; 
+	position: absolute; 
+	left: 610px; 
+	top: 155px; 
+	background-color: yellow; 
+	width: 100px; 
+	padding: 10px; 
+	border: red 2px dashed;
+}
+
+.d4
+{
+	position: absolute; 
+	left: 10px; 
+	bottom: 100px; 
+	background-color: #0099CC; 
+	padding: 5px; color: 
+	white; border: 5px white groove; 
+	font-size: 13pt;
+}
+
+.d5
+{
+	position: absolute; 
+	left:120px; 
+	bottom: 180px; 
+	background-color: green; 
+	width: 150px; 
+	padding: 5px; 
+	color: white; 
+	border: 10px black double;
+}
+
+.d6
+{
+	z-index: 1;
+	position: absolute;
+	right: 10px;
+	bottom: 10px;
+	background-color: #cc3300;
+	width: 280px;
+	padding: 10px;
+	color: white;
+}

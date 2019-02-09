@@ -1,0 +1,49 @@
+
+/************************************************************************************
+ * File                      : 2.1.5.txt
+ * Author Name               : GOWTHAM
+ * Desc                      : Pseudo code to convert binary number to decimal number
+ * Version                   : 2.0
+ * Last Modified Date        : 09-Feb-2016
+ * Change Description        : No changes
+ ************************************************************************************/
+
+BEGIN
+   
+   DECLARE     num,dec,base,rem AS INTEGER
+   INITIALIZE  dec to 0
+   INITIALIZE  rem to 0
+   INITIALIZE  base to 1
+   PROMPT      "Enter a binary number"
+   ACCEPT      num
+   decimal(num);
+   
+END
+
+/*********************************************************************
+* Module Name : decimal()
+* Input Parameters : num1
+* Return Type : INTEGER
+* Author : GOWTHAM
+* Creation Date : 09-Feb-2016
+*********************************************************************/
+
+  SUB decimal(num1)
+   
+      WHILE(num!=0)
+        
+		  rem=num%10
+		  dec=dec+rem*base
+		  num=num/10
+		  base=base*2
+		  
+	  END	 WHILE
+	
+	PRINT "the equivalent decimal number is" sum
+	
+  END SUB	
+	
+
+
+		  
+		  

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Student Registration Form</title>
+<script src="stu_val.js"></script>
+<link rel=stylesheet href="stu_css.css">
+</head>
+<body>
+	<h1>Student Registration Form</h1>
+	<span id="txt">All fields marked with (<font>*</font>) are mandatory</span>
+	<form name="student" method="post" onsubmit="return validate();" onreset="val_reset();">
+		<table>
+			<tr>
+				<td class="al">Student Name:<font>*</font></td>
+				<td><input type="text" id="names" name="name" pattern="[a-zA-Z]+" oninvalid="setCustomValidity('Plz enter in format: FirstName LastName')" placeholder="Firstname Lastname" required/></td>
+			</tr>
+			<tr>
+				<td class="al">Password:<font>*</font></td>
+				<td><input type="password" name="password" onblur="return checkPass();" pattern="[a-zA-Z0-9]{8,}" oninvalid="setCustomValidity('Password must be minimum 8 characters')" placeholder="Minimum 8 Characters" required/></td>
+			</tr>
+			<tr>
+				<td class="al">Retype Password:<font>*</font></td>
+				<td><input type="password" name="repassword" oninput=" return checkPass();" placeholder="Retype Password" pattern="[a-zA-Z0-9]{8,}" required/></td>
+				<td id="r1"></td>
+			</tr>
+			<tr>
+				<td class="al">Course Type:<font>*</font></td>
+				<td><select name="course_type" onchange="popCourse();">
+				<option value="" selected>[Select One]</option>
+				<option value="part">Part Time</option>
+				<option value="full">Full Time</option>
+				</select></td>
+				<td id="c"></td>
+			</tr>
+			<tr>
+				<td class="al">Course Name:<font>*</font></td>
+				<td><select name="course_name">
+				<option value=""></option>
+				<option value=""></option>
+				<option value=""></option>
+				</select></td>
+				<td id="cn"></td>
+			</tr>
+			<tr>
+				<td class="al">Facilities Required:</td>
+				<td><input type="checkbox" name="chk" value="hostel" />Hostel<br />
+					<input type="checkbox" name="chk" value="transport" />Transport<br />
+					<input type="checkbox" name="chk" value="books" />Books
+				</td>
+			</tr>
+			<tr>
+				<td class="al">Email:<font>*</font></td>
+				<td><input type="email" name="email" placeholder="Enter valid email" required /></td>
+			</tr>
+			<tr>
+				<td class="al">DOB:<font>*</font></td>
+				<td><input type="date" name="dt" required /></td>
+				<td id="d"></td>
+			</tr>
+			<tr>
+				<td align="center" class="in"><input type="reset" value="Reset"/></td>
+				<td align="center" class="in"><input type="submit" value="Register"/></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

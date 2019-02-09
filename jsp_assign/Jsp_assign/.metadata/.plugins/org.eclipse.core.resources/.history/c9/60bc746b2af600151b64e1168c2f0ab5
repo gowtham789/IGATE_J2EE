@@ -1,0 +1,64 @@
+package com.pms.controller;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.pms.dao.PatientDAO;
+import com.pms.dto.PatientDTO;
+
+/**
+ * Servlet implementation class ViewPatient
+ */
+@WebServlet("/ViewPatient")
+public class ViewPatient extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public ViewPatient() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doPost(request,response);
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		PatientDTO pt=new PatientDTO();
+		PatientDAO pd=new PatientDAO();
+		String pid=request.getParameter("PatIdTb");
+		int id=Integer.parseInt(pid);
+		pt=pd.getPatientDetails(id);
+		if(pd.isPatient(id)==true)
+		{
+		PrintWriter out=response.getWriter();
+		response.setContentType("text/html");
+		out.print("<Html><Body><Table border='3' bgcolor='lightgray' align='center'>");
+		out.print("<tr><th>Patient Id</th><th>Patient Name</th><th>Patient Age</th><th>Patient Phone number</th>"
+				+ "<th>Description</th><th>Consultation date</th></tr>");
+		out.print("<tr><td>"+pt.getPatientId()+"</td><td>"+pt.getPatientName()+"</td><td>"+pt.getAge()+"</td><td>"+pt.getPhoneNum()+"</td><td>"+pt.getDescription()+"</td><td>"+pt.getConsultDate()+"</td></tr>");
+		out.print("</Table></Body></Html>");
+		}
+		else
+		{
+			response.sendRedirect("fail.html");
+		}
+	}
+
+}

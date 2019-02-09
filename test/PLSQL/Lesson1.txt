@@ -1,0 +1,163 @@
+///Example for Record
+ declare
+ TYPE EMP_DEPT_REC is RECORD
+ (
+ V_ENUM employee.eno%TYPE,
+ V_ENAME employee.ename%TYPE,
+ V_DNAME department_new.dname%TYPE
+ );
+ V_ed EMP_DEPT_REC;
+ begin
+ SELECT eno,ename,d.dname
+ INTO V_ed
+ FROM employee e,department_new d
+ WHERE eno=344
+ AND e.deptno=d.dno;
+ dbms_output.put_line('EMPLOYEE NUMBER IS :'||V_ed.V_ENUM);
+ dbms_output.put_line('EMPLOYEE NAME IS :'||V_ed.V_ENAME);
+ dbms_output.put_line('EMPLOYEE DEPART IS :'||V_ed.V_DNAME);
+ end;
+ /
+
+**********************************************
+
+//Example for table
+declare
+type name_Arr is table
+of employee.ename%TYPE
+INDEX BY BINARY_INTEGER;
+myARR name_ARR;
+begin
+myARR(0):='Sita';
+Update employee set salary=5000
+where ename=myARR(0);
+end;
+
+**********************************************
+//Example for table of records
+declare
+TYPE EMP_DEPT_REC is RECORD
+ (
+ V_ENUM employee.eno%TYPE,
+ V_ENAME employee.ename%TYPE,
+ V_DNAME department_new.dname%TYPE
+ );
+type name_Arr is table
+of EMP_DEPT_REC
+INDEX BY BINARY_INTEGER;
+myARR name_ARR;
+begin
+SELECT eno,ename,d.dname
+ INTO myArr(0)
+ FROM employee e,department_new d
+ WHERE eno=344
+ AND e.deptno=d.dno;
+ dbms_output.put_line('EMPLOYEE NUMBER IS :'||myArr(0).V_ENUM);
+ dbms_output.put_line('EMPLOYEE NAME IS :'||myArr(0).V_ENAME);
+ dbms_output.put_line('EMPLOYEE DEPART IS :'||myArr(0).V_DNAME);
+ end;
+**********************************************
+//Example for if
+declare
+V_SAL employee.salary%TYPE;
+begin
+SELECT salary into V_SAL
+FROM employee where eno=684;
+IF (V_SAL<15000)
+THEN
+    DBMS_OUTPUT.PUT_LINE('U r in Beta A Grade');
+    UPDATE employee set salary=salary+salary*15/100
+    WHERE eno=684;
+ELSIF (V_SAL>=15000 AND V_SAL<30000)
+THEN
+    DBMS_OUTPUT.PUT_LINE('U r in Beta B Grade');
+ 	UPDATE employee set salary=salary+salary*10/100
+    WHERE eno=684;
+ELSIF (V_SAL>=31000 AND V_SAL<45000)
+THEN
+    DBMS_OUTPUT.PUT_LINE('U r in GAMMA A Grade');
+ 	UPDATE employee set salary=salary+salary*5/100
+    WHERE eno=684;
+ELSE
+	DBMS_OUTPUT.PUT_LINE('U r in ALREADY GETTING MORE');
+END IF;
+end;
+
+**********************************************
+//Nested if
+declare
+V_SAL employee.salary%TYPE;
+V_DNO employee.deptno%TYPE;
+begin
+SELECT salary,deptno into V_SAL,V_DNO
+FROM employee where eno=684;
+IF (V_SAL<15000)
+THEN
+   DBMS_OUTPUT.PUT_LINE('Poor...Let me check ur Dept');
+   IF (V_DNO=30)
+   THEN
+   	DBMS_OUTPUT.PUT_LINE('Oh! Dept 30!');
+    ELSE
+ 	DBMS_OUTPUT.PUT_LINE('Sorry! Unavail');
+    END IF;
+ELSE
+ DBMS_OUTPUT.PUT_LINE('U r in ALREADY GETTING MORE');
+END IF;
+end;
+
+**********************************************
+//Loop example
+declare
+V_Num NUMBER:=10;
+begin
+loop
+	DBMS_OUTPUT.PUT_LINE(V_Num);
+	V_Num:=V_Num+10;
+	EXIT WHEN V_Num>60;
+end loop;
+end;
+
+**********************************************
+//Loop example
+declare
+V_Num NUMBER:=10;
+begin
+loop
+	DBMS_OUTPUT.PUT_LINE(V_Num);
+	V_num:=V_num+10;
+	IF(V_Num>60)
+	THEN
+		EXIT;
+	END IF;
+end loop;
+end;
+
+
+**********************************************
+declare
+V_Num NUMBER;
+begin
+FOR V_Num in REVERSE 1..10 
+loop
+	DBMS_OUTPUT.PUT_LINE(V_Num);
+end loop;
+end;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

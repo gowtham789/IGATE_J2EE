@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="common.js">
+    </script>
+    <script type="text/javascript">
+        var headVar = 10;
+    </script>
+</head>
+<body>
+    <script>
+        document.write("<b>Script embedded in Head Tag<br>--------------------------------------------------<br><b>Value stored in variable <i>headVar</i> is " + headVar);
+    </script>
+    <hr />
+    <script type="text/javascript">
+        var bodyVar = 65;
+        document.write("<b>Script embedded in Body Tag<br>--------------------------------------------------<br><b>Value stored in variable <i> bodyVar is " + bodyVar);
+    </script>
+    <hr />
+    <script>
+        document.write("The actual script is in external script file called common.js<br><br><b>The Sum of the variables <i> headVar and bodyVar </i>is " + sum(headVar, bodyVar));
+    </script>
+    <hr />
+</body>
+</html>

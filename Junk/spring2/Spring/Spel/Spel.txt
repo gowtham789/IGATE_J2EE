@@ -1,0 +1,61 @@
+//Create a List of cities
+
+<util:list id="cities">
+    <bean class=“trg.spring.City"
+         p:name="Chicago" p:state="IL" p:population="2853114"/>
+    <bean class=" trg.spring.City"
+         p:name="Atlanta" p:state="GA" p:population="537958"/>
+     <bean class=" trg.spring.City"
+          p:name="Dallas" p:state="TX" p:population="1279910"/>
+     ……
+</util:list>
+
+//Assign the value as 3rd city from the list
+<property name="customerCity" value="#{cities[2]}"/> 
+
+
+----------------------------------------------------------
+
+<bean class=“trg.spring.City" id="c1">
+    	<property name="name" value="Chicago"/> 
+	<property name="state" value="IL"/> 
+	<property name="population" value="2853114"/> 
+</bean>
+
+<bean class=“trg.spring.City" id="c2">
+    	<property name="name" value="Atlanta"/> 
+	<property name="state" value="GA"/> 
+	<property name="population" value="537958"/> 
+</bean>
+
+<bean class=“trg.spring.City" id="c3">
+    	<property name="name" value="Dallas"/> 
+	<property name="state" value="TX"/> 
+	<property name="population" value="1279910"/> 
+</bean>
+
+//Create a Map of cities
+
+<util:map id="cityMap"  key-type="java.lang.String" 
+			value-type="trg.spring.City">
+
+	<entry key="#{c1.name}" value="#{c1}"/>  //Map.put("Chicago",c1);
+	<entry key="#{c2.name}" value="#{c2}"/>  //Map.put("Dallas",c2);
+	<entry key="#{c3.name}" value="#{c3}"/>  //Map.put("Atlanta",c3);
+</util:map>
+
+//Map.get Dallas => c2
+
+<property name="customerCity" value="#{cityMap['Dallas']}"/> 
+
+
+
+
+
+
+
+
+
+
+
+

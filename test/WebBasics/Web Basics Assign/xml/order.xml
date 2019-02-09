@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<orderdetails xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="orderxsd.xsd">
+	
+<order id="01">
+	<cusname>Gowtham</cusname>
+    <dob>1993-08-18</dob>
+    <gender>male</gender>
+    <mobileno>9000156252</mobileno>
+    <select_a_product>television</select_a_product>
+    <quantity>2</quantity>
+    <services>COD</services>
+</order>
+
+<order id="02">
+	<cusname>Kishan</cusname>
+    <dob>1993-04-11</dob>
+    <gender>male</gender>
+    <mobileno>9246596369</mobileno>
+    <select_a_product>laptop</select_a_product>
+    <quantity>1</quantity>
+    <services>Giftwrap</services>
+</order>
+
+<order id="03">
+	<cusname>Vivek</cusname>
+    <dob>1990-05-21</dob>
+    <gender>male</gender>
+    <mobileno>9882658545</mobileno>
+    <select_a_product>refrigerator</select_a_product>
+    <quantity>1</quantity>
+    <services>COD</services>
+</order>
+
+</orderdetails>

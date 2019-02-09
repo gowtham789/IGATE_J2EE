@@ -1,0 +1,189 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>8.4</title>
+		<link href="8.4.css" rel="stylesheet">
+		<script src="8.4.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<form>
+		<div id="reg"> <p> <h1>Email Registration form</h1></p>
+		</div>
+		<div id="accdet">
+			<b>Email Account Details</b> (* is required)
+			<table border="0" cellpadding="5" cellspacing="10">
+				<tr >
+					<td align="right">Choose your Login Name:*</td>
+					<td><input type="text" name="uname" onblur="unameCheck()" required><b>@patni.com</b></td>
+				</tr>
+				<tr>
+					<td align="right">Choose your password:*</td>
+					<td><input type="password" name="pwd" onblur="isPass()" required></td>
+				</tr>
+				<tr>
+					<td align="right">Re-type password:*</td>
+					<td><input type="password" name="repwd" onblur="rePass()" required></td>
+				</tr>
+			</table>
+			<div id="side1">
+				User name should contain only alphabets (a-z), numbers (0-9) and underscore(_)<br><br/>
+				Password must be atleast <b>6</b> characters to ensure better security.
+			</div>
+			</br>
+			
+		</div>
+		<hr/>
+		<div id="pwdrem">
+			<b>Password Remainder Information * (All the Fields are required)</b>
+			<table cellpadding="5" cellspacing="10">
+				<tr>
+					<td align="right">Hint Question: </td>
+					<td><select name="qstn" onchange="question()">
+						<option value="">[Select One]</option>
+						<option value="1">What is your first Company?</option>
+						<option value="2">What is your first salary?</option>
+						<option value="3">What is your grandfather's name?</option>
+					</select></td>
+				</tr>
+				<tr>
+					<td align="right"><b>OR </b> Create your Question: </td>
+					<td><input type="text" name="ownqst" onblur="question()" size="30"></td>
+				</tr>
+				<tr>
+					<td align="right">Hint Answer: </td>
+					<td><input type="text" name="hntans" onblur="answer()" size="20"/></td>
+				</tr>
+				<tr>
+					<td align="right">Birthdate: </td>
+					<td><select name="month" required>
+						<option value="">Month</option>
+						<option value="1">1</option>
+					</select>
+					<select name="day" required>
+						<option value="">Day</option>
+						<option value="1">1</option>
+					</select>
+					<select name="year" required>
+						<option value="">Year</option>
+						<option value="1993">1993</option>
+					</select></td>
+				</tr>
+				<tr>
+					<td align="right">Country : </td>
+					<td><select name="country" required>
+						<option value="">Select country</option>
+						<option value="india">India</option>
+					</select></td>
+				</tr>
+				<tr>
+					<td align="right">City : </td>
+					<td><select name="city" required city>
+						<option value="">Select One</option>
+						<option value="hyderabad">Hyderabad</option>
+					</select></td>
+				</tr>
+			</table>
+			<div id="chqst">
+				Choose a Hint Question where answer only you will know.
+			</div>
+			</br></br></br></br></br></br></br></br></br></br></br></br>
+		</div>
+		
+		<hr>
+		<div id="tellurs">
+			<b>Tell us about yourself</b>
+			<table cellpadding="5" cellspacing="10">
+				<tr>
+					<td align="right">First Name:*</td>
+					<td><input type="text" name="fname" onblur="fnameCheck()" required /></td>
+				</tr>
+				<tr>
+					<td align="right">Last Name:*</td>
+					<td><input type="text" name="lname" onblur="lnameCheck()" required /> </td>
+				</tr>
+				<tr>
+					<td align="right">Gender :</td>
+					<td> <select name="gender">
+						<option value="">Select One</option>
+						<option value="male">Male</option>
+						<option value="female">Female</option>
+					</select> </td>
+				</tr>
+				<tr>
+					<td align="right">State :</td>
+					<td><select name="state">
+						<option value="">Select One</option>
+						<option value="andhra">Andhra Pradesh</option>
+					</select> </td>
+				</tr>
+				<tr>
+					<td align="right">Pin Code :</td>
+					<td><input type="number" name="pincode"/> </td>
+				</tr>
+				<tr>
+					<td align="right">Education :</td>
+					<td><select name="education">
+						<option value="">Select One</option>
+						<option value="bebtech">B.E/B.Tech</option>
+					</select></td>
+				</tr>
+				<tr>
+					<td align="right">Occupation : </td>
+					<td><select name="occupation">
+						<option value="">Select One</option>
+						<option value="farmer">Farmer</option>
+					</select></td>
+				</tr>
+				<tr>
+					<td align="right">Alernate Email Address : </td>
+					<td><input type="email" name="altemail" /> [optional] </td>
+				</tr>
+			</table>
+		</div>
+		<hr>
+		<div id="tellint">
+			<b>Tell us your interests </b>[optional]<br>
+			Based on your selection we will periodically send you information
+			<table cellpadding="5" cellspacing="10">
+				</tr><tr>
+					<td><input type="checkbox" name="entertain" >Entertainment</td>
+					<td><input type="checkbox" name="comptech" >Computer & Technology</td>
+					<td><input type="checkbox" name="relest" >Real Estate</td>
+				</tr>
+				</tr><tr>
+					<td><input type="checkbox" name="news" >News</td>
+					<td><input type="checkbox" name="educ" >Education</td>
+					<td><input type="checkbox" name="credcrd" >Credit Card</td>
+				</tr>
+				</tr><tr>
+					<td><input type="checkbox" name="hofam" >Home & Family</td>
+					<td><input type="checkbox" name="career" >Careers</td>
+					<td><input type="checkbox" name="insurance" >Insurance</td>
+				</tr>
+				</tr><tr>
+					<td><input type="checkbox" name="healnut" >Health & Nutrition</td>
+					<td><input type="checkbox" name="shopping" >Shopping</td>
+					<td><input type="checkbox" name="banking" >Banking</td>
+				</tr>
+				</tr><tr>
+					<td><input type="checkbox" name="beaufash" >Beauty & Fashion</td>
+					<td><input type="checkbox" name="automob" >Automobiles</td>
+					<td><input type="checkbox" name="spcoff" >Special Offers</td>
+				</tr>
+				</tr><tr>
+					<td><input type="checkbox" name="spogam" >Sports & Games</td>
+					<td><input type="checkbox" name="invest" >Ivesting</td>
+				</tr>
+				</tr><tr>
+					<td><input type="checkbox" name="travel" >Travel</td>
+					<td><input type="checkbox" name="loans" >Loans</td>
+					
+				</tr>
+			</table>
+		</div>
+		<hr><hr>
+		<p align="center"><input type="button" value="Register Me" onclick="validate()" /> &nbsp;&nbsp;
+		<input type="reset" value="reset" /></p>
+		</form>
+	</body>
+</html>

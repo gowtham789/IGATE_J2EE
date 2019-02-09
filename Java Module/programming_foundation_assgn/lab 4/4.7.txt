@@ -1,0 +1,35 @@
+
+/************************************************************************************
+ * File                      :4.7.txt
+ * Author Name               :GOWTHAM
+ * Desc                      :Substring in main string
+ * Version                   :2.0
+ * Last Modified Date        :12-Feb-2016
+ ************************************************************************************/
+
+
+BEGIN
+	DECLARE mainstring AS STRING
+	DECLARE substirng  AS STRING
+	
+	PROMPT "Enter the main string " AND STORE IN mainstring
+	PROMPT "Enter the sub string which has to be find" AND STORE IN substring
+	find(mainstring,substring)
+END
+
+/*********************************************************************
+* Module Name : find()
+* Input Parameters : mainstring,substring
+* Return Type : STRING
+* Author : GOWTHAM
+* Creation Date : 09-Feb-2016
+*********************************************************************/
+
+SUB find(mainstring,substring)
+	IF(substr(mainstring,substring)) THEN
+		PRINT "Substring found in source string"
+	ELSE
+		PRINT "Substring not found in source string"
+	END IF
+END SUB
+	

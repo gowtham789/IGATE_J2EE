@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title> 5.0 </title>
+		<script type="text/javascript">
+			var myWindow = null;
+			function openWindow()
+			{
+				var result = false;
+				var widVal = document.forms[0].width.value;
+				var heiVal = document.forms[0].height.value;
+				var lefVal = document.forms[0].left.value;
+				var topVal = document.forms[0].top.value;
+				if(widVal>0 && heiVal>0 && lefVal>0 && topVal>0)
+				{
+					myWindow = window.open("","","noresizable,height=200,width=200");
+					myWindow.resizeTo(widVal,heiVal);
+					myWindow.moveTo(lefVal,topVal);
+					myWindow.document.write("This window is opened on clicking of the <b>New Window</b> button");
+					result = true;
+				}
+				return result;
+			}
+		</script>
+	</head>
+	<body>
+		<form onsubmit="return openWindow()">
+			<table cellpadding="15" border="2" cellspacing="10" style="border-color:blue">
+				<tr align="center">
+					<td colspan=4><b style="font-size:30px">Create a new window</b></td>
+				</tr>
+				<tr align="center">
+					<td colspan=4><b style="font-size:20px">Window Size</b></td>
+				</tr>
+				<tr align="center">
+					<td><b>Width :</b></td>
+					<td><input type="number" name="width" value=0 size="8" required /></td>
+					<td><b>Height :</b></td>
+					<td><input type="number" name="height" value=0  size="8" required /></td>
+				</tr >
+				<tr align="center">
+					<td colspan=4><b style="font-size:20px">POSITION</b></td>
+				</tr>
+				<tr align="center">
+					<td><b>Left:</b></td>
+					<td><input type="number" name="left" value=0 size="8" required /></td>
+					<td><b>Top :</b></td>
+					<td><input type="number" name="top" value=0  size="8" required /></td>
+				</tr>
+				<tr align="center">
+					<td colspan=3><input type="submit" value="New Window" name="newwin" /></td>
+					<td align="center"><input type="reset" value="Reset" name="reset" /></td>
+				</tr>
+			</table>
+		</form>
+	</body>
+</html>

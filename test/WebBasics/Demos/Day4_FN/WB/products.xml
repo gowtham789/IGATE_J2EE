@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list_products xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="products.xsd">
+	<product id="101">
+		<name>Pen</name>
+		<price>10</price>
+		<quantity></quantity>
+	</product>
+	<product id="102">
+		<name>Pencil</name>
+		<price>20</price>
+		<quantity>30</quantity>
+	</product>
+	<product id="103">
+		<name>Marker</name>
+		<price>30</price>
+		<quantity>70</quantity>
+	</product>
+	<product id="104">
+		<name>Pen</name>
+		<price>10</price>
+		<quantity>500</quantity>
+	</product>
+	<product id="105">
+		<name>Pen</name>
+		<price>10</price>
+		<quantity>20</quantity>
+	</product>
+</list_products>
